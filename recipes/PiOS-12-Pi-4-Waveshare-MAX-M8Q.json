@@ -6,8 +6,8 @@
     },
     "date": "2025-05-01",
     "os": {
-        "name": "FreeBSD",
-        "version": "14"
+        "name": "Pi OS",
+        "version": "12"
     },
     "server": {
         "name": "Raspberry Pi 4b"

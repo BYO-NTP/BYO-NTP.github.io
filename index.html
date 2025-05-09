@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>BYO-NTP</title>
-  <link rel="stylesheet" href="css/style.css">
+  <!-- <link rel="stylesheet" href="style.css"> -->
   <meta name="description" content="">
 
   <meta property="og:title" content="Build Your Own NTP">
@@ -14,11 +14,11 @@
   <meta property="og:image" content="">
   <meta property="og:image:alt" content="">
 
-  <link rel="icon" href="/favicon.ico" sizes="any">
-  <link rel="icon" href="/icon.svg" type="image/svg+xml">
-  <link rel="apple-touch-icon" href="icon.png">
+  <!-- <link rel="icon" href="/favicon.ico" sizes="any"> -->
+  <!-- <link rel="icon" href="/icon.svg" type="image/svg+xml"> -->
+  <!-- <link rel="apple-touch-icon" href="icon.png"> -->
 
-  <link rel="manifest" href="site.webmanifest">
+  <!-- <link rel="manifest" href="site.webmanifest"> -->
   <meta name="theme-color" content="#fafafa">
 </head>
 
@@ -26,10 +26,126 @@
   <h1>Build Your Own - NTP server</h1>
 
   <p>Build a GNSS backed NTP Stratum 1 server.</p>
+
   <p>GNSS networks: GPS, Galileo, BeiDou, GLONASS</p>
+  
+  <p>I would like my NTP server to be accurate to within: <select name="accuracy">
+    <option value="1s">1 second</option>
+    <option value="1ms">1 millisecond (.001 seconds)</option>
+    <option value="1us">1 microsecond (.000001 seconds)</option>
+    <option value="1ns">1 nanosecond (.000000001 seconds)</option>
+    <option value="1ps">1 picosecond (.000000000001 seconds)</option>
+  </select>
+  </p>
+  
+  <p>My preferred OS is: <select name="os"></select>
+  </p>
+
+  <p>My preferred server hardware is: <select name="server">
+    <option value="nuc">Mini PC (NUC, etc.)</option>
+    <option value="pi">Raspberry Pi</option>
+    <option value="server">Server</option>
+    </select>
+  </p>
+
+  <p>My preferred NTP daemon is: <select name="daemon">
+    <option value="chrony">Chrony</option>
+    <option value="ntpd">NTPD</option>
+    <option value="ntpsec">NTPsec</option>
+    <option value="openntpd">OpenNTPD</option>
+    </select>
+  </p>
+
+  <hr>
+  The following build recipes match your criteria:
+
+  <ul name="recipes">
+    <li><a href=""> </a></li>
+  </ul>
+
   <script>
-  	
-  </script>
+
+function ajax({ method = 'GET', url, data = null, headers = {} }) {
+  const fetchOptions = {
+    method,
+    headers: {
+      ...headers
+    }
+  };
+
+  if (data) {
+    fetchOptions.body = headers['Content-Type'] === 'application/x-www-form-urlencoded'
+      ? data
+      : JSON.stringify(data);
+
+    // Set default content type if not provided
+    if (!headers['Content-Type']) {
+      fetchOptions.headers['Content-Type'] = 'application/json';
+    }
+  }
+
+  return fetch(url, fetchOptions)
+    .then(async response => {
+      const contentType = response.headers.get('content-type');
+      const responseData = contentType && contentType.includes('application/json')
+        ? await response.json()
+        : await response.text();
+
+      if (!response.ok) {
+        throw new Error(`HTTP ${response.status}: ${response.statusText} — ${responseData}`);
+      }
+
+      return responseData;
+    });
+}
+
+function populateRecipes(recipes) {
+  const ul = document.querySelector('ul[name="recipes"]');
+  ul.innerHTML = ''; // Clear existing items
+
+  for (const recipe of recipes) {
+    // console.log('Recipe:', recipe);
+    const li = document.createElement('li');
+    const a = document.createElement('a');
+    a.href='#'
+    a.textContent = `${recipe.os.name} + ${recipe.server.name} + ${recipe.gnss.name}`;
+    li.appendChild(a);
+    ul.appendChild(li);
+  }
+}
+
+function populateOSOptions(osList) {
+  const select = document.querySelector('select[name="os"]');
+  select.innerHTML = ''; // Clear existing options
+
+  for (const os of osList) {
+    // console.log('OS:', os);
+    const option = document.createElement('option');
+    option.value = `${os.name}`;
+    option.textContent = `${os.name}`;
+    select.appendChild(option);
+  }
+}
+
+function onLoad () {
+  ajax({
+    method: 'GET',
+    url: `/dist/all.json`,
+  }).then(response => {
+    // console.log('Success:', response);
+    populateRecipes(response.recipes);
+    populateOSOptions(response.os);
+
+
+
+  }).catch(error => {
+    console.error('Error:', error);
+  });
+}
+
+
+onLoad()
+</script>
 
 </body>
 
