@@ -1,0 +1,13 @@
+{
+    "name": "FreeBSD",
+    "release": {
+        "name": "14.2",
+        "codename": "",
+        "major": "14",
+        "minor": "2",
+        "patch": "2"
+    },
+    "family": [ "bsd" ],
+    "pps": [ "kernel", "userland" ],
+    "ptp": [ ]
+}

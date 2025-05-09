@@ -1,0 +1,23 @@
+{
+    "manufacturer": "u-blox",
+    "model": "MAX-M8Q",
+    "gnss": {
+        "supported": [ "gps", "glonass", "galileo", "beidou" ],
+        "augmentation": [ "SBAS", "QZSS", "IMES", "D-GPS" ],
+        "concurrent": 3
+    },
+    "specs": {
+        "channels": 72,
+        "update_rate": "10Hz",
+        "sensitivity": {
+            "tracking": "-167 dBm",
+            "acquisition": "-160 dBm"
+        },
+        "time_accuracy": "60ns"
+    },
+    "protocols": {
+        "NMEA": [ 2.1, 2.3, 4.1 ],
+        "UBX": [ 18 ],
+        "RTCM": [ 2.3 ]
+    }
+}

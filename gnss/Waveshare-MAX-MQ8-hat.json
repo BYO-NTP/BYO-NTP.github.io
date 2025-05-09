@@ -1,0 +1,47 @@
+{
+    "manufacturer": "Waveshare",
+    "product": {
+        "name": "MAX-MQ8 GNSS HAT",
+        "url": "https://www.waveshare.com/max-m8q-gnss-hat.htm"
+    },
+    "revision": "",
+    "module": {
+        "manufacturer": "u-blox",
+        "model": "MAX-M8Q"
+    },
+    "in_production": true,
+    "accuracy": {
+        "class": "µs"
+    },
+    "interface": [ "USB", "UART", "I2C" ],
+    "pps": true,
+    "rtc": {
+        "chip": "",
+        "battery": ""
+    },
+    "software": [ "u-center", "gpsd" ],
+    "usb": {
+        "version": [ 2 ],
+        "connectors": [ "C" ]
+    },
+    "price": {
+        "range": "20-50",
+        "msrp": 35
+    },
+    "vendors": [
+        {
+            "name": "Waveshare",
+            "url": "https://www.waveshare.com/max-m8q-gnss-hat.htm",
+            "total": "$35"
+        },
+        {
+            "name": "AliExpress",
+            "url": "https://www.aliexpress.us/item/3256807319702589.html",
+            "total": "$31"
+        },
+        {
+            "name": "Spotpear",
+            "url": "https://spotpear.com/index/product/detail/id/441.html"
+        }
+    ]
+}

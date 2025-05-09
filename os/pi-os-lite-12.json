@@ -1,0 +1,13 @@
+{
+    "name": "Pi OS",
+    "release": {
+        "name": "Raspberry Pi OS Lite",
+        "codename": "bookworm",
+        "major": "12",
+        "minor": "2",
+        "patch": "2"
+    },
+    "family": [ "debian", "linux" ],
+    "pps": [ "kernel" ],
+    "ptp": [ ]
+}

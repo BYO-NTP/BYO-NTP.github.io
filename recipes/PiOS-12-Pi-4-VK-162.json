@@ -1,0 +1,45 @@
+{
+    "author": {
+        "name": "Matt Simerson",
+        "email": "",
+        "url": "https://matt.simerson.net/"
+    },
+    "date": "2025-05-01",
+    "os": {
+        "name": "FreeBSD",
+        "version": "14"
+    },
+    "server": {
+        "name": "Raspberry Pi 4b"
+    },
+    "gnss": {
+        "name": "Waveshare MAX-M8Q"
+    },
+    "daemon": [
+        {
+            "name": "Chrony",
+            "version": "4.6.1"
+        },
+        {
+            "name": "NTPsec",
+            "version": "1.2.3"
+        },
+        {
+            "name": "ntp",
+            "version": "4.2.8"
+        },
+        {
+            "name": "OpenNTPD"
+        }
+    ],
+    "steps": [
+        {
+            "name": "Install FreeBSD for Raspberry Pi 4b",
+            "url": "https://github.com/BYO-NTP/recipes/wiki/FreeBSD-14-Raspberry-Pi-4b"
+        },
+        {
+            "name": "Install Waveshare MAX-M8Q GNSS HAT",
+            "url": "https://github.com/BYO-NTP/recipes/wiki/FreeBSD-14-Raspberry-Pi-4b-Waveshare-MAX%E2%80%90M8Q-GNSS-HAT"
+        }
+    ]
+}

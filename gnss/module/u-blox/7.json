@@ -1,0 +1,21 @@
+{
+    "name": "u-blox 7",
+    "gnss": {
+        "supported": [ "gps" ],
+        "concurrent": 1
+    },
+    "specs": {
+        "channels": 50,
+        "update_rate": "1Hz",
+        "sensitivity": {
+            "tracking": "-160 dBm",
+            "acquisition": "-146 dBm"
+        },
+        "time_accuracy": "50ns"
+    },
+    "protocols": {
+        "NMEA": [ 2.1, 2.3 ],
+        "UBX": [ 14 ],
+        "RTCM": [ ]
+    }
+}

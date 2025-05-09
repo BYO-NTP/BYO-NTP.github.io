@@ -1,0 +1,686 @@
+{
+  "recipes": [
+    {
+      "author": {
+        "name": "Matt Simerson",
+        "email": "",
+        "url": "https://matt.simerson.net/"
+      },
+      "date": "2025-05-01",
+      "os": {
+        "name": "FreeBSD",
+        "version": "14"
+      },
+      "server": {
+        "name": "Raspberry Pi 4b"
+      },
+      "gnss": {
+        "name": "Waveshare MAX-M8Q"
+      },
+      "daemon": [
+        {
+          "name": "Chrony",
+          "version": "4.6.1"
+        },
+        {
+          "name": "NTPsec",
+          "version": "1.2.3"
+        },
+        {
+          "name": "ntp",
+          "version": "4.2.8"
+        },
+        {
+          "name": "OpenNTPD"
+        }
+      ],
+      "steps": [
+        {
+          "name": "Install FreeBSD for Raspberry Pi 4b",
+          "url": "https://github.com/BYO-NTP/recipes/wiki/FreeBSD-14-Raspberry-Pi-4b"
+        },
+        {
+          "name": "Install Waveshare MAX-M8Q GNSS HAT",
+          "url": "https://github.com/BYO-NTP/recipes/wiki/FreeBSD-14-Raspberry-Pi-4b-Waveshare-MAX%E2%80%90M8Q-GNSS-HAT"
+        }
+      ]
+    },
+    {
+      "author": {
+        "name": "Matt Simerson",
+        "email": "",
+        "url": "https://matt.simerson.net/"
+      },
+      "date": "2025-05-01",
+      "os": {
+        "name": "FreeBSD",
+        "version": "14"
+      },
+      "server": {
+        "name": "Raspberry Pi 4b"
+      },
+      "gnss": {
+        "name": "VK-162"
+      },
+      "daemon": [
+        {
+          "name": "Chrony",
+          "version": "4.6.1"
+        },
+        {
+          "name": "NTPsec",
+          "version": "1.2.3"
+        },
+        {
+          "name": "ntp"
+        },
+        {
+          "name": "OpenNTPD"
+        }
+      ],
+      "steps": [
+        {
+          "name": "Install FreeBSD for Raspberry Pi 4b",
+          "url": "https://github.com/BYO-NTP/recipes/wiki/FreeBSD-14-Raspberry-Pi-4b"
+        },
+        {
+          "name": "Install VK-162 GPS",
+          "url": "https://github.com/BYO-NTP/recipes/wiki/FreeBSD-14-Raspberry-Pi-4b-VK%E2%80%90162"
+        }
+      ]
+    },
+    {
+      "author": {
+        "name": "Matt Simerson",
+        "email": "",
+        "url": "https://matt.simerson.net/"
+      },
+      "date": "2025-05-01",
+      "os": {
+        "name": "Pi OS",
+        "version": "12"
+      },
+      "server": {
+        "name": "Raspberry Pi 4b"
+      },
+      "gnss": {
+        "name": "Waveshare MAX-M8Q"
+      },
+      "daemon": [
+        {
+          "name": "Chrony",
+          "version": "4.6.1"
+        },
+        {
+          "name": "NTPsec",
+          "version": "1.2.3"
+        },
+        {
+          "name": "ntp",
+          "version": "4.2.8"
+        },
+        {
+          "name": "OpenNTPD"
+        }
+      ],
+      "steps": [
+        {
+          "name": "Install FreeBSD for Raspberry Pi 4b",
+          "url": "https://github.com/BYO-NTP/recipes/wiki/FreeBSD-14-Raspberry-Pi-4b"
+        },
+        {
+          "name": "Install Waveshare MAX-M8Q GNSS HAT",
+          "url": "https://github.com/BYO-NTP/recipes/wiki/FreeBSD-14-Raspberry-Pi-4b-Waveshare-MAX%E2%80%90M8Q-GNSS-HAT"
+        }
+      ]
+    },
+    {
+      "author": {
+        "name": "Matt Simerson",
+        "email": "",
+        "url": "https://matt.simerson.net/"
+      },
+      "date": "2025-05-01",
+      "os": {
+        "name": "Pi OS",
+        "version": "12"
+      },
+      "server": {
+        "name": "Raspberry Pi 4b"
+      },
+      "gnss": {
+        "name": "Waveshare MAX-M8Q"
+      },
+      "daemon": [
+        {
+          "name": "Chrony",
+          "version": "4.6.1"
+        },
+        {
+          "name": "NTPsec",
+          "version": "1.2.3"
+        },
+        {
+          "name": "ntp",
+          "version": "4.2.8"
+        },
+        {
+          "name": "OpenNTPD"
+        }
+      ],
+      "steps": [
+        {
+          "name": "Install FreeBSD for Raspberry Pi 4b",
+          "url": "https://github.com/BYO-NTP/recipes/wiki/FreeBSD-14-Raspberry-Pi-4b"
+        },
+        {
+          "name": "Install Waveshare MAX-M8Q GNSS HAT",
+          "url": "https://github.com/BYO-NTP/recipes/wiki/FreeBSD-14-Raspberry-Pi-4b-Waveshare-MAX%E2%80%90M8Q-GNSS-HAT"
+        }
+      ]
+    }
+  ],
+  "server": [
+    {
+      "manufacturer": "Chuwi",
+      "product": "LarkBox",
+      "version": "X",
+      "usb": {
+        "version": [
+          3
+        ],
+        "connectors": [
+          "A",
+          "C"
+        ]
+      },
+      "msrp": 170,
+      "storage": [
+        "ssd",
+        "usb"
+      ],
+      "power": {
+        "TDP": 15,
+        "observed": 6
+      },
+      "ram": [
+        12
+      ],
+      "uart": {
+        "connectors": []
+      },
+      "ethernet": {
+        "connectors": [
+          "RJ45"
+        ],
+        "speed": [
+          1,
+          2.5
+        ]
+      },
+      "rtc": {
+        "chip": "Intel",
+        "battery": "yes"
+      }
+    },
+    {
+      "manufacturer": "Raspberry Pi",
+      "product": "4",
+      "version": "b",
+      "usb": {
+        "version": [
+          2,
+          3
+        ],
+        "connectors": [
+          "C"
+        ]
+      },
+      "msrp": 55,
+      "storage": [
+        "sd card",
+        "usb"
+      ],
+      "power": {
+        "TDP": 8,
+        "observed": 3
+      },
+      "ram": [
+        1,
+        2,
+        4,
+        8
+      ],
+      "uart": {
+        "connectors": [
+          "GPIO"
+        ]
+      },
+      "ethernet": {
+        "connectors": [
+          "RJ45"
+        ],
+        "speed": [
+          1
+        ]
+      },
+      "rtc": {
+        "chip": "",
+        "battery": ""
+      }
+    },
+    {
+      "manufacturer": "Raspberry Pi",
+      "product": "5",
+      "version": "",
+      "usb": {
+        "version": [
+          2,
+          3
+        ],
+        "connectors": [
+          "A"
+        ]
+      },
+      "msrp": 80,
+      "storage": [
+        "sd card",
+        "usb"
+      ],
+      "power": {
+        "TDP": 8,
+        "observed": 3
+      },
+      "ram": [
+        1,
+        2,
+        4,
+        8
+      ],
+      "uart": {
+        "connectors": [
+          "GPIO"
+        ]
+      },
+      "ethernet": {
+        "connectors": [
+          "RJ45"
+        ],
+        "speed": [
+          1
+        ]
+      },
+      "rtc": {
+        "chip": "",
+        "battery": ""
+      }
+    },
+    {
+      "manufacturer": "KINGDEL",
+      "product": "NC1037",
+      "version": "",
+      "usb": {
+        "version": [
+          2,
+          3
+        ],
+        "connectors": [
+          "A"
+        ]
+      },
+      "msrp": 270,
+      "storage": [
+        "ssd"
+      ],
+      "power": {
+        "TDP": 0,
+        "observed": 0
+      },
+      "ram": [
+        8
+      ],
+      "uart": {
+        "connectors": [
+          "RS232",
+          "RS232",
+          "RS232",
+          "RS232"
+        ]
+      },
+      "ethernet": {
+        "connectors": [
+          "RJ45"
+        ],
+        "speed": [
+          1,
+          1
+        ]
+      },
+      "rtc": {
+        "chip": "Intel",
+        "battery": "yes"
+      }
+    }
+  ],
+  "os": [
+    {
+      "name": "FreeBSD",
+      "release": {
+        "name": "14.2",
+        "codename": "",
+        "major": "14",
+        "minor": "2",
+        "patch": "2"
+      },
+      "family": [
+        "bsd"
+      ],
+      "pps": [
+        "kernel",
+        "userland"
+      ],
+      "ptp": []
+    },
+    {
+      "name": "Pi OS",
+      "release": {
+        "name": "Raspberry Pi OS Lite",
+        "codename": "bookworm",
+        "major": "12",
+        "minor": "2",
+        "patch": "2"
+      },
+      "family": [
+        "debian",
+        "linux"
+      ],
+      "pps": [
+        "kernel"
+      ],
+      "ptp": []
+    },
+    {
+      "name": "Pi OS",
+      "release": {
+        "name": "Raspberry Pi OS Lite (64-bit)",
+        "codename": "bullseye",
+        "major": "11",
+        "minor": "2",
+        "patch": "2"
+      },
+      "family": [
+        "debian",
+        "linux"
+      ],
+      "pps": [
+        "kernel"
+      ],
+      "ptp": []
+    },
+    {
+      "name": "Ubuntu",
+      "release": {
+        "name": "Ubuntu Server",
+        "codename": "",
+        "major": "24",
+        "minor": "4",
+        "patch": "2"
+      },
+      "family": [
+        "debian",
+        "linux"
+      ],
+      "pps": [
+        "kernel"
+      ],
+      "ptp": []
+    }
+  ],
+  "gnss": [
+    {
+      "manufacturer": "Stratux",
+      "product": "VK-162",
+      "revision": "",
+      "module": {
+        "manufacturer": "u-blox",
+        "model": "7"
+      },
+      "in_production": true,
+      "accuracy": {
+        "class": "ms"
+      },
+      "interface": [
+        "USB"
+      ],
+      "pps": false,
+      "rtc": {
+        "chip": "",
+        "battery": ""
+      },
+      "software": [
+        "u-center",
+        "gpsd"
+      ],
+      "usb": {
+        "version": [
+          2
+        ],
+        "connectors": [
+          "A"
+        ]
+      },
+      "price": {
+        "range": "0-20",
+        "msrp": 15
+      },
+      "vendors": [
+        {
+          "name": "many",
+          "url": "",
+          "total": "$15"
+        }
+      ]
+    },
+    {
+      "manufacturer": "Huawei",
+      "product": "WD22UGRC",
+      "revision": "CT",
+      "module": {
+        "manufacturer": "u-blox",
+        "model": "LEA-M8T"
+      },
+      "in_production": true,
+      "accuracy": {
+        "class": "µs"
+      },
+      "interface": [
+        "UART"
+      ],
+      "pps": true,
+      "rtc": {
+        "chip": "",
+        "battery": ""
+      },
+      "software": [
+        "u-center",
+        "gpsd"
+      ],
+      "usb": {
+        "version": [],
+        "connectors": []
+      },
+      "price": {
+        "msrp": 0,
+        "range": "20-50"
+      },
+      "vendors": [
+        {
+          "name": "eBay",
+          "url": "",
+          "total": "$32"
+        }
+      ]
+    },
+    {
+      "manufacturer": "Waveshare",
+      "product": {
+        "name": "MAX-MQ8 GNSS HAT",
+        "url": "https://www.waveshare.com/max-m8q-gnss-hat.htm"
+      },
+      "revision": "",
+      "module": {
+        "manufacturer": "u-blox",
+        "model": "MAX-M8Q"
+      },
+      "in_production": true,
+      "accuracy": {
+        "class": "µs"
+      },
+      "interface": [
+        "USB",
+        "UART",
+        "I2C"
+      ],
+      "pps": true,
+      "rtc": {
+        "chip": "",
+        "battery": ""
+      },
+      "software": [
+        "u-center",
+        "gpsd"
+      ],
+      "usb": {
+        "version": [
+          2
+        ],
+        "connectors": [
+          "C"
+        ]
+      },
+      "price": {
+        "range": "20-50",
+        "msrp": 35
+      },
+      "vendors": [
+        {
+          "name": "Waveshare",
+          "url": "https://www.waveshare.com/max-m8q-gnss-hat.htm",
+          "total": "$35"
+        },
+        {
+          "name": "AliExpress",
+          "url": "https://www.aliexpress.us/item/3256807319702589.html",
+          "total": "$31"
+        },
+        {
+          "name": "Spotpear",
+          "url": "https://spotpear.com/index/product/detail/id/441.html"
+        }
+      ]
+    },
+    {
+      "manufacturer": "",
+      "product": "",
+      "revision": "",
+      "module": {
+        "manufacturer": "u-blox, Quectel, etc.",
+        "model": ""
+      },
+      "in_production": false,
+      "accuracy": {
+        "class": "s, ms, µs, ns, ps"
+      },
+      "interface": [
+        "USB",
+        "UART",
+        "I2C"
+      ],
+      "pps": false,
+      "rtc": {
+        "chip": "",
+        "battery": "supercap, coin cell"
+      },
+      "software": [
+        "u-center",
+        "gpsd"
+      ],
+      "usb": {
+        "version": [
+          2,
+          3
+        ],
+        "connectors": [
+          "A",
+          "C"
+        ]
+      },
+      "price": {
+        "msrp": 0,
+        "range": "0-20, 20-50, 50-100, 100-200, 200+"
+      },
+      "vendors": [
+        {
+          "name": "",
+          "url": "",
+          "total": ""
+        }
+      ]
+    },
+    {
+      "manufacturer": "Uputronics",
+      "product": {
+        "name": "GPS/RTC board for Pi",
+        "url": "https://store.uputronics.com/products/raspberry-pi-gps-rtc-expansion-board"
+      },
+      "revision": "6.4",
+      "module": {
+        "manufacturer": "u-blox",
+        "model": "M8Q"
+      },
+      "in_production": true,
+      "accuracy": {
+        "class": "ms, µs"
+      },
+      "interface": [
+        "USB",
+        "UART",
+        "I2C"
+      ],
+      "pps": true,
+      "rtc": {
+        "chip": "RV-3028-C7",
+        "battery": "supercap"
+      },
+      "software": [
+        "u-center",
+        "gpsd"
+      ],
+      "usb": {
+        "version": [
+          2
+        ],
+        "connectors": [
+          "C"
+        ]
+      },
+      "price": {
+        "range": "50-100",
+        "msrp": 55
+      },
+      "vendors": [
+        {
+          "name": "Uputronics",
+          "url": "https://store.uputronics.com/products/raspberry-pi-gps-rtc-expansion-board",
+          "total": "$55 + $19 shipping"
+        },
+        {
+          "name": "Airspy.US",
+          "url": "https://v3.airspy.us/product/upu-rpi-gps-rtc/",
+          "total": "$50 + $10 shipping",
+          "notes": "Listing is for rev 6.1 (lastest is 6.4)"
+        }
+      ]
+    }
+  ]
+}
