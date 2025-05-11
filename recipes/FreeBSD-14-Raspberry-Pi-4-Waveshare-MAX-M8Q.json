@@ -10,10 +10,12 @@
         "version": "14"
     },
     "server": {
-        "name": "Raspberry Pi 4b"
+        "manufacturer": "Raspberry Pi",
+        "product": "4b"
     },
     "gnss": {
-        "name": "Waveshare MAX-M8Q"
+        "manufacturer": "Waveshare",
+        "product": "MAX-M8Q GNSS HAT"
     },
     "daemon": [
         {

@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "nodemon": "^3.1.10"
+  },
+  "scripts": {
+    "all": "node tools/all-from-path.js",
+    "start": "npm run all && npx nodemon --watch . --exec node server.js"
+  }
+}
