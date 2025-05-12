@@ -11,7 +11,7 @@
     },
     "server": {
         "manufacturer": "Raspberry Pi",
-        "product": "4b"
+        "product": "4"
     },
     "gnss": {
         "manufacturer": "Stratux",
@@ -32,16 +32,6 @@
         },
         {
             "name": "OpenNTPD"
-        }
-    ],
-    "steps": [
-        {
-            "name": "Install FreeBSD for Raspberry Pi 4b",
-            "url": "https://github.com/BYO-NTP/recipes/wiki/FreeBSD-14-Raspberry-Pi-4b"
-        },
-        {
-            "name": "Install Waveshare MAX-M8Q GNSS HAT",
-            "url": "https://github.com/BYO-NTP/recipes/wiki/FreeBSD-14-Raspberry-Pi-4b-Waveshare-MAX%E2%80%90M8Q-GNSS-HAT"
         }
     ]
 }
