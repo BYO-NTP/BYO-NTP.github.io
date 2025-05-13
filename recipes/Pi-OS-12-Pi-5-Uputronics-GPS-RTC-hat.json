@@ -1,0 +1,25 @@
+{
+    "author": {
+        "name": "Phil Randal",
+        "email": "",
+        "url": "https://www.philrandal.co.uk/blog/archives/2019/04/entry_213.html"
+    },
+    "date": "2023-09-19",
+    "os": {
+        "name": "Pi OS",
+        "version": "12"
+    },
+    "server": {
+        "manufacturer": "Raspberry Pi",
+        "product": "5"
+    },
+    "gnss": {
+        "manufacturer": "Uputronics",
+        "product": "GPS RTC board for Pi"
+    },
+    "daemon": [
+        {
+            "name": "NTPsec"
+        }
+    ]
+}

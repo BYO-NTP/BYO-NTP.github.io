@@ -6,6 +6,43 @@
         "email": "",
         "url": "https://matt.simerson.net/"
       },
+      "date": "2025-05-12",
+      "os": {
+        "name": "FreeBSD",
+        "version": "14"
+      },
+      "server": {
+        "manufacturer": "Chuwi",
+        "product": "Larkbox X"
+      },
+      "gnss": {
+        "manufacturer": "Huawei",
+        "product": "WD22UGRC"
+      },
+      "daemon": [
+        {
+          "name": "Chrony",
+          "version": "4.6.1"
+        },
+        {
+          "name": "NTPsec",
+          "version": "1.2.3"
+        },
+        {
+          "name": "ntp",
+          "version": "4.2.8"
+        },
+        {
+          "name": "OpenNTPD"
+        }
+      ]
+    },
+    {
+      "author": {
+        "name": "Matt Simerson",
+        "email": "",
+        "url": "https://matt.simerson.net/"
+      },
       "date": "2025-05-01",
       "os": {
         "name": "FreeBSD",
@@ -145,6 +182,31 @@
         },
         {
           "name": "OpenNTPD"
+        }
+      ]
+    },
+    {
+      "author": {
+        "name": "Phil Randal",
+        "email": "",
+        "url": "https://www.philrandal.co.uk/blog/archives/2019/04/entry_213.html"
+      },
+      "date": "2023-09-19",
+      "os": {
+        "name": "Pi OS",
+        "version": "12"
+      },
+      "server": {
+        "manufacturer": "Raspberry Pi",
+        "product": "5"
+      },
+      "gnss": {
+        "manufacturer": "Uputronics",
+        "product": "GPS RTC board for Pi"
+      },
+      "daemon": [
+        {
+          "name": "NTPsec"
         }
       ]
     }
@@ -451,8 +513,65 @@
       ]
     },
     {
+      "manufacturer": "Uputronics",
+      "product": {
+        "name": "GPS RTC board for Pi",
+        "url": "https://store.uputronics.com/products/raspberry-pi-gps-rtc-expansion-board"
+      },
+      "revision": "6.4",
+      "module": {
+        "manufacturer": "u-blox",
+        "model": "M8Q"
+      },
+      "in_production": true,
+      "accuracy": {
+        "class": "ms, µs"
+      },
+      "interface": [
+        "USB",
+        "UART",
+        "I2C"
+      ],
+      "pps": true,
+      "rtc": {
+        "chip": "RV-3028-C7",
+        "battery": "supercap"
+      },
+      "software": [
+        "u-center",
+        "gpsd"
+      ],
+      "usb": {
+        "version": [
+          2
+        ],
+        "connectors": [
+          "C"
+        ]
+      },
+      "price": {
+        "range": "50-100",
+        "msrp": 55
+      },
+      "vendors": [
+        {
+          "name": "Uputronics",
+          "url": "https://store.uputronics.com/products/raspberry-pi-gps-rtc-expansion-board",
+          "total": "$55 + $19 shipping"
+        },
+        {
+          "name": "Airspy.US",
+          "url": "https://v3.airspy.us/product/upu-rpi-gps-rtc/",
+          "total": "$50 + $10 shipping",
+          "notes": "Listing is for rev 6.1 (lastest is 6.4)"
+        }
+      ]
+    },
+    {
       "manufacturer": "Huawei",
-      "product": "WD22UGRC",
+      "product": {
+        "product": "WD22UGRC"
+      },
       "revision": "CT",
       "module": {
         "manufacturer": "u-blox",
@@ -593,61 +712,6 @@
           "name": "",
           "url": "",
           "total": ""
-        }
-      ]
-    },
-    {
-      "manufacturer": "Uputronics",
-      "product": {
-        "name": "GPS/RTC board for Pi",
-        "url": "https://store.uputronics.com/products/raspberry-pi-gps-rtc-expansion-board"
-      },
-      "revision": "6.4",
-      "module": {
-        "manufacturer": "u-blox",
-        "model": "M8Q"
-      },
-      "in_production": true,
-      "accuracy": {
-        "class": "ms, µs"
-      },
-      "interface": [
-        "USB",
-        "UART",
-        "I2C"
-      ],
-      "pps": true,
-      "rtc": {
-        "chip": "RV-3028-C7",
-        "battery": "supercap"
-      },
-      "software": [
-        "u-center",
-        "gpsd"
-      ],
-      "usb": {
-        "version": [
-          2
-        ],
-        "connectors": [
-          "C"
-        ]
-      },
-      "price": {
-        "range": "50-100",
-        "msrp": 55
-      },
-      "vendors": [
-        {
-          "name": "Uputronics",
-          "url": "https://store.uputronics.com/products/raspberry-pi-gps-rtc-expansion-board",
-          "total": "$55 + $19 shipping"
-        },
-        {
-          "name": "Airspy.US",
-          "url": "https://v3.airspy.us/product/upu-rpi-gps-rtc/",
-          "total": "$50 + $10 shipping",
-          "notes": "Listing is for rev 6.1 (lastest is 6.4)"
         }
       ]
     }

@@ -1,6 +1,8 @@
 {
     "manufacturer": "Huawei",
-    "product": "WD22UGRC",
+    "product": {
+        "name": "WD22UGRC"
+    },
     "revision": "CT",
     "module": {
         "manufacturer": "u-blox",

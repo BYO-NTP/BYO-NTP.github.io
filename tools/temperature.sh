@@ -1,5 +1,7 @@
 #!/bin/sh
 
+# 2025-05-01 by Matt Simerson <matt@tnpi.net>
+
 HOSTNAME="$(hostname)"
 
 do_cpu() {

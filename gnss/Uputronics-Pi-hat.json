@@ -1,7 +1,7 @@
 {
     "manufacturer": "Uputronics",
     "product": {
-        "name": "GPS/RTC board for Pi",
+        "name": "GPS RTC board for Pi",
         "url": "https://store.uputronics.com/products/raspberry-pi-gps-rtc-expansion-board"
     },
     "revision": "6.4",

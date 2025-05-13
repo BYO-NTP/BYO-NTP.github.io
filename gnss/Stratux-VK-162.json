@@ -1,6 +1,8 @@
 {
     "manufacturer": "Stratux",
-    "product": "VK-162",
+    "product": {
+        "name": "VK-162"
+    },
     "revision": "",
     "module": {
         "manufacturer": "u-blox",

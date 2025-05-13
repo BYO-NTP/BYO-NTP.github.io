@@ -1,6 +1,9 @@
 {
     "manufacturer": "",
-    "product": "",
+    "product": {
+        "name": "",
+        "url": ""
+    },
     "revision": "",
     "module": {
         "manufacturer": "u-blox, Quectel, etc.",
