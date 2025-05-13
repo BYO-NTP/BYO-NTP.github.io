@@ -4,6 +4,7 @@
   },
   "scripts": {
     "all": "node tools/all-from-path.js",
-    "start": "npm run all && npx nodemon --watch . --exec node server.js"
+    "start": "npm run server",
+    "server": "npm run all && npx nodemon --watch . --exec node server.js"
   }
 }

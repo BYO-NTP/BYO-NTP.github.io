@@ -1,0 +1,15 @@
+{
+    "name": "Ubuntu",
+    "family": [ "debian", "linux" ],
+    "releases": [
+        {
+            "name": "Ubuntu Server",
+            "codename": "",
+            "major": "24",
+            "minor": "4",
+            "patch": "2",
+            "pps": [ "kernel" ],
+            "ptp": [ ]
+        }
+    ]
+}

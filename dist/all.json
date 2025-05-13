@@ -22,7 +22,7 @@
       },
       "daemon": [
         {
-          "name": "Chrony",
+          "name": "chrony",
           "version": "4.6.1"
         },
         {
@@ -57,7 +57,7 @@
       },
       "daemon": [
         {
-          "name": "Chrony",
+          "name": "chrony",
           "version": "4.6.1"
         },
         {
@@ -92,7 +92,7 @@
       },
       "daemon": [
         {
-          "name": "Chrony",
+          "name": "chrony",
           "version": "4.6.1"
         },
         {
@@ -127,7 +127,7 @@
       },
       "daemon": [
         {
-          "name": "Chrony",
+          "name": "chrony",
           "version": "4.6.1"
         },
         {
@@ -162,7 +162,7 @@
       },
       "daemon": [
         {
-          "name": "Chrony",
+          "name": "chrony",
           "version": "4.6.1"
         },
         {
@@ -387,75 +387,139 @@
   "os": [
     {
       "name": "FreeBSD",
-      "release": {
-        "name": "14.2",
-        "codename": "",
-        "major": "14",
-        "minor": "2",
-        "patch": "2"
-      },
       "family": [
         "bsd"
       ],
-      "pps": [
-        "kernel",
-        "userland"
+      "links": [
+        {
+          "name": "Site",
+          "url": "https://www.freebsd.org/"
+        },
+        {
+          "name": "Documentation",
+          "url": "https://docs.freebsd.org/"
+        },
+        {
+          "name": "Download",
+          "url": "https://www.freebsd.org/where/"
+        }
       ],
-      "ptp": []
+      "releases": [
+        {
+          "name": "14.2",
+          "codename": "",
+          "major": "14",
+          "minor": "2",
+          "patch": "2",
+          "pps": [
+            "kernel",
+            "userland"
+          ],
+          "ptp": []
+        }
+      ]
     },
     {
       "name": "Pi OS",
-      "release": {
-        "name": "Raspberry Pi OS Lite",
-        "codename": "bookworm",
-        "major": "12",
-        "minor": "2",
-        "patch": "2"
-      },
       "family": [
         "debian",
         "linux"
       ],
-      "pps": [
-        "kernel"
+      "links": [
+        {
+          "name": "Download",
+          "url": "https://www.raspberrypi.com/software/operating-systems/"
+        }
       ],
-      "ptp": []
+      "releases": [
+        {
+          "name": "Raspberry Pi OS Lite (64-bit)",
+          "codename": "Bookworm",
+          "major": "12",
+          "minor": "10",
+          "patch": "",
+          "date": "2023-10-10",
+          "pps": [
+            "kernel"
+          ],
+          "ptp": []
+        },
+        {
+          "name": "Raspberry Pi OS Lite (64-bit)",
+          "codename": "Bullseye",
+          "major": "11",
+          "minor": "2",
+          "patch": "",
+          "date": "2021-12-03",
+          "pps": [
+            "kernel"
+          ],
+          "ptp": []
+        },
+        {
+          "name": "Raspberry Pi OS Lite (64-bit)",
+          "codename": "Buster",
+          "major": "10",
+          "minor": "",
+          "patch": "",
+          "date": "2019-06-24",
+          "pps": [
+            "kernel"
+          ],
+          "ptp": []
+        }
+      ]
     },
     {
       "name": "Pi OS",
-      "release": {
-        "name": "Raspberry Pi OS Lite (64-bit)",
-        "codename": "bullseye",
-        "major": "11",
-        "minor": "2",
-        "patch": "2"
-      },
       "family": [
         "debian",
         "linux"
       ],
-      "pps": [
-        "kernel"
-      ],
-      "ptp": []
+      "releases": [
+        {
+          "name": "Raspberry Pi OS Lite (64-bit)",
+          "codename": "Bookworm",
+          "major": "12",
+          "minor": "10",
+          "patch": "",
+          "pps": [
+            "kernel"
+          ],
+          "ptp": []
+        },
+        {
+          "name": "Raspberry Pi OS Lite (64-bit)",
+          "codename": "Bullseye",
+          "major": "11",
+          "minor": "",
+          "patch": "",
+          "pps": [
+            "kernel"
+          ],
+          "ptp": []
+        }
+      ]
     },
     {
       "name": "Ubuntu",
-      "release": {
-        "name": "Ubuntu Server",
-        "codename": "",
-        "major": "24",
-        "minor": "4",
-        "patch": "2"
-      },
       "family": [
         "debian",
         "linux"
       ],
-      "pps": [
-        "kernel"
-      ],
-      "ptp": []
+      "releases": [
+        {
+          "name": "Ubuntu Server",
+          "codename": "",
+          "major": "24",
+          "minor": "4",
+          "patch": "2",
+          "pps": [
+            "kernel"
+          ],
+          "ptp": []
+        }
+      ]
     }
   ],
   "gnss": [

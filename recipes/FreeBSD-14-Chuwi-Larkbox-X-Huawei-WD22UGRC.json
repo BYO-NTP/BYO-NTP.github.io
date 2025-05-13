@@ -20,7 +20,7 @@
     },
     "daemon": [
         {
-            "name": "Chrony",
+            "name": "chrony",
             "version": "4.6.1"
         },
         {

@@ -1,6 +1,12 @@
 {
     "name": "Pi OS",
     "family": [ "debian", "linux" ],
+    "links": [
+        {
+            "name": "Download",
+            "url": "https://www.raspberrypi.com/software/operating-systems/"
+        }
+    ],
     "releases": [
         {
             "name": "Raspberry Pi OS Lite (64-bit)",
@@ -8,6 +14,7 @@
             "major": "12",
             "minor": "10",
             "patch": "",
+            "date": "2023-10-10",
             "pps": [ "kernel" ],
             "ptp": [ ]
         },
@@ -15,8 +22,19 @@
             "name": "Raspberry Pi OS Lite (64-bit)",
             "codename": "Bullseye",
             "major": "11",
+            "minor": "2",
+            "patch": "",
+            "date": "2021-12-03",
+            "pps": [ "kernel" ],
+            "ptp": [ ]
+        },
+        {
+            "name": "Raspberry Pi OS Lite (64-bit)",
+            "codename": "Buster",
+            "major": "10",
             "minor": "",
             "patch": "",
+            "date": "2019-06-24",
             "pps": [ "kernel" ],
             "ptp": [ ]
         }
