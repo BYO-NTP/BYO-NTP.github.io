@@ -7,7 +7,7 @@
         "url": "https://matt.simerson.net/"
       },
       "date": "2025-05-12",
-      "accuracy": 0.0001,
+      "accuracy": 0.00001,
       "os": {
         "name": "FreeBSD",
         "version": "14"
@@ -76,7 +76,7 @@
         "email": "",
         "url": "https://matt.simerson.net/"
       },
-      "accuracy": 0.0001,
+      "accuracy": 0.000003,
       "date": "2025-05-01",
       "os": {
         "name": "FreeBSD",
@@ -146,6 +146,7 @@
         "email": "",
         "url": "https://matt.simerson.net/"
       },
+      "accuracy": 0.000003,
       "date": "2025-05-01",
       "os": {
         "name": "Pi OS",

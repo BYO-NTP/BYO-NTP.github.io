@@ -29,9 +29,10 @@
     }
     h1 {
       color: #333;
+      text-align: center;
     }
     table {
-      width: 100%;
+      width: 98%;
       border-collapse: collapse;
     }
     th, td {
@@ -39,11 +40,17 @@
       text-align: left;
       border-bottom: 1px solid #ddd;
     }
-    th {
-      background-color: #f2f2f2;
-    }
     #recipes tbody tr:hover {
       background-color: #f0f0f0;
+    }
+    .alignright {
+      text-align: right;
+    }
+    footer {
+      margin-top: 20px;
+      padding: 5px;
+      text-align: center;
+      /* border-top: 1px solid #ddd; */
     }
 </style>
 </head>
@@ -51,33 +58,44 @@
 <body>
   <h1>Build Your Own - NTP server</h1>
 
-  <p>Build a <a href="https://en.wikipedia.org/wiki/Satellite_navigation">GNSS</a> backed NTP Stratum 1 server.</p>
-  
-  <p>I would like my NTP server to be accurate to within: <select name="accuracy">
-    <option value="1s">1 second</option>
-    <option value="1ms">1 millisecond (.001 seconds)</option>
-    <option value="1us">1 microsecond (.000001 seconds)</option>
-    <option value="1ns">1 nanosecond  (.000000001 seconds)</option>
-    <option value="1ps">1 picosecond  (.000000000001 seconds)</option>
-  </select>
-  </p>
-  
-  <hr>
-  The following build recipes match your criteria:
+  <p>Build a <a href="https://en.wikipedia.org/wiki/Satellite_navigation">GNSS</a> backed NTP Stratum 1 server, using proven components and processes.</p>
+
+  These build recipes match your criteria:
 
   <table id="recipes" border="1">
     <thead>
       <tr>
         <th>Build Date</th>
-        <th>Server</th>
-        <th>OS</th>
+        <th>Server<br>
+          <select id="serverFilter">
+            <option value="all">All</option>
+          </select>
+        </th>
+        <th>OS<br>
+        <select id="osFilter">
+          <option value="all">All</option>
+        </select></th>
         <th>GNSS HW</th>
-        <th>Accuracy</th>
+        <th>Accuracy<br>
+          <select id="accuracyFilter">
+            <option value="all">All</option>
+            <option value="1">1 second</option>
+            <option value=".001">1 ms</option>
+            <option value=".000001">1 us</option>
+            <option value=".000000001">1 ns</option>
+            <option value=".000000000001">1 ps</option>
+          </select>
+        </th>
       </tr>
     </thead>
     <tbody>
     </tbody>
   </table>
+
+  <footer>
+    <p>BYO-NTP is a community project. Please contribute on <a href="https://github.com/BYO-NTP/recipes">GitHub</a>.</p>
+    <p>BYO-NTP is not affiliated with any of the manufacturers listed on this site.</p>
+  </footer>
 
   <script>
 
@@ -132,6 +150,16 @@ function populateRecipesTable(recipes) {
   tbody.innerHTML = ""; // Clear existing rows
 
   for (const recipe of recipes) {
+    const osFull = `${recipe.os.name} ${recipe.os.version}`;
+    const osFilter = document.getElementById("osFilter").value;
+    const serverFull = `${recipe.server.manufacturer} ${recipe.server.product}`;
+    const serverFilter = document.getElementById("serverFilter").value;
+    const accuracyFilter = document.getElementById("accuracyFilter").value;
+
+    if (osFilter !== "all" && osFull !== osFilter) continue;
+    if (serverFilter !== "all" && serverFull !== serverFilter) continue;
+    if (accuracyFilter !== "all" && recipe.accuracy > accuracyFilter) continue;
+
     const tr = document.createElement("tr");
 
     tr.addEventListener("click", () => {
@@ -156,10 +184,41 @@ function populateRecipesTable(recipes) {
 
     const accuracyTd = document.createElement("td");
     accuracyTd.textContent = recipe.accuracy;
+    accuracyTd.classList.add("alignright");
     tr.appendChild(accuracyTd);
 
     tbody.appendChild(tr);
   };
+}
+
+function populateOSFilterOptions(recipes) {
+  const osSet = new Set();
+  recipes.forEach(recipe => {
+    osSet.add(`${recipe.os.name} ${recipe.os.version}`);
+  });
+
+  const select = document.getElementById("osFilter");
+  osSet.forEach(os => {
+    const option = document.createElement("option");
+    option.value = os;
+    option.textContent = os;
+    select.appendChild(option);
+  });
+}
+
+function populateServerFilterOptions(recipes) {
+  const serverSet = new Set();
+  recipes.forEach(recipe => {
+    serverSet.add(`${recipe.server.manufacturer} ${recipe.server.product}`);
+  });
+
+  const select = document.getElementById("serverFilter");
+  serverSet.forEach(server => {
+    const option = document.createElement("option");
+    option.value = server;
+    option.textContent = server;
+    select.appendChild(option);
+  });
 }
 
 function onLoad () {
@@ -167,7 +226,21 @@ function onLoad () {
     method: 'GET',
     url: `/recipes/dist/all.json`,
   }).then(response => {
+    populateOSFilterOptions(response.recipes);
+    populateServerFilterOptions(response.recipes);
     populateRecipesTable(response.recipes);
+
+    document.getElementById("osFilter").addEventListener("change", (e) => {
+      populateRecipesTable(response.recipes);
+    });
+
+    document.getElementById("serverFilter").addEventListener("change", (e) => {
+      populateRecipesTable(response.recipes);
+    });
+
+    document.getElementById("accuracyFilter").addEventListener("change", (e) => {
+      populateRecipesTable(response.recipes);
+    });
 
   }).catch(error => {
     console.error('Error:', error);

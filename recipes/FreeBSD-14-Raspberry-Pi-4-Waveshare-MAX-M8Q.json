@@ -4,7 +4,7 @@
         "email": "",
         "url": "https://matt.simerson.net/"
     },
-    "accuracy": 0.0001,
+    "accuracy": 0.000003,
     "date": "2025-05-01",
     "os": {
         "name": "FreeBSD",
