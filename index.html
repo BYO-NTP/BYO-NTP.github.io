@@ -20,12 +20,38 @@
 
   <!-- <link rel="manifest" href="site.webmanifest"> -->
   <meta name="theme-color" content="#fafafa">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 5px;
+      background-color: #7b6e6e;
+    }
+    h1 {
+      color: #333;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    th, td {
+      padding: 10px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+    }
+    th {
+      background-color: #f2f2f2;
+    }
+    #recipes tbody tr:hover {
+      background-color: #f0f0f0;
+    }
+</style>
 </head>
 
 <body>
   <h1>Build Your Own - NTP server</h1>
 
-  <p>Build a [GNSS](https://en.wikipedia.org/wiki/Satellite_navigation) backed NTP Stratum 1 server.</p>
+  <p>Build a <a href="https://en.wikipedia.org/wiki/Satellite_navigation">GNSS</a> backed NTP Stratum 1 server.</p>
   
   <p>I would like my NTP server to be accurate to within: <select name="accuracy">
     <option value="1s">1 second</option>
@@ -39,9 +65,19 @@
   <hr>
   The following build recipes match your criteria:
 
-  <ul name="recipes">
-    <li><a href=""> </a></li>
-  </ul>
+  <table id="recipes" border="1">
+    <thead>
+      <tr>
+        <th>Build Date</th>
+        <th>Server</th>
+        <th>OS</th>
+        <th>GNSS HW</th>
+        <th>Accuracy</th>
+      </tr>
+    </thead>
+    <tbody>
+    </tbody>
+  </table>
 
   <script>
 
@@ -91,19 +127,39 @@ function getRecipeUrl(recipe) {
   }`
 }
 
-function populateRecipes(recipes) {
-  const ul = document.querySelector('ul[name="recipes"]');
-  ul.innerHTML = ''; // Clear existing items
+function populateRecipesTable(recipes) {
+  const tbody = document.querySelector("table#recipes tbody");
+  tbody.innerHTML = ""; // Clear existing rows
 
   for (const recipe of recipes) {
-    // console.log('Recipe:', recipe);
-    const li = document.createElement('li');
-    const a = document.createElement('a');
-    a.href=`${getRecipeUrl(recipe)}`;
-    a.textContent = `${recipe.os.name} + ${recipe.server.manufacturer} ${recipe.server.product} + ${recipe.gnss.manufacturer} ${recipe.gnss.product}`;
-    li.appendChild(a);
-    ul.appendChild(li);
-  }
+    const tr = document.createElement("tr");
+
+    tr.addEventListener("click", () => {
+      window.location.href = getRecipeUrl(recipe)
+    });
+
+    const dateTd = document.createElement("td");
+    dateTd.textContent = recipe.date;
+    tr.appendChild(dateTd);
+
+    const serverTd = document.createElement("td");
+    serverTd.textContent = `${recipe.server.manufacturer} ${recipe.server.product}`;
+    tr.appendChild(serverTd);
+
+    const osTd = document.createElement("td");
+    osTd.textContent = `${recipe.os.name} ${recipe.os.version}`;
+    tr.appendChild(osTd);
+
+    const gnssTd = document.createElement("td");
+    gnssTd.textContent = `${recipe.gnss.manufacturer} ${recipe.gnss.product}`;
+    tr.appendChild(gnssTd);
+
+    const accuracyTd = document.createElement("td");
+    accuracyTd.textContent = recipe.accuracy;
+    tr.appendChild(accuracyTd);
+
+    tbody.appendChild(tr);
+  };
 }
 
 function onLoad () {
@@ -111,8 +167,7 @@ function onLoad () {
     method: 'GET',
     url: `/recipes/dist/all.json`,
   }).then(response => {
-    // console.log('Success:', response);
-    populateRecipes(response.recipes);
+    populateRecipesTable(response.recipes);
 
   }).catch(error => {
     console.error('Error:', error);

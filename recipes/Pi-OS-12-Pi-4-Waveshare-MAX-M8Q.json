@@ -29,9 +29,6 @@
         {
             "name": "ntp",
             "version": "4.2.8"
-        },
-        {
-            "name": "OpenNTPD"
         }
    ]
 }

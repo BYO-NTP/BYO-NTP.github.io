@@ -7,6 +7,7 @@
         "url": "https://matt.simerson.net/"
       },
       "date": "2025-05-12",
+      "accuracy": 0.0001,
       "os": {
         "name": "FreeBSD",
         "version": "14"
@@ -31,9 +32,6 @@
         {
           "name": "ntp",
           "version": "4.2.8"
-        },
-        {
-          "name": "OpenNTPD"
         }
       ]
     },
@@ -43,6 +41,7 @@
         "email": "",
         "url": "https://matt.simerson.net/"
       },
+      "accuracy": 0.01,
       "date": "2025-05-01",
       "os": {
         "name": "FreeBSD",
@@ -68,9 +67,6 @@
         {
           "name": "ntp",
           "version": "4.2.8"
-        },
-        {
-          "name": "OpenNTPD"
         }
       ]
     },
@@ -80,6 +76,7 @@
         "email": "",
         "url": "https://matt.simerson.net/"
       },
+      "accuracy": 0.0001,
       "date": "2025-05-01",
       "os": {
         "name": "FreeBSD",
@@ -105,9 +102,6 @@
         {
           "name": "ntp",
           "version": "4.2.8"
-        },
-        {
-          "name": "OpenNTPD"
         }
       ]
     },
@@ -117,6 +111,7 @@
         "email": "",
         "url": "https://matt.simerson.net/"
       },
+      "accuracy": 0.01,
       "date": "2025-05-01",
       "os": {
         "name": "Pi OS",
@@ -142,9 +137,6 @@
         {
           "name": "ntp",
           "version": "4.2.8"
-        },
-        {
-          "name": "OpenNTPD"
         }
       ]
     },
@@ -179,9 +171,6 @@
         {
           "name": "ntp",
           "version": "4.2.8"
-        },
-        {
-          "name": "OpenNTPD"
         }
       ]
     },
@@ -191,6 +180,7 @@
         "email": "",
         "url": "https://www.philrandal.co.uk/blog/archives/2019/04/entry_213.html"
       },
+      "accuracy": 0.0001,
       "date": "2023-09-19",
       "os": {
         "name": "Pi OS",
@@ -470,7 +460,9 @@
   "gnss": [
     {
       "manufacturer": "Stratux",
-      "product": "VK-162",
+      "product": {
+        "name": "VK-162"
+      },
       "revision": "",
       "module": {
         "manufacturer": "u-blox",
@@ -570,7 +562,7 @@
     {
       "manufacturer": "Huawei",
       "product": {
-        "product": "WD22UGRC"
+        "name": "WD22UGRC"
       },
       "revision": "CT",
       "module": {
@@ -669,7 +661,10 @@
     },
     {
       "manufacturer": "",
-      "product": "",
+      "product": {
+        "name": "",
+        "url": ""
+      },
       "revision": "",
       "module": {
         "manufacturer": "u-blox, Quectel, etc.",

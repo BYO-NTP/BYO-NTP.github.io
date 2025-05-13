@@ -4,6 +4,7 @@
         "email": "",
         "url": "https://matt.simerson.net/"
     },
+    "accuracy": 0.0001,
     "date": "2025-05-01",
     "os": {
         "name": "FreeBSD",
@@ -29,9 +30,6 @@
         {
             "name": "ntp",
             "version": "4.2.8"
-        },
-        {
-            "name": "OpenNTPD"
         }
     ]
 }
