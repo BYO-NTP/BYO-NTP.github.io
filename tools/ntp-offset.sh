@@ -2,8 +2,10 @@
 
 usage()
 {
-     echo "Usage: $0 [peer name] [ntp|chrony]"
-     exit 1
+	echo "Usage: $0 [peer name] [ntp|chrony|path-to-logfile]"
+	echo; echo;
+	echo "common peer names: PPS, NMEA, 127.127.20 (NMEA), 127.127.22 (PPS)"
+	exit 1
 }
 
 if [ -z "$1" ]; then usage; fi
@@ -26,8 +28,13 @@ is_running()
 	esac
 }
 
-which_ntp_daemon()
+which_log_file()
 {
+	if [ -f "$2" ]; then
+		LOGFILE="$2"
+		return
+	fi
+
 	if is_running chronyd;
 	then
 		LOGFILE="/var/log/chrony/statistics.log"
@@ -51,10 +58,12 @@ which_ntp_daemon()
 	fi
 }
 
-which_ntp_daemon
+which_log_file
+
+echo "Calculating offset for $1 in $LOGFILE"
 
 awk '
-     /'$2'/ { sum += $5 * 1000; cnt++; }
-     END { if (cnt > 0) print sum / cnt, "ms"; else print "No matching records"; }
+  /'$1'/ { sum += $5 * 1000; cnt++; }
+  END { if (cnt > 0) print sum / cnt, "ms"; else print "No matching records"; }
 
 ' < $LOGFILE

@@ -6,5 +6,9 @@
     "all": "node tools/all-from-path.js",
     "start": "npm run server",
     "server": "npm run all && npx nodemon --watch . --exec node server.js"
+  },
+  "type": "module",
+  "devDependencies": {
+    "nodemon": "^3.1.10"
   }
 }
