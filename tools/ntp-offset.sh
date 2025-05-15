@@ -1,10 +1,23 @@
 #!/bin/sh
 
+# NTP peer offset calculator
+
 usage()
 {
-	echo "Usage: $0 [peer name] [ntp|chrony|path-to-logfile]"
-	echo; echo;
-	echo "common peer names: PPS, NMEA, 127.127.20 (NMEA), 127.127.22 (PPS)"
+	cat <<EOF
+Usage: $0 [peer name] [ntp|chrony|logfile]
+
+Options:
+peer name     The NTP peer name (ex: PPS, NMEA, 127.127.20 (NMEA), 127.127.22 (PPS)
+ntp daemon    The NTP daemon (ntp, ntpsec, or chrony), or the path to a log file
+
+Examples:
+$0 PPS
+$0 NMEA chrony
+$0 127.127.20 ntp
+$0 127.127.22 /var/log/ntp/peerstats.#3234
+
+EOF
 	exit 1
 }
 
@@ -13,25 +26,23 @@ if [ -z "$1" ]; then usage; fi
 is_running()
 {
 	case "$(uname -s)" in
-		FreeBSD)
-			pgrep -q "$1"
-		;;
-		Darwin)
+		FreeBSD|Darwin)
 			pgrep -q "$1"
 		;;
 		Linux)
 			pgrep -c "$1" > /dev/null 2>&1
 		;;
 		*)
-			echo "ERR: file a feature request to support $(uname -s)"
+			echo "ERR: Unsupported platform $(uname -s). Please file a feature request."
 			exit 1
+		;;
 	esac
 }
 
 which_log_file()
 {
-	if [ -f "$2" ]; then
-		LOGFILE="$2"
+	if [ -f "$1" ]; then
+		LOGFILE="$1"
 		return
 	fi
 
@@ -43,27 +54,32 @@ which_log_file()
 		LOGFILE="/var/log/ntp/peerstats"
 	fi
 
-	if [ -z "$LOGFILE" ];
+	if [ -z "$LOGFILE" ] || [ ! -f "$LOGFILE" ];
 	then
-		case "$2" in
-			ntp)
-				LOGFILE="/var/log/ntp/peerstats"
-			;;
-			chrony)
-				LOGFILE="/var/log/chrony/statistics.log"
-			;;
-			*)
-			usage
+		case "$1" in
+			ntp)    LOGFILE="/var/log/ntp/peerstats" ;;
+			ntpsec) LOGFILE="/var/log/ntpsec/peerstats" ;;
+			chrony) LOGFILE="/var/log/chrony/statistics.log" ;;
+			*)      usage ;;
 		esac
 	fi
 }
 
-which_log_file
+which_log_file "$2"
 
 echo "Calculating offset for $1 in $LOGFILE"
 
 awk '
-  /'$1'/ { sum += $5 * 1000; cnt++; }
-  END { if (cnt > 0) print sum / cnt, "ms"; else print "No matching records"; }
-
-' < $LOGFILE
+  # Sum up the offsets for the specified peer
+  /'$1'/ {
+    sum += $5 * 1000
+    cnt++
+  }
+  END {
+    if (cnt > 0) {
+      print sum / cnt, "ms";
+    } else {
+      print "No matching records";
+    }
+  }
+' < "$LOGFILE"
