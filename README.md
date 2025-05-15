@@ -1,4 +1,4 @@
-<img src="img/byo-ntp-logo-bg.jpeg" alt="BYO-NTP logo" width="200"/>
+<img src="img/BYO-NTP-logo.jpeg" alt="BYO-NTP logo" width="200"/>
 
 The first feature of this GitHub repo is the [BYO-NTP search](https://byo-ntp.github.io/recipes/) tool, which catalogs and reference the many DIY Stratum 1 NTP server builds. It provides links to the wiki pages which detail how to replicate a build.
 
