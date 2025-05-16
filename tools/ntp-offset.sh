@@ -69,8 +69,14 @@ which_log_file "$2"
 
 echo "Calculating offset for $1 in $LOGFILE"
 
+# format of peerstats record (in ms), from ntp:scripts/stats/peer.awk
+# ==========================================================================
+#        ident     cnt     mean     rms      max     delay     dist     disp
+# ==========================================================================
+# 140.173.112.2     85   -0.509    1.345    4.606   80.417   49.260    1.092
+
 awk '
-  # Sum up the offsets for the specified peer
+  # Sum the offsets for the specified peer
   /'$1'/ {
     sum += $5 * 1000
     cnt++

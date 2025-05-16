@@ -17,6 +17,15 @@
     ],
     "releases": [
         {
+            "name": "15.0",
+            "codename": "CURRENT",
+            "major": "15",
+            "minor": "0",
+            "patch": "0",
+            "pps": [ "kernel", "userland" ],
+            "ptp": [ ]
+        },
+        {
             "name": "14.2",
             "codename": "",
             "major": "14",
