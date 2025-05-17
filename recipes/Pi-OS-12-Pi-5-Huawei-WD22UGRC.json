@@ -5,7 +5,7 @@
         "url": "https://matt.simerson.net/"
     },
     "date": "2025-05-16",
-    "accuracy": 0.00001,
+    "accuracy": 0.000000402,
     "os": {
         "name": "Pi OS",
         "version": "12"

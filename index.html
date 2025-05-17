@@ -40,6 +40,7 @@
     th, td {
       padding: 10px;
       text-align: left;
+      font-size: 0.9em;
       border-bottom: 1px solid #ddd;
     }
     #recipes tbody tr:hover {
@@ -89,11 +90,11 @@
         <th>Accuracy<br>
           <select id="accuracyFilter">
             <option value="all">All</option>
-            <option value="1">1 second</option>
-            <option value=".001">1 ms</option>
-            <option value=".000001">1 us</option>
-            <option value=".000000001">1 ns</option>
-            <option value=".000000000001">1 ps</option>
+            <option value="s">second</option>
+            <option value="ms">millisecond</option>
+            <option value="µs">microsecond</option>
+            <option value="ns">nanosecond</option>
+            <option value="ps">picosecond</option>
           </select>
         </th>
       </tr>
@@ -157,6 +158,14 @@ function getRecipeUrl(recipe) {
   }`
 }
 
+const accuracyMap = {
+  's': 1,
+  'ms': 0.001,
+  'µs': 0.000001,
+  'ns': 0.000000001,
+  'ps': 0.000000000001
+};
+
 function populateRecipesTable(all) {
   const tbody = document.querySelector("table#recipes tbody");
   tbody.innerHTML = ""; // Clear existing rows
@@ -169,7 +178,11 @@ function populateRecipesTable(all) {
 
     if (osFilter !== "all" && recipe.os.name !== osFilter) continue;
     if (serverFilter !== "all" && recipe.server.manufacturer !== serverFilter) continue;
-    if (accuracyFilter !== "all" && recipe.accuracy > accuracyFilter) continue;
+    if (accuracyFilter !== "all") {
+      console.log(recipe.accuracy, accuracyMap[accuracyFilter]);
+      if (recipe.accuracy > accuracyMap[accuracyFilter]) continue;
+    }
+
     if (ntpdFilter !== "all" && !recipe.daemon.filter(d => d.name === ntpdFilter).length) continue;
 
     const tr = document.createElement("tr");
