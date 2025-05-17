@@ -1,0 +1,28 @@
+{
+    "author": {
+        "name": "David Taylor",
+        "email": "",
+        "url": "https://www.satsignal.eu/ntp/FreeBSD-GPS-PPS.html"
+    },
+    "accuracy": 0.000008,
+    "date": "2010-04-01",
+    "os": {
+        "name": "FreeBSD",
+        "version": "8.2"
+    },
+    "server": {
+        "manufacturer": "Generic",
+        "product": "Intel"
+    },
+    "gnss": {
+        "manufacturer": "Garmin GPS",
+        "product": "18 LVC"
+    },
+    "daemon": [
+        {
+            "name": "ntp",
+            "version": "4.2.4p5-a"
+        }
+    ],
+    "url": "https://www.satsignal.eu/ntp/FreeBSD-GPS-PPS.htm"
+}

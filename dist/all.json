@@ -107,6 +107,62 @@
     },
     {
       "author": {
+        "name": "David Taylor",
+        "email": "",
+        "url": "https://www.satsignal.eu/ntp/FreeBSD-GPS-PPS.htm"
+      },
+      "accuracy": 0.00001,
+      "date": "2006-01-01",
+      "os": {
+        "name": "FreeBSD",
+        "version": "5.4"
+      },
+      "server": {
+        "manufacturer": "Generic",
+        "product": "Intel"
+      },
+      "gnss": {
+        "manufacturer": "Garmin GPS",
+        "product": "18 LVC"
+      },
+      "daemon": [
+        {
+          "name": "ntp",
+          "version": ""
+        }
+      ],
+      "url": "https://www.satsignal.eu/ntp/FreeBSD-GPS-PPS.htm"
+    },
+    {
+      "author": {
+        "name": "David Taylor",
+        "email": "",
+        "url": "https://www.satsignal.eu/ntp/FreeBSD-GPS-PPS.html"
+      },
+      "accuracy": 0.000008,
+      "date": "2010-04-01",
+      "os": {
+        "name": "FreeBSD",
+        "version": "8.2"
+      },
+      "server": {
+        "manufacturer": "Generic",
+        "product": "Intel"
+      },
+      "gnss": {
+        "manufacturer": "Garmin GPS",
+        "product": "18 LVC"
+      },
+      "daemon": [
+        {
+          "name": "ntp",
+          "version": "4.2.4p5-a"
+        }
+      ],
+      "url": "https://www.satsignal.eu/ntp/FreeBSD-GPS-PPS.htm"
+    },
+    {
+      "author": {
         "name": "Matt Simerson",
         "email": "",
         "url": "https://matt.simerson.net/"
@@ -177,6 +233,41 @@
     },
     {
       "author": {
+        "name": "Matt Simerson",
+        "email": "",
+        "url": "https://matt.simerson.net/"
+      },
+      "date": "2025-05-16",
+      "accuracy": 0.00001,
+      "os": {
+        "name": "Pi OS",
+        "version": "12"
+      },
+      "server": {
+        "manufacturer": "Raspberry Pi",
+        "product": "5"
+      },
+      "gnss": {
+        "manufacturer": "Huawei",
+        "product": "WD22UGRC"
+      },
+      "daemon": [
+        {
+          "name": "chrony",
+          "version": "4.6.1"
+        },
+        {
+          "name": "NTPsec",
+          "version": "1.2.3"
+        },
+        {
+          "name": "ntp",
+          "version": "4.2.8"
+        }
+      ]
+    },
+    {
+      "author": {
         "name": "Phil Randal",
         "email": "",
         "url": "https://www.philrandal.co.uk/blog/archives/2019/04/entry_213.html"
@@ -199,7 +290,92 @@
         {
           "name": "NTPsec"
         }
-      ]
+      ],
+      "url": "https://www.philrandal.co.uk/blog/archives/2019/04/entry_213.html"
+    },
+    {
+      "author": {
+        "name": "Tiago Friere",
+        "email": "",
+        "url": "https://github.com/tiagofreire-pt/"
+      },
+      "accuracy": 1e-8,
+      "date": "2025-01-17",
+      "os": {
+        "name": "Pi OS",
+        "version": "12"
+      },
+      "server": {
+        "manufacturer": "Raspberry Pi",
+        "product": "5"
+      },
+      "gnss": {
+        "manufacturer": "Uputronics",
+        "product": "GPS HAT"
+      },
+      "daemon": [
+        {
+          "name": "chrony",
+          "version": "4.6.1"
+        }
+      ],
+      "url": "https://github.com/tiagofreire-pt/rpi_uputronics_stratum1_chrony"
+    },
+    {
+      "author": {
+        "name": "David Taylor",
+        "email": "",
+        "url": "https://www.satsignal.eu/"
+      },
+      "accuracy": 0.00003,
+      "date": "2025-05-01",
+      "os": {
+        "name": "Raspbian",
+        "version": "7"
+      },
+      "server": {
+        "manufacturer": "Raspberry Pi",
+        "product": "B+"
+      },
+      "gnss": {
+        "manufacturer": "HAB Supplies",
+        "product": "Pi+ GPS board"
+      },
+      "daemon": [
+        {
+          "name": "ntp",
+          "version": "4.2.8"
+        }
+      ],
+      "url": "https://www.satsignal.eu/ntp/Raspberry-Pi-NTP.html"
+    },
+    {
+      "author": {
+        "name": "Anthony Stirk",
+        "email": "",
+        "url": ""
+      },
+      "accuracy": 0.0001,
+      "date": "2018-11-30",
+      "os": {
+        "name": "Raspbian",
+        "version": "9"
+      },
+      "server": {
+        "manufacturer": "Raspberry Pi",
+        "product": "3B+"
+      },
+      "gnss": {
+        "manufacturer": "Uputronics",
+        "product": "Pi-HAT GPS board"
+      },
+      "daemon": [
+        {
+          "name": "ntp",
+          "version": "4.2.8"
+        }
+      ],
+      "url": "https://ava.upuaut.net/?p=951"
     }
   ],
   "server": [
@@ -336,52 +512,6 @@
         "chip": "",
         "battery": ""
       }
-    },
-    {
-      "manufacturer": "KINGDEL",
-      "product": "NC1037",
-      "version": "",
-      "usb": {
-        "version": [
-          2,
-          3
-        ],
-        "connectors": [
-          "A"
-        ]
-      },
-      "msrp": 270,
-      "storage": [
-        "ssd"
-      ],
-      "power": {
-        "TDP": 0,
-        "observed": 0
-      },
-      "ram": [
-        8
-      ],
-      "uart": {
-        "connectors": [
-          "RS232",
-          "RS232",
-          "RS232",
-          "RS232"
-        ]
-      },
-      "ethernet": {
-        "connectors": [
-          "RJ45"
-        ],
-        "speed": [
-          1,
-          1
-        ]
-      },
-      "rtc": {
-        "chip": "Intel",
-        "battery": "yes"
-      }
     }
   ],
   "os": [
@@ -405,6 +535,18 @@
         }
       ],
       "releases": [
+        {
+          "name": "15.0",
+          "codename": "CURRENT",
+          "major": "15",
+          "minor": "0",
+          "patch": "0",
+          "pps": [
+            "kernel",
+            "userland"
+          ],
+          "ptp": []
+        },
         {
           "name": "14.2",
           "codename": "",
@@ -463,37 +605,6 @@
           "minor": "",
           "patch": "",
           "date": "2019-06-24",
-          "pps": [
-            "kernel"
-          ],
-          "ptp": []
-        }
-      ]
-    },
-    {
-      "name": "Pi OS",
-      "family": [
-        "debian",
-        "linux"
-      ],
-      "releases": [
-        {
-          "name": "Raspberry Pi OS Lite (64-bit)",
-          "codename": "Bookworm",
-          "major": "12",
-          "minor": "10",
-          "patch": "",
-          "pps": [
-            "kernel"
-          ],
-          "ptp": []
-        },
-        {
-          "name": "Raspberry Pi OS Lite (64-bit)",
-          "codename": "Bullseye",
-          "major": "11",
-          "minor": "",
-          "patch": "",
           "pps": [
             "kernel"
           ],
@@ -721,57 +832,6 @@
         {
           "name": "Spotpear",
           "url": "https://spotpear.com/index/product/detail/id/441.html"
-        }
-      ]
-    },
-    {
-      "manufacturer": "",
-      "product": {
-        "name": "",
-        "url": ""
-      },
-      "revision": "",
-      "module": {
-        "manufacturer": "u-blox, Quectel, etc.",
-        "model": ""
-      },
-      "in_production": false,
-      "accuracy": {
-        "class": "s, ms, µs, ns, ps"
-      },
-      "interface": [
-        "USB",
-        "UART",
-        "I2C"
-      ],
-      "pps": false,
-      "rtc": {
-        "chip": "",
-        "battery": "supercap, coin cell"
-      },
-      "software": [
-        "u-center",
-        "gpsd"
-      ],
-      "usb": {
-        "version": [
-          2,
-          3
-        ],
-        "connectors": [
-          "A",
-          "C"
-        ]
-      },
-      "price": {
-        "msrp": 0,
-        "range": "0-20, 20-50, 50-100, 100-200, 200+"
-      },
-      "vendors": [
-        {
-          "name": "",
-          "url": "",
-          "total": ""
         }
       ]
     }

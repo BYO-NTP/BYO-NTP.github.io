@@ -1,0 +1,36 @@
+{
+    "author": {
+        "name": "",
+        "email": "",
+        "url": ""
+    },
+    "accuracy": 0.01,
+    "date": "YYYY-MM-DD",
+    "os": {
+        "name": "",
+        "version": ""
+    },
+    "server": {
+        "manufacturer": "",
+        "product": ""
+    },
+    "gnss": {
+        "manufacturer": "",
+        "product": ""
+    },
+    "daemon": [
+        {
+            "name": "chrony",
+            "version": "4.6.1"
+        },
+        {
+            "name": "NTPsec",
+            "version": "1.2.3"
+        },
+        {
+            "name": "ntp",
+            "version": "4.2.8"
+        }
+    ],
+    "url": ""
+}

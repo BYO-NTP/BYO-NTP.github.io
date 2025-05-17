@@ -16,6 +16,7 @@ async function loadJsonFilesFromFolder(folderPath) {
       const filePath = path.join(folderPath, file);
 
       if (path.extname(file) !== '.json') continue;
+      if (file.endsWith('template.json')) continue;
 
       try {
         const rawData = await fs.readFile(filePath, 'utf-8');

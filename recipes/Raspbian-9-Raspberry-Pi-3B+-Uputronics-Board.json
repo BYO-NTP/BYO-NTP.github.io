@@ -1,0 +1,28 @@
+{
+    "author": {
+        "name": "Anthony Stirk",
+        "email": "",
+        "url": ""
+    },
+    "accuracy": 0.0001,
+    "date": "2018-11-30",
+    "os": {
+        "name": "Raspbian",
+        "version": "9"
+    },
+    "server": {
+        "manufacturer": "Raspberry Pi",
+        "product": "3B+"
+    },
+    "gnss": {
+        "manufacturer": "Uputronics",
+        "product": "Pi-HAT GPS board"
+    },
+    "daemon": [
+        {
+            "name": "ntp",
+            "version": "4.2.8"
+        }
+    ],
+    "url": "https://ava.upuaut.net/?p=951"
+}

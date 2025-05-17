@@ -136,6 +136,8 @@ function ajax({ method = 'GET', url, data = null, headers = {} }) {
 }
 
 function getRecipeUrl(recipe) {
+  if (recipe.url) return recipe.url;
+
   return `https://github.com/BYO-NTP/recipes/wiki/` +
   `${
     recipe.os.name.replace('-', '%E2%80%90').replace(/\s+/g, '-')}-${
@@ -151,15 +153,13 @@ function populateRecipesTable(recipes) {
   const tbody = document.querySelector("table#recipes tbody");
   tbody.innerHTML = ""; // Clear existing rows
 
-  for (const recipe of recipes) {
-    const osFull = `${recipe.os.name} ${recipe.os.version}`;
+  for (const recipe of recipes.sort((a, b) => new Date(b.date) - new Date(a.date))) {
     const osFilter = document.getElementById("osFilter").value;
-    const serverFull = `${recipe.server.manufacturer} ${recipe.server.product}`;
     const serverFilter = document.getElementById("serverFilter").value;
     const accuracyFilter = document.getElementById("accuracyFilter").value;
 
-    if (osFilter !== "all" && osFull !== osFilter) continue;
-    if (serverFilter !== "all" && serverFull !== serverFilter) continue;
+    if (osFilter !== "all" && recipe.os.name !== osFilter) continue;
+    if (serverFilter !== "all" && recipe.server.manufacturer !== serverFilter) continue;
     if (accuracyFilter !== "all" && recipe.accuracy > accuracyFilter) continue;
 
     const tr = document.createElement("tr");
@@ -196,7 +196,7 @@ function populateRecipesTable(recipes) {
 function populateOSFilterOptions(recipes) {
   const osSet = new Set();
   recipes.forEach(recipe => {
-    osSet.add(`${recipe.os.name} ${recipe.os.version}`);
+    osSet.add(`${recipe.os.name}`);
   });
 
   const select = document.getElementById("osFilter");
@@ -211,7 +211,7 @@ function populateOSFilterOptions(recipes) {
 function populateServerFilterOptions(recipes) {
   const serverSet = new Set();
   recipes.forEach(recipe => {
-    serverSet.add(`${recipe.server.manufacturer} ${recipe.server.product}`);
+    serverSet.add(`${recipe.server.manufacturer}`);
   });
 
   const select = document.getElementById("serverFilter");
