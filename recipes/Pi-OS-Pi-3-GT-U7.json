@@ -1,0 +1,28 @@
+{
+    "author": {
+        "name": "Austin",
+        "email": "",
+        "url": "https://austinsnerdythings.com/"
+    },
+    "accuracy": 0.00001,
+    "date": "2021-04-19",
+    "os": {
+        "name": "Raspbian",
+        "version": ""
+    },
+    "server": {
+        "manufacturer": "Raspberry Pi",
+        "product": "3"
+    },
+    "gnss": {
+        "manufacturer": "GT-U7",
+        "product": ""
+    },
+    "daemon": [
+        {
+            "name": "chrony",
+            "version": "4.6.1"
+        }
+    ],
+    "url": "https://austinsnerdythings.com/2021/04/19/microsecond-accurate-ntp-with-a-raspberry-pi-and-pps-gps/"
+}
