@@ -2,12 +2,12 @@
     "manufacturer": "Waveshare",
     "product": {
         "name": "MAX-M8Q GNSS HAT",
+        "revision": "",
         "url": "https://www.waveshare.com/max-m8q-gnss-hat.htm"
     },
-    "revision": "",
     "module": {
         "manufacturer": "u-blox",
-        "model": "MAX-M8Q"
+        "product": "MAX-M8Q"
     },
     "in_production": true,
     "accuracy": {

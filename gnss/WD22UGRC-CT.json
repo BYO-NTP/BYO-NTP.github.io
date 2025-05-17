@@ -1,12 +1,12 @@
 {
     "manufacturer": "Huawei",
     "product": {
-        "name": "WD22UGRC"
+        "name": "WD22UGRC",
+        "revision": "CT"
     },
-    "revision": "CT",
     "module": {
         "manufacturer": "u-blox",
-        "model": "LEA-M8T"
+        "product": "LEA-M8T"
     },
     "in_production": true,
     "accuracy": {

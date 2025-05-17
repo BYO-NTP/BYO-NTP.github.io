@@ -16,7 +16,8 @@
     },
     "gnss": {
         "manufacturer": "Huawei",
-        "product": "WD22UGRC"
+        "product": "WD22UGRC",
+        "revision": "CT"
     },
     "daemon": [
         {

@@ -35,7 +35,7 @@ async function loadJsonFilesFromFolder(folderPath) {
 
 const all = {};
 
-for (const folder of ['recipes', 'server', 'os', 'gnss']) {
+for (const folder of ['recipes', 'server', 'os', 'gnss', 'gnss/module']) {
   const fullPath = path.join(__dirname, folder);
   all[folder] = await loadJsonFilesFromFolder(fullPath);
 }

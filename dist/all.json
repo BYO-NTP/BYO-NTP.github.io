@@ -18,7 +18,8 @@
       },
       "gnss": {
         "manufacturer": "Huawei",
-        "product": "WD22UGRC"
+        "product": "WD22UGRC",
+        "revision": "CT"
       },
       "daemon": [
         {
@@ -163,6 +164,34 @@
     },
     {
       "author": {
+        "name": "Sven Reifschneider",
+        "email": "",
+        "url": "https://reifschneider.digital/"
+      },
+      "accuracy": 0.00001,
+      "date": "2024-07-22",
+      "os": {
+        "name": "Pi OS",
+        "version": "11"
+      },
+      "server": {
+        "manufacturer": "Raspberry Pi",
+        "product": "3"
+      },
+      "gnss": {
+        "manufacturer": "u-blox",
+        "product": "NEO-6M"
+      },
+      "daemon": [
+        {
+          "name": "ntp",
+          "version": ""
+        }
+      ],
+      "url": "https://reifschneider.digital/blog/high-precision-time-gps-raspberry-pi-ntp"
+    },
+    {
+      "author": {
         "name": "Matt Simerson",
         "email": "",
         "url": "https://matt.simerson.net/"
@@ -249,7 +278,8 @@
       },
       "gnss": {
         "manufacturer": "Huawei",
-        "product": "WD22UGRC"
+        "product": "WD22UGRC",
+        "revision": "CT"
       },
       "daemon": [
         {
@@ -637,12 +667,12 @@
     {
       "manufacturer": "Stratux",
       "product": {
-        "name": "VK-162"
+        "name": "VK-162",
+        "revision": ""
       },
-      "revision": "",
       "module": {
         "manufacturer": "u-blox",
-        "model": "7"
+        "product": "7"
       },
       "in_production": true,
       "accuracy": {
@@ -684,12 +714,12 @@
       "manufacturer": "Uputronics",
       "product": {
         "name": "GPS RTC board for Pi",
+        "revision": "6.4",
         "url": "https://store.uputronics.com/products/raspberry-pi-gps-rtc-expansion-board"
       },
-      "revision": "6.4",
       "module": {
         "manufacturer": "u-blox",
-        "model": "M8Q"
+        "product": "M8Q"
       },
       "in_production": true,
       "accuracy": {
@@ -738,12 +768,12 @@
     {
       "manufacturer": "Huawei",
       "product": {
-        "name": "WD22UGRC"
+        "name": "WD22UGRC",
+        "revision": "CT"
       },
-      "revision": "CT",
       "module": {
         "manufacturer": "u-blox",
-        "model": "LEA-M8T"
+        "product": "LEA-M8T"
       },
       "in_production": true,
       "accuracy": {
@@ -781,12 +811,12 @@
       "manufacturer": "Waveshare",
       "product": {
         "name": "MAX-M8Q GNSS HAT",
+        "revision": "",
         "url": "https://www.waveshare.com/max-m8q-gnss-hat.htm"
       },
-      "revision": "",
       "module": {
         "manufacturer": "u-blox",
-        "model": "MAX-M8Q"
+        "product": "MAX-M8Q"
       },
       "in_production": true,
       "accuracy": {
@@ -834,6 +864,120 @@
           "url": "https://spotpear.com/index/product/detail/id/441.html"
         }
       ]
+    }
+  ],
+  "gnss/module": [
+    {
+      "manufacturer": "u-blox",
+      "product": "7",
+      "gnss": {
+        "supported": [
+          "gps"
+        ],
+        "concurrent": 1
+      },
+      "specs": {
+        "channels": 50,
+        "update_rate": "1Hz",
+        "sensitivity": {
+          "tracking": "-160 dBm",
+          "acquisition": "-146 dBm"
+        },
+        "time_accuracy": "50ns"
+      },
+      "protocols": {
+        "NMEA": [
+          2.1,
+          2.3
+        ],
+        "UBX": [
+          14
+        ],
+        "RTCM": []
+      }
+    },
+    {
+      "manufacturer": "u-blox",
+      "product": "LEA-M8T",
+      "firmware": "3.01",
+      "gnss": {
+        "supported": [
+          "gps",
+          "glonass",
+          "galileo",
+          "beidou"
+        ],
+        "augmentation": [
+          "SBAS",
+          "QZSS",
+          "IMES",
+          "D-GPS"
+        ],
+        "concurrent": 3
+      },
+      "specs": {
+        "channels": 72,
+        "channels_tracking": 32,
+        "update_rate": "10Hz",
+        "sensitivity": {
+          "tracking": "-167 dBm",
+          "acquisition": "-160 dBm"
+        },
+        "time_accuracy": "20ns"
+      },
+      "protocols": {
+        "NMEA": [
+          2.3,
+          4.1
+        ],
+        "UBX": [
+          22
+        ],
+        "RTCM": [
+          2.3
+        ]
+      }
+    },
+    {
+      "manufacturer": "u-blox",
+      "product": "MAX-M8Q",
+      "gnss": {
+        "supported": [
+          "gps",
+          "glonass",
+          "galileo",
+          "beidou"
+        ],
+        "augmentation": [
+          "SBAS",
+          "QZSS",
+          "IMES",
+          "D-GPS"
+        ],
+        "concurrent": 3
+      },
+      "specs": {
+        "channels": 72,
+        "update_rate": "10Hz",
+        "sensitivity": {
+          "tracking": "-167 dBm",
+          "acquisition": "-160 dBm"
+        },
+        "time_accuracy": "60ns"
+      },
+      "protocols": {
+        "NMEA": [
+          2.1,
+          2.3,
+          4.1
+        ],
+        "UBX": [
+          18
+        ],
+        "RTCM": [
+          2.3
+        ]
+      }
     }
   ]
 }

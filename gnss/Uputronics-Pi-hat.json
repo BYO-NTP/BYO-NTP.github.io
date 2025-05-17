@@ -2,12 +2,12 @@
     "manufacturer": "Uputronics",
     "product": {
         "name": "GPS RTC board for Pi",
+        "revision": "6.4",
         "url": "https://store.uputronics.com/products/raspberry-pi-gps-rtc-expansion-board"
     },
-    "revision": "6.4",
     "module": {
         "manufacturer": "u-blox",
-        "model": "M8Q"
+        "product": "M8Q"
     },
     "in_production": true,
     "accuracy": {

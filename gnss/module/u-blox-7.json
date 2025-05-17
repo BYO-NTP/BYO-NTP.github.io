@@ -1,5 +1,6 @@
 {
-    "name": "u-blox 7",
+    "manufacturer": "u-blox",
+    "product": "7",
     "gnss": {
         "supported": [ "gps" ],
         "concurrent": 1

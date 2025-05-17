@@ -2,12 +2,12 @@
     "manufacturer": "",
     "product": {
         "name": "",
+        "revision": "",
         "url": ""
     },
-    "revision": "",
     "module": {
         "manufacturer": "u-blox, Quectel, etc.",
-        "model": ""
+        "product": ""
     },
     "in_production": false,
     "accuracy": {

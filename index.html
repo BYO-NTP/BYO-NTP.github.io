@@ -67,7 +67,7 @@
   <table id="recipes" border="1">
     <thead>
       <tr>
-        <th>Build Date</th>
+        <th>Author</th>
         <th>Server<br>
           <select id="serverFilter">
             <option value="all">All</option>
@@ -78,6 +78,14 @@
           <option value="all">All</option>
         </select></th>
         <th>GNSS HW</th>
+        <th>ntpd <br>
+          <select id="ntpdFilter">
+            <option value="all">All</option>
+            <option value="ntp">ntp</option>
+            <option value="chrony">chrony</option>
+            <option value="NTPsec">NTPsec</option>
+          </select>
+        </th>
         <th>Accuracy<br>
           <select id="accuracyFilter">
             <option value="all">All</option>
@@ -149,18 +157,20 @@ function getRecipeUrl(recipe) {
   }`
 }
 
-function populateRecipesTable(recipes) {
+function populateRecipesTable(all) {
   const tbody = document.querySelector("table#recipes tbody");
   tbody.innerHTML = ""; // Clear existing rows
 
-  for (const recipe of recipes.sort((a, b) => new Date(b.date) - new Date(a.date))) {
+  for (const recipe of all.recipes.sort((a, b) => new Date(b.date) - new Date(a.date))) {
     const osFilter = document.getElementById("osFilter").value;
     const serverFilter = document.getElementById("serverFilter").value;
     const accuracyFilter = document.getElementById("accuracyFilter").value;
+    const ntpdFilter = document.getElementById("ntpdFilter").value;
 
     if (osFilter !== "all" && recipe.os.name !== osFilter) continue;
     if (serverFilter !== "all" && recipe.server.manufacturer !== serverFilter) continue;
     if (accuracyFilter !== "all" && recipe.accuracy > accuracyFilter) continue;
+    if (ntpdFilter !== "all" && !recipe.daemon.filter(d => d.name === ntpdFilter).length) continue;
 
     const tr = document.createElement("tr");
 
@@ -169,7 +179,8 @@ function populateRecipesTable(recipes) {
     });
 
     const dateTd = document.createElement("td");
-    dateTd.textContent = recipe.date;
+    dateTd.innerHTML = `${recipe.date}`;
+    dateTd.innerHTML += `<br>${recipe.author.name}`;
     tr.appendChild(dateTd);
 
     const serverTd = document.createElement("td");
@@ -181,8 +192,23 @@ function populateRecipesTable(recipes) {
     tr.appendChild(osTd);
 
     const gnssTd = document.createElement("td");
-    gnssTd.textContent = `${recipe.gnss.manufacturer} ${recipe.gnss.product}`;
+    gnssTd.innerHTML = `${recipe.gnss.manufacturer} ${recipe.gnss.product}`;
+    const modules = all.gnss.filter(m =>
+      m.manufacturer === recipe.gnss.manufacturer &&
+      m.product.name === recipe.gnss.product
+    );
+    if (modules?.length === 1) {
+      const mod = modules[0]
+      // add module info if not contained in product name
+      if (!mod.product.name.includes(mod.module.product)) {
+        gnssTd.innerHTML += `<br>${mod.module.manufacturer} ${mod.module.product}`;
+      }
+    }
     tr.appendChild(gnssTd);
+
+    const daemonTd = document.createElement("td");
+    daemonTd.textContent = recipe.daemon.map(d => d.name).join(', ');
+    tr.appendChild(daemonTd);
 
     const accuracyTd = document.createElement("td");
     accuracyTd.textContent = recipe.accuracy;
@@ -230,20 +256,13 @@ function onLoad () {
   }).then(response => {
     populateOSFilterOptions(response.recipes);
     populateServerFilterOptions(response.recipes);
-    populateRecipesTable(response.recipes);
+    populateRecipesTable(response);
 
-    document.getElementById("osFilter").addEventListener("change", (e) => {
-      populateRecipesTable(response.recipes);
-    });
-
-    document.getElementById("serverFilter").addEventListener("change", (e) => {
-      populateRecipesTable(response.recipes);
-    });
-
-    document.getElementById("accuracyFilter").addEventListener("change", (e) => {
-      populateRecipesTable(response.recipes);
-    });
-
+    for (const f of ['osFilter', 'serverFilter', 'ntpdFilter', 'accuracyFilter']) {
+      document.getElementById(f).addEventListener("change", (e) => {
+        populateRecipesTable(response);
+      });
+    }
   }).catch(error => {
     console.error('Error:', error);
   });

@@ -1,6 +1,7 @@
 {
     "manufacturer": "u-blox",
-    "model": "MAX-M8Q",
+    "product": "LEA-M8T",
+    "firmware": "3.01",
     "gnss": {
         "supported": [ "gps", "glonass", "galileo", "beidou" ],
         "augmentation": [ "SBAS", "QZSS", "IMES", "D-GPS" ],
@@ -8,16 +9,17 @@
     },
     "specs": {
         "channels": 72,
+        "channels_tracking": 32,
         "update_rate": "10Hz",
         "sensitivity": {
             "tracking": "-167 dBm",
             "acquisition": "-160 dBm"
         },
-        "time_accuracy": "60ns"
+        "time_accuracy": "20ns"
     },
     "protocols": {
-        "NMEA": [ 2.1, 2.3, 4.1 ],
-        "UBX": [ 18 ],
+        "NMEA": [ 2.3, 4.1 ],
+        "UBX": [ 22 ],
         "RTCM": [ 2.3 ]
     }
 }

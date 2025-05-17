@@ -1,0 +1,28 @@
+{
+    "author": {
+        "name": "Sven Reifschneider",
+        "email": "",
+        "url": "https://reifschneider.digital/"
+    },
+    "accuracy": 0.00001,
+    "date": "2024-07-22",
+    "os": {
+        "name": "Pi OS",
+        "version": "11"
+    },
+    "server": {
+        "manufacturer": "Raspberry Pi",
+        "product": "3"
+    },
+    "gnss": {
+        "manufacturer": "u-blox",
+        "product": "NEO-6M"
+    },
+    "daemon": [
+        {
+            "name": "ntp",
+            "version": ""
+        }
+    ],
+    "url": "https://reifschneider.digital/blog/high-precision-time-gps-raspberry-pi-ntp"
+}
