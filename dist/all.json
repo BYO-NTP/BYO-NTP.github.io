@@ -441,7 +441,7 @@
         "email": "",
         "url": "https://www.jacobdeane.com/"
       },
-      "accuracy": 0.01,
+      "accuracy": 0.001,
       "date": "2020-11-09",
       "os": {
         "name": "Pi OS",
@@ -463,6 +463,34 @@
         }
       ],
       "url": "https://www.jacobdeane.com/iot/2020/building-a-gps-based-time-server/"
+    },
+    {
+      "author": {
+        "name": "Johannes Weber",
+        "email": "",
+        "url": "https://weberblog.net/"
+      },
+      "accuracy": 0.002,
+      "date": "2019-02-06",
+      "os": {
+        "name": "Raspbian",
+        "version": "10"
+      },
+      "server": {
+        "manufacturer": "Raspberry Pi",
+        "product": "1"
+      },
+      "gnss": {
+        "manufacturer": "GY",
+        "product": "GPS6MV2"
+      },
+      "daemon": [
+        {
+          "name": "ntp",
+          "version": "4.2.8p12"
+        }
+      ],
+      "url": "https://weberblog.net/ntp-server-via-gps-on-a-raspberry-pi/"
     },
     {
       "author": {
@@ -510,7 +538,8 @@
       },
       "gnss": {
         "manufacturer": "Uputronics",
-        "product": "Pi-HAT GPS board"
+        "product": "GPS Expansion board for Pi",
+        "revision": "4.1"
       },
       "daemon": [
         {
@@ -778,6 +807,49 @@
   ],
   "gnss": [
     {
+      "manufacturer": "",
+      "product": {
+        "name": "GY-GPS6MV2",
+        "revision": "",
+        "url": ""
+      },
+      "module": {
+        "manufacturer": "u-blox",
+        "product": "NEO-6M"
+      },
+      "in_production": false,
+      "accuracy": {
+        "class": "µs"
+      },
+      "interface": [
+        "UART"
+      ],
+      "pps": true,
+      "rtc": {
+        "chip": "",
+        "battery": "coin cell"
+      },
+      "software": [
+        "u-center",
+        "gpsd"
+      ],
+      "usb": {
+        "version": [],
+        "connectors": []
+      },
+      "price": {
+        "msrp": 0,
+        "range": ""
+      },
+      "vendors": [
+        {
+          "name": "",
+          "url": "",
+          "total": ""
+        }
+      ]
+    },
+    {
       "manufacturer": "Stratux",
       "product": {
         "name": "VK-162",
@@ -875,6 +947,49 @@
           "url": "https://v3.airspy.us/product/upu-rpi-gps-rtc/",
           "total": "$50 + $10 shipping",
           "notes": "Listing is for rev 6.1 (lastest is 6.4)"
+        }
+      ]
+    },
+    {
+      "manufacturer": "Uputronics",
+      "product": {
+        "name": "GPS Expansion board for Pi",
+        "revision": "4.1",
+        "url": ""
+      },
+      "module": {
+        "manufacturer": "u-blox",
+        "product": "M8Q"
+      },
+      "in_production": false,
+      "accuracy": {
+        "class": "µs"
+      },
+      "interface": [
+        "UART"
+      ],
+      "pps": true,
+      "rtc": {
+        "chip": "",
+        "battery": "supercap"
+      },
+      "software": [
+        "u-center",
+        "gpsd"
+      ],
+      "usb": {
+        "version": [],
+        "connectors": []
+      },
+      "price": {
+        "msrp": 50,
+        "range": ""
+      },
+      "vendors": [
+        {
+          "name": "Uputronics",
+          "url": "https://www.uputronics.com/",
+          "total": ""
         }
       ]
     },

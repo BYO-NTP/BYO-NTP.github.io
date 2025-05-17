@@ -16,7 +16,8 @@
     },
     "gnss": {
         "manufacturer": "Uputronics",
-        "product": "Pi-HAT GPS board"
+        "product": "GPS Expansion board for Pi",
+        "revision": "4.1"
     },
     "daemon": [
         {
