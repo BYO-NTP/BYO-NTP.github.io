@@ -85,7 +85,13 @@ do_freq() {
 
 get_disk_temp() {
     if [ -x "/usr/local/sbin/smartctl" ]; then
-        sudo /usr/local/sbin/smartctl -A /dev/$1 | grep ^Temperature: | awk '{print $2}'
+        $SMARTCTL="/usr/local/sbin/smartctl"
+    elif [ -x "/usr/sbin/smartctl" ]; then
+        $SMARTCTL="/usr/sbin/smartctl"
+    fi
+
+    if [ -n "$SMARTCTL" ]; then
+        sudo $SMARTCTL -A /dev/$1 | grep ^Temperature: | awk '{print $2}'
     fi
 }
 
