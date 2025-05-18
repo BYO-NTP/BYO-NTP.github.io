@@ -110,6 +110,8 @@ configure_ntpd()
 	if is_running chronyd; then
 		cat >> "$TG_ETC_DIR/telegraf.conf" <<EOFC
 
+#[[inputs.ntpq]]
+
 [[inputs.chrony]]
   server = "udp://[::1]:323"
   metrics = ["tracking", "sources"]
@@ -118,15 +120,19 @@ EOFC
 		cat >> "$TG_ETC_DIR/telegraf.conf" <<EOFQ
 
 [[inputs.ntpq]]
-EOFQ
-	else
-		cat >> "$TG_ETC_DIR/telegraf.conf" <<EOFZ
 
 #[[inputs.chrony]]
 #  server = "udp://[::1]:323"
 #  metrics = ["tracking", "sources"]
+EOFQ
+	else
+		cat >> "$TG_ETC_DIR/telegraf.conf" <<EOFZ
 
 #[[inputs.ntp]]
+
+#[[inputs.chrony]]
+#  server = "udp://[::1]:323"
+#  metrics = ["tracking", "sources"]
 EOFZ
 	fi
 }

@@ -1,6 +1,4 @@
-<div style="text-align: center;">
-  <img src="img/BYO-NTP-logo.jpeg" alt="BYO-NTP logo" width="200"/>
-</div>
+<img src="https://byo-ntp.github.io/recipes/img/BYO-NTP-logo.jpeg" alt="BYO-NTP logo" width="200"/>
 
 This sites main goal is to encourage new Stratum 1 NTP server builds. We do this by providing:
 
