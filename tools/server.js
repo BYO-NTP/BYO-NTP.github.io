@@ -1,3 +1,4 @@
+import { exec } from 'child_process';
 import http from 'node:http';
 import fs from 'node:fs/promises';
 import os from 'node:os';
@@ -8,7 +9,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const port = 8080;
-const htdocs = path.join(__dirname);
+const htdocs = path.join(__dirname, '..', 'htdocs');
 
 const mimeTypes = {
   '.html': 'text/html',
@@ -53,6 +54,18 @@ const server = http.createServer(async (req, res) => {
       res.end('Server Error');
     }
   }
+});
+
+exec('node tools/all-from-path.js', (error, stdout, stderr) => {
+  if (error) {
+    console.error(`Error: ${error.message}`);
+    return;
+  }
+  if (stderr) {
+    console.error(`Stderr: ${stderr}`);
+    return;
+  }
+  console.log(`Output:\n${stdout}`);
 });
 
 server.listen(port, () => {

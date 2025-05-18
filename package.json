@@ -5,7 +5,7 @@
   "scripts": {
     "all": "node tools/all-from-path.js",
     "start": "npm run server",
-    "server": "npm run all && npx nodemon --watch . --exec node server.js"
+    "server": "npx nodemon --watch . --ignore htdocs --exec node tools/server.js"
   },
   "type": "module",
   "devDependencies": {

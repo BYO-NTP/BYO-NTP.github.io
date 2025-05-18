@@ -265,7 +265,7 @@ function populateServerFilterOptions(recipes) {
 function onLoad () {
   ajax({
     method: 'GET',
-    url: `/recipes/dist/all.json`,
+    url: `/recipes/all.json`,
   }).then(response => {
     populateOSFilterOptions(response.recipes);
     populateServerFilterOptions(response.recipes);

@@ -40,7 +40,7 @@ for (const folder of ['recipes', 'server', 'os', 'gnss', 'gnss/module']) {
   all[folder] = await loadJsonFilesFromFolder(fullPath);
 }
 
-const outputDir = path.join(__dirname, 'dist');
+const outputDir = path.join(__dirname, 'htdocs');
 await fs.mkdir(outputDir, { recursive: true });
 
 try {
