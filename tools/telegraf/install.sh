@@ -38,6 +38,14 @@ telegraf ALL=(ALL) NOPASSWD: /usr/sbin/ntpctl
 telegraf ALL=(ALL) NOPASSWD: /usr/sbin/smartctl
 EOF
 
+	# Fix for this error:
+	# May 18 09:21:12 pi5.home.simerson.net systemd[1]: multi-user.target: Wants dependency dropin
+	#      /etc/systemd/system/multi-user.target.wants/telegraf.service is not a symlink, ignoring.
+	if [ -f "/etc/systemd/system/multi-user.target.wants/telegraf.service" ]; then
+		mv /etc/systemd/system/multi-user.target.wants/telegraf.service /etc/systemd/system/
+		ln -s /etc/systemd/system/telegraf.service /etc/systemd/system/multi-user.target.wants/
+	fi
+
 	sed -i -e '/LimitMEMLOCK/ s/Limit/#Limit/' /etc/systemd/system/multi-user.target.wants/telegraf.service
 	systemctl daemon-reload
 
@@ -54,7 +62,7 @@ install_temperature()
 
 configure_temperature()
 {
-	for i in cpu gpu freq disk; do
+	for i in cpu gpu disk; do
 		OUT=$(/usr/local/sbin/temperature.sh $i)
 		if [ -n "$OUT" ]; then
 			cat >> "$TG_ETC_DIR/telegraf.conf" <<EOF
@@ -67,6 +75,18 @@ configure_temperature()
 EOF
 		fi
 	done
+
+	OUT=$(/usr/local/sbin/temperature.sh freq)
+	if [ -n "$OUT" ]; then
+		cat >> "$TG_ETC_DIR/telegraf.conf" <<EOF
+
+[[inputs.exec]]
+  interval = "30s"
+  commands = ["/usr/local/sbin/temperature.sh freq"]
+  name_override = "cpu"
+  data_format = "influx"
+EOF
+	fi
 }
 
 is_running()
