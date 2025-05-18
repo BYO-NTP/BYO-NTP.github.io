@@ -55,8 +55,10 @@ install_temperature()
 configure_temperature()
 {
 	for i in cpu gpu freq disk; do
-		if [ -n "$(/usr/local/sbin/temperature.sh $i)" ]; then
+		OUT=$(/usr/local/sbin/temperature.sh $i)
+		if [ -n "$OUT" ]; then
 			cat >> "$TG_ETC_DIR/telegraf.conf" <<EOF
+
 [[inputs.exec]]
   interval = "30s"
   commands = ["/usr/local/sbin/temperature.sh $i"]
@@ -87,16 +89,19 @@ configure_ntpd()
 {
 	if is_running chronyd; then
 		cat >> "$TG_ETC_DIR/telegraf.conf" <<EOFC
+
 [[inputs.chrony]]
   server = "udp://[::1]:323"
   metrics = ["tracking", "sources"]
 EOFC
 	elif is_running ntp; then
 		cat >> "$TG_ETC_DIR/telegraf.conf" <<EOFQ
+
 [[inputs.ntpq]]
 EOFQ
 	else
 		cat >> "$TG_ETC_DIR/telegraf.conf" <<EOFZ
+
 #[[inputs.chrony]]
 #  server = "udp://[::1]:323"
 #  metrics = ["tracking", "sources"]
