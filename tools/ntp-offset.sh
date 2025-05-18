@@ -51,7 +51,13 @@ which_log_file()
 		LOGFILE="/var/log/chrony/statistics.log"
 	elif is_running ntp;
 	then
-		LOGFILE="/var/log/ntp/peerstats"
+		if [ -f "/var/log/ntp/peerstats" ]; then
+			LOGFILE="/var/log/ntp/peerstats"
+		elif [ -f "/var/log/ntpsec/peerstats" ]; then
+			LOGFILE="/var/log/ntpsec/peerstats"
+		else
+			echo "ERR: ntpd is running but files cannot be found, is statistics enabled?"
+		fi
 	fi
 
 	if [ -z "$LOGFILE" ] || [ ! -f "$LOGFILE" ];

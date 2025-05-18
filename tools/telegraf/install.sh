@@ -1,8 +1,10 @@
 #!/bin/sh
 
-ETC_DIR="/usr/local/etc"
+set -e
+
+TG_ETC_DIR="/usr/local/etc"
 FETCH="fetch -o"
-TOOLS_URI="https://raw.githubusercontent.com/BYO-NTP/recipes/refs/heads/master"
+TOOLS_URI="https://raw.githubusercontent.com/BYO-NTP/recipes/refs/heads/master/tools"
 
 install_telegraf_freebsd()
 {
@@ -44,7 +46,7 @@ EOF
 
 install_temperature()
 {
-	-d /usr/local/sbin || mkdir -p /usr/local/sbin
+	test -d /usr/local/sbin || mkdir -p /usr/local/sbin
 	$FETCH /usr/local/sbin/temperature.sh "$TOOLS_URI/telegraf/temperature.sh"
 	chmod 755 /usr/local/sbin/temperature.sh
 	chmod +x /usr/local/sbin/temperature.sh
@@ -54,7 +56,7 @@ configure_temperature()
 {
 	for i in cpu gpu freq disk; do
 		if [ -n "$(/usr/local/sbin/temperature.sh $i)" ]; then
-			cat >> "$ETC_DIR/telegraf.conf" <<EOF
+			cat >> "$TG_ETC_DIR/telegraf.conf" <<EOF
 [[inputs.exec]]
   interval = "30s"
   commands = ["/usr/local/sbin/temperature.sh $i"]
@@ -84,17 +86,17 @@ is_running()
 configure_ntpd()
 {
 	if is_running chronyd; then
-		cat >> "$ETC_DIR/telegraf.conf" <<EOFC
+		cat >> "$TG_ETC_DIR/telegraf.conf" <<EOFC
 [[inputs.chrony]]
   server = "udp://[::1]:323"
   metrics = ["tracking", "sources"]
 EOFC
 	elif is_running ntp; then
-		cat >> "$ETC_DIR/telegraf.conf" <<EOFQ
+		cat >> "$TG_ETC_DIR/telegraf.conf" <<EOFQ
 [[inputs.ntpq]]
 EOFQ
 	else
-		cat >> "$ETC_DIR/telegraf.conf" <<EOFZ
+		cat >> "$TG_ETC_DIR/telegraf.conf" <<EOFZ
 #[[inputs.chrony]]
 #  server = "udp://[::1]:323"
 #  metrics = ["tracking", "sources"]
@@ -108,10 +110,10 @@ install_telegraf_conf()
 {
 	$FETCH - "$TOOLS_URI/telegraf/telegraf.conf" \
 		| sed -e "/hostname/ s/time.example.com/$(hostname)/" \
-		> "$ETC_DIR/telegraf.conf"
+		> "$TG_ETC_DIR/telegraf.conf"
 
 	if [ -n "$INFLUX_DB_HOST" ]; then
-		sed -i -e "/INFLUX/ s/INFLUX_SERVER/$INFLUX_DB_HOST/" "$ETC_DIR/telegraf.conf"
+		sed -i -e "/INFLUX/ s/INFLUX_SERVER/$INFLUX_DB_HOST/" "$TG_ETC_DIR/telegraf.conf"
 	fi
 
 	configure_ntpd
@@ -130,7 +132,7 @@ case "$(uname -s)" in
 		install_telegraf_conf
 		;;
 	Linux) 
-		ETC_DIR="/etc"
+		TG_ETC_DIR="/etc/telegraf"
 		FETCH="curl -o"
 		install_temperature
 		install_telegraf_linux
