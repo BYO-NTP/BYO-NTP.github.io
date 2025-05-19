@@ -4,7 +4,6 @@
         "email": "",
         "url": "https://www.satsignal.eu/"
     },
-    "accuracy": 0.00003,
     "date": "2025-05-01",
     "os": {
         "name": "Raspbian",
@@ -21,7 +20,8 @@
     "daemon": [
         {
             "name": "ntp",
-            "version": "4.2.8"
+            "version": "4.2.8",
+            "accuracy": 0.00003
         }
     ],
     "url": "https://www.satsignal.eu/ntp/Raspberry-Pi-NTP.html"

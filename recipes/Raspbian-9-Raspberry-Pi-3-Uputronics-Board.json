@@ -4,7 +4,6 @@
         "email": "",
         "url": ""
     },
-    "accuracy": 0.0001,
     "date": "2018-11-30",
     "os": {
         "name": "Raspbian",
@@ -22,7 +21,8 @@
     "daemon": [
         {
             "name": "ntp",
-            "version": "4.2.8"
+            "version": "4.2.8",
+            "accuracy": 0.0001
         }
     ],
     "url": "https://ava.upuaut.net/?p=951"

@@ -5,7 +5,6 @@
         "url": "https://matt.simerson.net/"
     },
     "date": "2025-05-16",
-    "accuracy": 0.000000402,
     "os": {
         "name": "Pi OS",
         "version": "12"
@@ -22,15 +21,18 @@
     "daemon": [
         {
             "name": "chrony",
-            "version": "4.6.1"
+            "version": "4.6.1" ,
+            "accuracy": 0.000000402
         },
         {
             "name": "NTPsec",
-            "version": "1.2.3"
+            "version": "1.2.3",
+            "accuracy": 0.00340
         },
         {
             "name": "ntp",
-            "version": "4.2.8"
+            "version": "4.2.8",
+            "accuracy": 0.1
         }
     ]
 }

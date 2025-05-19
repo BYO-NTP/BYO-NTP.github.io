@@ -4,7 +4,6 @@
         "email": "",
         "url": "https://github.com/tiagofreire-pt/"
     },
-    "accuracy": 0.00000001,
     "date": "2025-01-17",
     "os": {
         "name": "Pi OS",
@@ -21,7 +20,8 @@
     "daemon": [
         {
             "name": "chrony",
-            "version": "4.6.1"
+            "version": "4.6.1",
+            "accuracy": 0.00000001
         }
     ],
     "url": "https://github.com/tiagofreire-pt/rpi_uputronics_stratum1_chrony"

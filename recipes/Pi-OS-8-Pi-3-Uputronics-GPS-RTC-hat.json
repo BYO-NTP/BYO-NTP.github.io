@@ -4,7 +4,6 @@
         "email": "",
         "url": "https://conorrobinson.ie/"
     },
-    "accuracy": 0.000000033,
     "date": "2024-02-28",
     "os": {
         "name": "Pi OS",
@@ -21,7 +20,8 @@
     "daemon": [
         {
             "name": "chrony",
-            "version": "4.6.1"
+            "version": "4.6.1",
+            "accuracy": 0.000000033
         }
     ],
     "url": "https://conorrobinson.ie/raspberry-pi-ntp-server-part-1/"

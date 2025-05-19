@@ -1,6 +1,7 @@
 #!/bin/sh
 
 # By Matt Simerson - 2025-05-18
+#
 # This script generates a configuration file for NTPsec
 set -e 
 
@@ -103,11 +104,11 @@ leapfile /etc/ntp/leap-seconds
 
 $CONF_NTP_STATS
 
-tos maxclock 6
-tos minclock 4 minsane 3
+tos maxclock 6 minclock 4 minsane 3 mindist 0.02
 
 $NTP_SERVERS
 
+enable calibrate
 # -------------------------------------------------------
 $NTP_REFCLOCKS
 # -------------------------------------------------------

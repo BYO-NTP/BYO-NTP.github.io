@@ -4,7 +4,6 @@
         "email": "",
         "url": "https://reifschneider.digital/"
     },
-    "accuracy": 0.00001,
     "date": "2024-07-22",
     "os": {
         "name": "Pi OS",
@@ -21,7 +20,8 @@
     "daemon": [
         {
             "name": "ntp",
-            "version": ""
+            "version": "",
+            "accuracy": 0.00001
         }
     ],
     "url": "https://reifschneider.digital/blog/high-precision-time-gps-raspberry-pi-ntp"

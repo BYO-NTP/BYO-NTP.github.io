@@ -4,7 +4,6 @@
         "email": "",
         "url": "https://www.jacobdeane.com/"
     },
-    "accuracy": 0.001,
     "date": "2020-11-09",
     "os": {
         "name": "Pi OS",
@@ -22,7 +21,8 @@
     "daemon": [
         {
             "name": "ntp",
-            "version": "4.2.8p15"
+            "version": "4.2.8p15",
+            "accuracy": 0.001
         }
     ],
     "url": "https://www.jacobdeane.com/iot/2020/building-a-gps-based-time-server/"

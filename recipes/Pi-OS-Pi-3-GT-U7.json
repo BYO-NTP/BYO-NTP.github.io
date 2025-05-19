@@ -4,7 +4,6 @@
         "email": "",
         "url": "https://austinsnerdythings.com/"
     },
-    "accuracy": 0.00001,
     "date": "2021-04-19",
     "os": {
         "name": "Raspbian",
@@ -21,7 +20,8 @@
     "daemon": [
         {
             "name": "chrony",
-            "version": "4.6.1"
+            "version": "4.6.1",
+            "accuracy": 0.00001
         }
     ],
     "url": "https://austinsnerdythings.com/2021/04/19/microsecond-accurate-ntp-with-a-raspberry-pi-and-pps-gps/"

@@ -4,7 +4,6 @@
         "email": "",
         "url": "https://www.satsignal.eu/ntp/FreeBSD-GPS-PPS.html"
     },
-    "accuracy": 0.000008,
     "date": "2010-04-01",
     "os": {
         "name": "FreeBSD",
@@ -21,7 +20,8 @@
     "daemon": [
         {
             "name": "ntp",
-            "version": "4.2.4p5-a"
+            "version": "4.2.4p5-a",
+            "accuracy": 0.000008
         }
     ],
     "url": "https://www.satsignal.eu/ntp/FreeBSD-GPS-PPS.htm"

@@ -179,8 +179,16 @@ function populateRecipesTable(all) {
     if (osFilter !== "all" && recipe.os.name !== osFilter) continue;
     if (serverFilter !== "all" && recipe.server.manufacturer !== serverFilter) continue;
     if (accuracyFilter !== "all") {
-      console.log(recipe.accuracy, accuracyMap[accuracyFilter]);
-      if (recipe.accuracy > accuracyMap[accuracyFilter]) continue;
+      if (recipe.daemon.filter(d => d.name === ntpdFilter).length) {
+        // if ntpd is used, use the accuracy of the ntpd
+        const ntpd = recipe.daemon.filter(d => d.name === ntpdFilter)[0];
+        if (ntpd.accuracy > accuracyMap[accuracyFilter]) continue;
+      } else {
+        const mostAccurateDaemon = recipe.daemon.reduce((mostAccurate, current) => {
+            return current.accuracy < mostAccurate.accuracy ? current : mostAccurate;
+        });
+        if (mostAccurateDaemon.accuracy > accuracyMap[accuracyFilter]) continue;
+      }
     }
 
     if (ntpdFilter !== "all" && !recipe.daemon.filter(d => d.name === ntpdFilter).length) continue;
@@ -224,7 +232,9 @@ function populateRecipesTable(all) {
     tr.appendChild(daemonTd);
 
     const accuracyTd = document.createElement("td");
-    accuracyTd.textContent = recipe.accuracy;
+    accuracyTd.textContent = recipe.daemon.reduce((mostAccurate, current) => {
+        return current.accuracy < mostAccurate.accuracy ? current : mostAccurate;
+    }).accuracy;
     accuracyTd.classList.add("alignright");
     tr.appendChild(accuracyTd);
 

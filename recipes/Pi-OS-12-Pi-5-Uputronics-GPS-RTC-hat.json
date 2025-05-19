@@ -4,7 +4,6 @@
         "email": "",
         "url": "https://www.philrandal.co.uk/blog/archives/2019/04/entry_213.html"
     },
-    "accuracy": 0.0001,
     "date": "2023-09-19",
     "os": {
         "name": "Pi OS",
@@ -20,8 +19,9 @@
     },
     "daemon": [
         {
-            "name": "NTPsec"
-        }
+            "name": "NTPsec",
+            "accuracy": 0.0001
+       }
     ],
     "url": "https://www.philrandal.co.uk/blog/archives/2019/04/entry_213.html"
 }

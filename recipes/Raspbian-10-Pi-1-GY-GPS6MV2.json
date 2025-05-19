@@ -4,7 +4,6 @@
         "email": "",
         "url": "https://weberblog.net/"
     },
-    "accuracy": 0.002,
     "date": "2019-02-06",
     "os": {
         "name": "Raspbian",
@@ -21,7 +20,8 @@
     "daemon": [
         {
             "name": "ntp",
-            "version": "4.2.8p12"
+            "version": "4.2.8p12",
+            "accuracy": 0.002
         }
     ],
     "url": "https://weberblog.net/ntp-server-via-gps-on-a-raspberry-pi/"

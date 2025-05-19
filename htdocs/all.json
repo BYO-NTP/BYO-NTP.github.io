@@ -7,7 +7,6 @@
         "url": "https://matt.simerson.net/"
       },
       "date": "2025-05-12",
-      "accuracy": 0.00001,
       "os": {
         "name": "FreeBSD",
         "version": "14"
@@ -24,15 +23,18 @@
       "daemon": [
         {
           "name": "chrony",
-          "version": "4.6.1"
+          "version": "4.6.1",
+          "accuracy": 0.00001
         },
         {
           "name": "NTPsec",
-          "version": "1.2.3"
+          "version": "1.2.3",
+          "accuracy": 0.00001
         },
         {
           "name": "ntp",
-          "version": "4.2.8"
+          "version": "4.2.8",
+          "accuracy": 0.00001
         }
       ]
     },
@@ -42,7 +44,6 @@
         "email": "",
         "url": "https://matt.simerson.net/"
       },
-      "accuracy": 0.01,
       "date": "2025-05-01",
       "os": {
         "name": "FreeBSD",
@@ -59,15 +60,18 @@
       "daemon": [
         {
           "name": "chrony",
-          "version": "4.6.1"
+          "version": "4.6.1",
+          "accuracy": 0.01
         },
         {
           "name": "NTPsec",
-          "version": "1.2.3"
+          "version": "1.2.3",
+          "accuracy": 0.01
         },
         {
           "name": "ntp",
-          "version": "4.2.8"
+          "version": "4.2.8",
+          "accuracy": 0.01
         }
       ]
     },
@@ -77,7 +81,6 @@
         "email": "",
         "url": "https://matt.simerson.net/"
       },
-      "accuracy": 0.000003,
       "date": "2025-05-01",
       "os": {
         "name": "FreeBSD",
@@ -94,15 +97,18 @@
       "daemon": [
         {
           "name": "chrony",
-          "version": "4.6.1"
+          "version": "4.6.1",
+          "accuracy": 0.000003
         },
         {
           "name": "NTPsec",
-          "version": "1.2.3"
+          "version": "1.2.3",
+          "accuracy": 0.000003
         },
         {
           "name": "ntp",
-          "version": "4.2.8"
+          "version": "4.2.8",
+          "accuracy": 0.000003
         }
       ]
     },
@@ -112,7 +118,6 @@
         "email": "",
         "url": "https://www.satsignal.eu/ntp/FreeBSD-GPS-PPS.htm"
       },
-      "accuracy": 0.00001,
       "date": "2006-01-01",
       "os": {
         "name": "FreeBSD",
@@ -129,7 +134,8 @@
       "daemon": [
         {
           "name": "ntp",
-          "version": ""
+          "version": "",
+          "accuracy": 0.00001
         }
       ],
       "url": "https://www.satsignal.eu/ntp/FreeBSD-GPS-PPS.htm"
@@ -140,7 +146,6 @@
         "email": "",
         "url": "https://www.satsignal.eu/ntp/FreeBSD-GPS-PPS.html"
       },
-      "accuracy": 0.000008,
       "date": "2010-04-01",
       "os": {
         "name": "FreeBSD",
@@ -157,7 +162,8 @@
       "daemon": [
         {
           "name": "ntp",
-          "version": "4.2.4p5-a"
+          "version": "4.2.4p5-a",
+          "accuracy": 0.000008
         }
       ],
       "url": "https://www.satsignal.eu/ntp/FreeBSD-GPS-PPS.htm"
@@ -168,7 +174,6 @@
         "email": "",
         "url": "https://reifschneider.digital/"
       },
-      "accuracy": 0.00001,
       "date": "2024-07-22",
       "os": {
         "name": "Pi OS",
@@ -185,7 +190,8 @@
       "daemon": [
         {
           "name": "ntp",
-          "version": ""
+          "version": "",
+          "accuracy": 0.00001
         }
       ],
       "url": "https://reifschneider.digital/blog/high-precision-time-gps-raspberry-pi-ntp"
@@ -196,7 +202,6 @@
         "email": "",
         "url": "https://matt.simerson.net/"
       },
-      "accuracy": 0.01,
       "date": "2025-05-01",
       "os": {
         "name": "Pi OS",
@@ -213,15 +218,18 @@
       "daemon": [
         {
           "name": "chrony",
-          "version": "4.6.1"
+          "version": "4.6.1",
+          "accuracy": 0.01
         },
         {
           "name": "NTPsec",
-          "version": "1.2.3"
+          "version": "1.2.3",
+          "accuracy": 0.01
         },
         {
           "name": "ntp",
-          "version": "4.2.8"
+          "version": "4.2.8",
+          "accuracy": 0.01
         }
       ]
     },
@@ -231,7 +239,6 @@
         "email": "",
         "url": "https://matt.simerson.net/"
       },
-      "accuracy": 0.00000285,
       "date": "2025-05-01",
       "os": {
         "name": "Pi OS",
@@ -248,15 +255,18 @@
       "daemon": [
         {
           "name": "chrony",
-          "version": "4.6.1"
+          "version": "4.6.1",
+          "accuracy": 0.00000285
         },
         {
           "name": "NTPsec",
-          "version": "1.2.3"
+          "version": "1.2.3",
+          "accuracy": 0.0067
         },
         {
           "name": "ntp",
-          "version": "4.2.8"
+          "version": "4.2.8",
+          "accuracy": 0.001
         }
       ]
     },
@@ -267,7 +277,6 @@
         "url": "https://matt.simerson.net/"
       },
       "date": "2025-05-16",
-      "accuracy": 4.02e-7,
       "os": {
         "name": "Pi OS",
         "version": "12"
@@ -284,15 +293,18 @@
       "daemon": [
         {
           "name": "chrony",
-          "version": "4.6.1"
+          "version": "4.6.1",
+          "accuracy": 4.02e-7
         },
         {
           "name": "NTPsec",
-          "version": "1.2.3"
+          "version": "1.2.3",
+          "accuracy": 0.0034
         },
         {
           "name": "ntp",
-          "version": "4.2.8"
+          "version": "4.2.8",
+          "accuracy": 0.1
         }
       ]
     },
@@ -302,7 +314,6 @@
         "email": "",
         "url": "https://www.philrandal.co.uk/blog/archives/2019/04/entry_213.html"
       },
-      "accuracy": 0.0001,
       "date": "2023-09-19",
       "os": {
         "name": "Pi OS",
@@ -318,7 +329,8 @@
       },
       "daemon": [
         {
-          "name": "NTPsec"
+          "name": "NTPsec",
+          "accuracy": 0.0001
         }
       ],
       "url": "https://www.philrandal.co.uk/blog/archives/2019/04/entry_213.html"
@@ -329,7 +341,6 @@
         "email": "",
         "url": "https://github.com/tiagofreire-pt/"
       },
-      "accuracy": 1e-8,
       "date": "2025-01-17",
       "os": {
         "name": "Pi OS",
@@ -346,7 +357,8 @@
       "daemon": [
         {
           "name": "chrony",
-          "version": "4.6.1"
+          "version": "4.6.1",
+          "accuracy": 1e-8
         }
       ],
       "url": "https://github.com/tiagofreire-pt/rpi_uputronics_stratum1_chrony"
@@ -357,7 +369,6 @@
         "email": "",
         "url": "https://austinsnerdythings.com/"
       },
-      "accuracy": 2e-8,
       "date": "2025-02-14",
       "os": {
         "name": "Pi OS",
@@ -374,7 +385,8 @@
       "daemon": [
         {
           "name": "chrony",
-          "version": ""
+          "version": "",
+          "accuracy": 2e-8
         }
       ],
       "url": "https://austinsnerdythings.com/2025/02/14/revisiting-microsecond-accurate-ntp-for-raspberry-pi-with-gps-pps-in-2025/"
@@ -385,7 +397,6 @@
         "email": "",
         "url": "https://austinsnerdythings.com/"
       },
-      "accuracy": 2e-8,
       "date": "2025-02-14",
       "os": {
         "name": "Pi OS",
@@ -402,7 +413,8 @@
       "daemon": [
         {
           "name": "chrony",
-          "version": ""
+          "version": "",
+          "accuracy": 2e-8
         }
       ],
       "url": "https://austinsnerdythings.com/2025/02/14/revisiting-microsecond-accurate-ntp-for-raspberry-pi-with-gps-pps-in-2025/"
@@ -413,7 +425,6 @@
         "email": "",
         "url": "https://conorrobinson.ie/"
       },
-      "accuracy": 3.3e-8,
       "date": "2024-02-28",
       "os": {
         "name": "Pi OS",
@@ -430,7 +441,8 @@
       "daemon": [
         {
           "name": "chrony",
-          "version": "4.6.1"
+          "version": "4.6.1",
+          "accuracy": 3.3e-8
         }
       ],
       "url": "https://conorrobinson.ie/raspberry-pi-ntp-server-part-1/"
@@ -441,7 +453,6 @@
         "email": "",
         "url": "https://austinsnerdythings.com/"
       },
-      "accuracy": 0.00001,
       "date": "2021-04-19",
       "os": {
         "name": "Raspbian",
@@ -458,7 +469,8 @@
       "daemon": [
         {
           "name": "chrony",
-          "version": "4.6.1"
+          "version": "4.6.1",
+          "accuracy": 0.00001
         }
       ],
       "url": "https://austinsnerdythings.com/2021/04/19/microsecond-accurate-ntp-with-a-raspberry-pi-and-pps-gps/"
@@ -469,7 +481,6 @@
         "email": "",
         "url": "https://www.jacobdeane.com/"
       },
-      "accuracy": 0.001,
       "date": "2020-11-09",
       "os": {
         "name": "Pi OS",
@@ -487,7 +498,8 @@
       "daemon": [
         {
           "name": "ntp",
-          "version": "4.2.8p15"
+          "version": "4.2.8p15",
+          "accuracy": 0.001
         }
       ],
       "url": "https://www.jacobdeane.com/iot/2020/building-a-gps-based-time-server/"
@@ -498,7 +510,6 @@
         "email": "",
         "url": "https://weberblog.net/"
       },
-      "accuracy": 0.002,
       "date": "2019-02-06",
       "os": {
         "name": "Raspbian",
@@ -515,7 +526,8 @@
       "daemon": [
         {
           "name": "ntp",
-          "version": "4.2.8p12"
+          "version": "4.2.8p12",
+          "accuracy": 0.002
         }
       ],
       "url": "https://weberblog.net/ntp-server-via-gps-on-a-raspberry-pi/"
@@ -526,7 +538,6 @@
         "email": "",
         "url": "https://www.satsignal.eu/"
       },
-      "accuracy": 0.00003,
       "date": "2025-05-01",
       "os": {
         "name": "Raspbian",
@@ -543,7 +554,8 @@
       "daemon": [
         {
           "name": "ntp",
-          "version": "4.2.8"
+          "version": "4.2.8",
+          "accuracy": 0.00003
         }
       ],
       "url": "https://www.satsignal.eu/ntp/Raspberry-Pi-NTP.html"
@@ -554,7 +566,6 @@
         "email": "",
         "url": ""
       },
-      "accuracy": 0.0001,
       "date": "2018-11-30",
       "os": {
         "name": "Raspbian",
@@ -572,7 +583,8 @@
       "daemon": [
         {
           "name": "ntp",
-          "version": "4.2.8"
+          "version": "4.2.8",
+          "accuracy": 0.0001
         }
       ],
       "url": "https://ava.upuaut.net/?p=951"

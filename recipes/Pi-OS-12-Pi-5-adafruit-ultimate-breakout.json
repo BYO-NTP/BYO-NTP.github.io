@@ -4,7 +4,6 @@
         "email": "",
         "url": "https://austinsnerdythings.com/"
     },
-    "accuracy": 0.00000002,
     "date": "2025-02-14",
     "os": {
         "name": "Pi OS",
@@ -21,7 +20,8 @@
     "daemon": [
         {
             "name": "chrony",
-            "version": ""
+            "version": "",
+            "accuracy": 0.00000002
         }
     ],
     "url": "https://austinsnerdythings.com/2025/02/14/revisiting-microsecond-accurate-ntp-for-raspberry-pi-with-gps-pps-in-2025/"
