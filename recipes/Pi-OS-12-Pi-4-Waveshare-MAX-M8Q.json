@@ -21,12 +21,12 @@
         {
             "name": "chrony",
             "version": "4.6.1",
-            "accuracy": 0.000002850
+            "accuracy": 0.00000285
         },
         {
             "name": "NTPsec",
             "version": "1.2.3",
-            "accuracy": 0.0067
+            "accuracy": 0.0000063
         },
         {
             "name": "ntp",

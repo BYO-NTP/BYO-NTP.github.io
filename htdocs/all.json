@@ -6,6 +6,44 @@
         "email": "",
         "url": "https://matt.simerson.net/"
       },
+      "date": "2025-05-18",
+      "os": {
+        "name": "FreeBSD",
+        "version": "14"
+      },
+      "server": {
+        "manufacturer": "Chuwi",
+        "product": "Larkbox X"
+      },
+      "gnss": {
+        "manufacturer": "Stratum",
+        "product": "VK-162",
+        "revision": ""
+      },
+      "daemon": [
+        {
+          "name": "chrony",
+          "version": "4.6.1",
+          "accuracy": 0.01
+        },
+        {
+          "name": "NTPsec",
+          "version": "1.2.3",
+          "accuracy": 0.0379
+        },
+        {
+          "name": "ntp",
+          "version": "4.2.8",
+          "accuracy": 0.01
+        }
+      ]
+    },
+    {
+      "author": {
+        "name": "Matt Simerson",
+        "email": "",
+        "url": "https://matt.simerson.net/"
+      },
       "date": "2025-05-12",
       "os": {
         "name": "FreeBSD",
@@ -103,12 +141,12 @@
         {
           "name": "NTPsec",
           "version": "1.2.3",
-          "accuracy": 0.000003
+          "accuracy": 0.001
         },
         {
           "name": "ntp",
           "version": "4.2.8",
-          "accuracy": 0.000003
+          "accuracy": 0.001
         }
       ]
     },
@@ -261,7 +299,7 @@
         {
           "name": "NTPsec",
           "version": "1.2.3",
-          "accuracy": 0.0067
+          "accuracy": 0.0000063
         },
         {
           "name": "ntp",
@@ -299,7 +337,7 @@
         {
           "name": "NTPsec",
           "version": "1.2.3",
-          "accuracy": 0.0034
+          "accuracy": 0.0000037
         },
         {
           "name": "ntp",
