@@ -33,5 +33,6 @@
             "version": "4.2.8",
             "accuracy": 0.001
         }
-    ]
+    ],
+    "url": "https://github.com/BYO-NTP/recipes/wiki/FreeBSD-14-Pi-4-Waveshare-MAX%E2%80%90M8Q"
 }

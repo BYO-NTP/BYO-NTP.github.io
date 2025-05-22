@@ -144,20 +144,6 @@ function ajax({ method = 'GET', url, data = null, headers = {} }) {
     });
 }
 
-function getRecipeUrl(recipe) {
-  if (recipe.url) return recipe.url;
-
-  return `https://github.com/BYO-NTP/recipes/wiki/` +
-  `${
-    recipe.os.name.replace('-', '%E2%80%90').replace(/\s+/g, '-')}-${
-    recipe.os.version.replace('-', '%E2%80%90').replace(/\s+/g, '-')}-${
-    recipe.server.manufacturer.replace('-', '%E2%80%90').replace(/\s+/g, '-')}-${
-    recipe.server.product.replace('-', '%E2%80%90').replace(/\s+/g, '-')}-${
-    recipe.gnss.manufacturer.replace('-', '%E2%80%90').replace(/\s+/g, '-')}-${
-    recipe.gnss.product.replace('-', '%E2%80%90').replace(/\s+/g, '-')
-  }`
-}
-
 const accuracyMap = {
   's': 1,
   'ms': 0.001,
@@ -196,7 +182,7 @@ function populateRecipesTable(all) {
     const tr = document.createElement("tr");
 
     tr.addEventListener("click", () => {
-      window.location.href = getRecipeUrl(recipe)
+      window.location.href = recipe.url
     });
 
     const dateTd = document.createElement("td");

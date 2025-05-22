@@ -34,5 +34,6 @@
             "version": "4.2.8",
             "accuracy": 0.00001
         }
-    ]
+    ],
+    "url": "https://github.com/BYO-NTP/recipes/wiki/FreeBSD-14-Larkbox-WD22UGRC"
 }

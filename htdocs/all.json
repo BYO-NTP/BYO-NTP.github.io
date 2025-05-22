@@ -6,44 +6,6 @@
         "email": "",
         "url": "https://matt.simerson.net/"
       },
-      "date": "2025-05-18",
-      "os": {
-        "name": "FreeBSD",
-        "version": "14"
-      },
-      "server": {
-        "manufacturer": "Chuwi",
-        "product": "Larkbox X"
-      },
-      "gnss": {
-        "manufacturer": "Stratum",
-        "product": "VK-162",
-        "revision": ""
-      },
-      "daemon": [
-        {
-          "name": "chrony",
-          "version": "4.6.1",
-          "accuracy": 0.01
-        },
-        {
-          "name": "NTPsec",
-          "version": "1.2.3",
-          "accuracy": 0.0379
-        },
-        {
-          "name": "ntp",
-          "version": "4.2.8",
-          "accuracy": 0.01
-        }
-      ]
-    },
-    {
-      "author": {
-        "name": "Matt Simerson",
-        "email": "",
-        "url": "https://matt.simerson.net/"
-      },
       "date": "2025-05-12",
       "os": {
         "name": "FreeBSD",
@@ -74,7 +36,47 @@
           "version": "4.2.8",
           "accuracy": 0.00001
         }
-      ]
+      ],
+      "url": "https://github.com/BYO-NTP/recipes/wiki/FreeBSD-14-Larkbox-WD22UGRC"
+    },
+    {
+      "author": {
+        "name": "Matt Simerson",
+        "email": "",
+        "url": "https://matt.simerson.net/"
+      },
+      "date": "2025-05-18",
+      "os": {
+        "name": "FreeBSD",
+        "version": "14"
+      },
+      "server": {
+        "manufacturer": "Chuwi",
+        "product": "Larkbox X"
+      },
+      "gnss": {
+        "manufacturer": "Stratum",
+        "product": "VK-162",
+        "revision": ""
+      },
+      "daemon": [
+        {
+          "name": "chrony",
+          "version": "4.6.1",
+          "accuracy": 0.01
+        },
+        {
+          "name": "NTPsec",
+          "version": "1.2.3",
+          "accuracy": 0.0379
+        },
+        {
+          "name": "ntp",
+          "version": "4.2.8",
+          "accuracy": 0.01
+        }
+      ],
+      "url": "https://github.com/BYO-NTP/recipes/wiki/FreeBSD-14-Larkbox-VK%E2%80%90162"
     },
     {
       "author": {
@@ -111,7 +113,46 @@
           "version": "4.2.8",
           "accuracy": 0.01
         }
-      ]
+      ],
+      "url": "https://github.com/BYO-NTP/recipes/wiki/FreeBSD-14-Pi-4-VK%E2%80%90162"
+    },
+    {
+      "author": {
+        "name": "Matt Simerson",
+        "email": "",
+        "url": "https://matt.simerson.net/"
+      },
+      "date": "2025-05-22",
+      "os": {
+        "name": "FreeBSD",
+        "version": "14"
+      },
+      "server": {
+        "manufacturer": "Raspberry Pi",
+        "product": "4"
+      },
+      "gnss": {
+        "manufacturer": "Waveshare",
+        "product": "MAX-M8Q GNSS HAT"
+      },
+      "daemon": [
+        {
+          "name": "chrony",
+          "version": "4.6.1",
+          "accuracy": 0.01
+        },
+        {
+          "name": "NTPsec",
+          "version": "1.2.3",
+          "accuracy": 0.01
+        },
+        {
+          "name": "ntp",
+          "version": "4.2.8",
+          "accuracy": 0.01
+        }
+      ],
+      "url": "https://github.com/BYO-NTP/recipes/wiki/FreeBSD-14-Pi-4-WD22UGRC"
     },
     {
       "author": {
@@ -148,7 +189,8 @@
           "version": "4.2.8",
           "accuracy": 0.001
         }
-      ]
+      ],
+      "url": "https://github.com/BYO-NTP/recipes/wiki/FreeBSD-14-Pi-4-Waveshare-MAX%E2%80%90M8Q"
     },
     {
       "author": {
@@ -240,6 +282,45 @@
         "email": "",
         "url": "https://matt.simerson.net/"
       },
+      "date": "2025-05-16",
+      "os": {
+        "name": "Pi OS",
+        "version": "12"
+      },
+      "server": {
+        "manufacturer": "Raspberry Pi",
+        "product": "4"
+      },
+      "gnss": {
+        "manufacturer": "Huawei",
+        "product": "WD22UGRC",
+        "revision": "CT"
+      },
+      "daemon": [
+        {
+          "name": "chrony",
+          "version": "4.6.1",
+          "accuracy": 0.01
+        },
+        {
+          "name": "NTPsec",
+          "version": "1.2.3",
+          "accuracy": 0.01
+        },
+        {
+          "name": "ntp",
+          "version": "4.2.8",
+          "accuracy": 0.01
+        }
+      ],
+      "url": "https://github.com/BYO-NTP/recipes/wiki/Pi-OS-12-Pi-5-WD22UGRC"
+    },
+    {
+      "author": {
+        "name": "Matt Simerson",
+        "email": "",
+        "url": "https://matt.simerson.net/"
+      },
       "date": "2025-05-01",
       "os": {
         "name": "Pi OS",
@@ -269,7 +350,8 @@
           "version": "4.2.8",
           "accuracy": 0.01
         }
-      ]
+      ],
+      "url": "https://github.com/BYO-NTP/recipes/wiki/Pi-OS-12-Pi-4-VK%E2%80%90162"
     },
     {
       "author": {
@@ -306,7 +388,8 @@
           "version": "4.2.8",
           "accuracy": 0.000003
         }
-      ]
+      ],
+      "url": "https://github.com/BYO-NTP/recipes/wiki/Pi-OS-12-Pi-4-Waveshare-MAX%E2%80%90M8Q"
     },
     {
       "author": {
@@ -344,7 +427,8 @@
           "version": "4.2.8",
           "accuracy": 0.000003
         }
-      ]
+      ],
+      "url": "https://github.com/BYO-NTP/recipes/wiki/Pi-OS-12-Pi-5-WD22UGRC"
     },
     {
       "author": {
@@ -629,35 +713,6 @@
     },
     {
       "author": {
-        "name": "Eric S Raymond",
-        "email": "",
-        "url": ""
-      },
-      "date": "2018-06-27",
-      "os": {
-        "name": "Raspbian Lite",
-        "version": "9"
-      },
-      "server": {
-        "manufacturer": "Raspberry Pi",
-        "product": "3"
-      },
-      "gnss": {
-        "manufacturer": "Uputronics",
-        "product": "GPS Expansion board for Pi",
-        "revision": ""
-      },
-      "daemon": [
-        {
-          "name": "NTPsec",
-          "version": "",
-          "accuracy": 0.00001
-        }
-      ],
-      "url": "https://www.ntpsec.org/white-papers/stratum-1-microserver-howto/"
-    },
-    {
-      "author": {
         "name": "Anthony Stirk",
         "email": "",
         "url": ""
@@ -684,6 +739,35 @@
         }
       ],
       "url": "https://ava.upuaut.net/?p=951"
+    },
+    {
+      "author": {
+        "name": "Eric S Raymond",
+        "email": "",
+        "url": ""
+      },
+      "date": "2018-06-27",
+      "os": {
+        "name": "Raspbian Lite",
+        "version": "9"
+      },
+      "server": {
+        "manufacturer": "Raspberry Pi",
+        "product": "3"
+      },
+      "gnss": {
+        "manufacturer": "Uputronics",
+        "product": "GPS Expansion board for Pi",
+        "revision": ""
+      },
+      "daemon": [
+        {
+          "name": "NTPsec",
+          "version": "",
+          "accuracy": 0.00001
+        }
+      ],
+      "url": "https://www.ntpsec.org/white-papers/stratum-1-microserver-howto/"
     }
   ],
   "server": [
