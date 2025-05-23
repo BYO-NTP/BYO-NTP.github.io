@@ -6,45 +6,6 @@
         "email": "",
         "url": "https://matt.simerson.net/"
       },
-      "date": "2025-05-12",
-      "os": {
-        "name": "FreeBSD",
-        "version": "14"
-      },
-      "server": {
-        "manufacturer": "Chuwi",
-        "product": "Larkbox X"
-      },
-      "gnss": {
-        "manufacturer": "Huawei",
-        "product": "WD22UGRC",
-        "revision": "CT"
-      },
-      "daemon": [
-        {
-          "name": "chrony",
-          "version": "4.6.1",
-          "accuracy": 0.00001
-        },
-        {
-          "name": "NTPsec",
-          "version": "1.2.3",
-          "accuracy": 0.00001
-        },
-        {
-          "name": "ntp",
-          "version": "4.2.8",
-          "accuracy": 0.00001
-        }
-      ],
-      "url": "https://github.com/BYO-NTP/recipes/wiki/FreeBSD-14-Larkbox-WD22UGRC"
-    },
-    {
-      "author": {
-        "name": "Matt Simerson",
-        "email": "",
-        "url": "https://matt.simerson.net/"
-      },
       "date": "2025-05-18",
       "os": {
         "name": "FreeBSD",
@@ -55,9 +16,8 @@
         "product": "Larkbox X"
       },
       "gnss": {
-        "manufacturer": "Stratum",
-        "product": "VK-162",
-        "revision": ""
+        "manufacturer": "Stratux",
+        "product": "VK-162"
       },
       "daemon": [
         {
@@ -84,6 +44,45 @@
         "email": "",
         "url": "https://matt.simerson.net/"
       },
+      "date": "2025-05-12",
+      "os": {
+        "name": "FreeBSD",
+        "version": "14"
+      },
+      "server": {
+        "manufacturer": "Chuwi",
+        "product": "Larkbox X"
+      },
+      "gnss": {
+        "manufacturer": "Huawei",
+        "product": "WD22UGRC",
+        "revision": "CT"
+      },
+      "daemon": [
+        {
+          "name": "chrony",
+          "version": "4.6.1",
+          "accuracy": 0.0000117
+        },
+        {
+          "name": "NTPsec",
+          "version": "1.2.3",
+          "accuracy": 0.000099
+        },
+        {
+          "name": "ntp",
+          "version": "4.2.8",
+          "accuracy": 0.00797
+        }
+      ],
+      "url": "https://github.com/BYO-NTP/recipes/wiki/FreeBSD-14-Larkbox-WD22UGRC"
+    },
+    {
+      "author": {
+        "name": "Matt Simerson",
+        "email": "",
+        "url": "https://matt.simerson.net/"
+      },
       "date": "2025-05-01",
       "os": {
         "name": "FreeBSD",
@@ -91,7 +90,49 @@
       },
       "server": {
         "manufacturer": "Raspberry Pi",
-        "product": "4"
+        "product": "4",
+        "model": "B",
+        "revision": "1.4"
+      },
+      "gnss": {
+        "manufacturer": "Waveshare",
+        "product": "MAX-M8Q GNSS HAT"
+      },
+      "daemon": [
+        {
+          "name": "chrony",
+          "version": "4.6.1",
+          "accuracy": 0.000003
+        },
+        {
+          "name": "NTPsec",
+          "version": "1.2.3",
+          "accuracy": 0.001
+        },
+        {
+          "name": "ntp",
+          "version": "4.2.8",
+          "accuracy": 0.001
+        }
+      ],
+      "url": "https://github.com/BYO-NTP/recipes/wiki/FreeBSD-14-Pi-4-MAX%E2%80%90M8Q"
+    },
+    {
+      "author": {
+        "name": "Matt Simerson",
+        "email": "",
+        "url": "https://matt.simerson.net/"
+      },
+      "date": "2025-05-01",
+      "os": {
+        "name": "FreeBSD",
+        "version": "14"
+      },
+      "server": {
+        "manufacturer": "Raspberry Pi",
+        "product": "4",
+        "model": "B",
+        "revision": "1.4"
       },
       "gnss": {
         "manufacturer": "Stratux",
@@ -129,7 +170,9 @@
       },
       "server": {
         "manufacturer": "Raspberry Pi",
-        "product": "4"
+        "product": "4",
+        "model": "B",
+        "revision": "1.4"
       },
       "gnss": {
         "manufacturer": "Waveshare",
@@ -153,44 +196,6 @@
         }
       ],
       "url": "https://github.com/BYO-NTP/recipes/wiki/FreeBSD-14-Pi-4-WD22UGRC"
-    },
-    {
-      "author": {
-        "name": "Matt Simerson",
-        "email": "",
-        "url": "https://matt.simerson.net/"
-      },
-      "date": "2025-05-01",
-      "os": {
-        "name": "FreeBSD",
-        "version": "14"
-      },
-      "server": {
-        "manufacturer": "Raspberry Pi",
-        "product": "4"
-      },
-      "gnss": {
-        "manufacturer": "Waveshare",
-        "product": "MAX-M8Q GNSS HAT"
-      },
-      "daemon": [
-        {
-          "name": "chrony",
-          "version": "4.6.1",
-          "accuracy": 0.000003
-        },
-        {
-          "name": "NTPsec",
-          "version": "1.2.3",
-          "accuracy": 0.001
-        },
-        {
-          "name": "ntp",
-          "version": "4.2.8",
-          "accuracy": 0.001
-        }
-      ],
-      "url": "https://github.com/BYO-NTP/recipes/wiki/FreeBSD-14-Pi-4-Waveshare-MAX%E2%80%90M8Q"
     },
     {
       "author": {
@@ -282,7 +287,7 @@
         "email": "",
         "url": "https://matt.simerson.net/"
       },
-      "date": "2025-05-16",
+      "date": "2025-05-01",
       "os": {
         "name": "Pi OS",
         "version": "12"
@@ -292,28 +297,27 @@
         "product": "4"
       },
       "gnss": {
-        "manufacturer": "Huawei",
-        "product": "WD22UGRC",
-        "revision": "CT"
+        "manufacturer": "Waveshare",
+        "product": "MAX-M8Q GNSS HAT"
       },
       "daemon": [
         {
           "name": "chrony",
           "version": "4.6.1",
-          "accuracy": 0.01
+          "accuracy": 0.00000285
         },
         {
           "name": "NTPsec",
           "version": "1.2.3",
-          "accuracy": 0.01
+          "accuracy": 0.0000063
         },
         {
           "name": "ntp",
           "version": "4.2.8",
-          "accuracy": 0.01
+          "accuracy": 0.000003
         }
       ],
-      "url": "https://github.com/BYO-NTP/recipes/wiki/Pi-OS-12-Pi-5-WD22UGRC"
+      "url": "https://github.com/BYO-NTP/recipes/wiki/Pi-OS-12-Pi-4-Waveshare-MAX%E2%80%90M8Q"
     },
     {
       "author": {
@@ -359,44 +363,6 @@
         "email": "",
         "url": "https://matt.simerson.net/"
       },
-      "date": "2025-05-01",
-      "os": {
-        "name": "Pi OS",
-        "version": "12"
-      },
-      "server": {
-        "manufacturer": "Raspberry Pi",
-        "product": "4"
-      },
-      "gnss": {
-        "manufacturer": "Waveshare",
-        "product": "MAX-M8Q GNSS HAT"
-      },
-      "daemon": [
-        {
-          "name": "chrony",
-          "version": "4.6.1",
-          "accuracy": 0.00000285
-        },
-        {
-          "name": "NTPsec",
-          "version": "1.2.3",
-          "accuracy": 0.0000063
-        },
-        {
-          "name": "ntp",
-          "version": "4.2.8",
-          "accuracy": 0.000003
-        }
-      ],
-      "url": "https://github.com/BYO-NTP/recipes/wiki/Pi-OS-12-Pi-4-Waveshare-MAX%E2%80%90M8Q"
-    },
-    {
-      "author": {
-        "name": "Matt Simerson",
-        "email": "",
-        "url": "https://matt.simerson.net/"
-      },
       "date": "2025-05-16",
       "os": {
         "name": "Pi OS",
@@ -404,7 +370,9 @@
       },
       "server": {
         "manufacturer": "Raspberry Pi",
-        "product": "5"
+        "product": "4",
+        "model": "B",
+        "revision": "1.4"
       },
       "gnss": {
         "manufacturer": "Huawei",
@@ -415,17 +383,17 @@
         {
           "name": "chrony",
           "version": "4.6.1",
-          "accuracy": 4.02e-7
+          "accuracy": 0.01
         },
         {
           "name": "NTPsec",
           "version": "1.2.3",
-          "accuracy": 0.0000037
+          "accuracy": 0.01
         },
         {
           "name": "ntp",
           "version": "4.2.8",
-          "accuracy": 0.000003
+          "accuracy": 0.01
         }
       ],
       "url": "https://github.com/BYO-NTP/recipes/wiki/Pi-OS-12-Pi-5-WD22UGRC"
@@ -484,6 +452,47 @@
         }
       ],
       "url": "https://github.com/tiagofreire-pt/rpi_uputronics_stratum1_chrony"
+    },
+    {
+      "author": {
+        "name": "Matt Simerson",
+        "email": "",
+        "url": "https://matt.simerson.net/"
+      },
+      "date": "2025-05-16",
+      "os": {
+        "name": "Pi OS",
+        "version": "12"
+      },
+      "server": {
+        "manufacturer": "Raspberry Pi",
+        "product": "5",
+        "model": "B",
+        "revision": "1.0"
+      },
+      "gnss": {
+        "manufacturer": "Huawei",
+        "product": "WD22UGRC",
+        "revision": "CT"
+      },
+      "daemon": [
+        {
+          "name": "chrony",
+          "version": "4.6.1",
+          "accuracy": 4.02e-7
+        },
+        {
+          "name": "NTPsec",
+          "version": "1.2.3",
+          "accuracy": 0.0000037
+        },
+        {
+          "name": "ntp",
+          "version": "4.2.8",
+          "accuracy": 0.000003
+        }
+      ],
+      "url": "https://github.com/BYO-NTP/recipes/wiki/Pi-OS-12-Pi-5-WD22UGRC"
     },
     {
       "author": {

@@ -11,7 +11,9 @@
     },
     "server": {
         "manufacturer": "Raspberry Pi",
-        "product": "4"
+        "product": "4",
+        "model": "B",
+        "revision": "1.4"
     },
     "gnss": {
         "manufacturer": "Waveshare",

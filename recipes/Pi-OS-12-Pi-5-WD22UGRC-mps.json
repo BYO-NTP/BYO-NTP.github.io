@@ -11,7 +11,9 @@
     },
     "server": {
         "manufacturer": "Raspberry Pi",
-        "product": "5"
+        "product": "5",
+        "model": "B",
+        "revision": "1.0"
     },
     "gnss": {
         "manufacturer": "Huawei",

@@ -14,9 +14,8 @@
         "product": "Larkbox X"
     },
     "gnss": {
-        "manufacturer": "Stratum",
-        "product": "VK-162",
-        "revision": ""
+        "manufacturer": "Stratux",
+        "product": "VK-162"
     },
     "daemon": [
         {
