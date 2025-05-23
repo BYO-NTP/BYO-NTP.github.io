@@ -53,6 +53,7 @@
       margin-top: 20px;
       padding: 5px;
       text-align: center;
+      font-size: 0.7em;
       /* border-top: 1px solid #ddd; */
     }
 </style>
@@ -87,7 +88,7 @@
             <option value="NTPsec">NTPsec</option>
           </select>
         </th>
-        <th>Accuracy<br>
+        <th>Accuracy<a href="#1"><sup>1</sup></a><br>
           <select id="accuracyFilter">
             <option value="all">All</option>
             <option value="s">second</option>
@@ -103,9 +104,13 @@
     </tbody>
   </table>
 
+  <h4>Footnotes</h4>
+  <ol style="font-size: 0.8em;">
+    <li><a name="1">Accuracy values of 0.01 are placeholders</a></li>
+  </ol>
+
   <footer>
     <p>BYO-NTP is a community project. Please contribute on <a href="https://github.com/BYO-NTP/recipes">GitHub</a>.</p>
-    <p>BYO-NTP is not affiliated with any of the manufacturers listed on this site.</p>
   </footer>
 
   <script>
