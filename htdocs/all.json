@@ -33,7 +33,7 @@
         {
           "name": "ntp",
           "version": "4.2.8",
-          "accuracy": 0.01
+          "accuracy": 0.0104
         }
       ],
       "url": "https://github.com/BYO-NTP/recipes/wiki/FreeBSD-14-Larkbox-VK%E2%80%90162"
@@ -383,7 +383,7 @@
         {
           "name": "chrony",
           "version": "4.6.1",
-          "accuracy": 0.01
+          "accuracy": 4.53e-7
         },
         {
           "name": "NTPsec",
@@ -431,7 +431,7 @@
         {
           "name": "ntp",
           "version": "4.2.8",
-          "accuracy": 0.01
+          "accuracy": 0.000002
         }
       ],
       "url": "https://github.com/BYO-NTP/recipes/wiki/Pi-OS-12-Pi-4-Waveshare-MAX%E2%80%90M8Q"

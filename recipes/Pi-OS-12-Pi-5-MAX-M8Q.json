@@ -31,7 +31,7 @@
         {
             "name": "ntp",
             "version": "4.2.8",
-            "accuracy": 0.01
+            "accuracy": 0.000002
         }
    ],
    "url": "https://github.com/BYO-NTP/recipes/wiki/Pi-OS-12-Pi-4-Waveshare-MAX%E2%80%90M8Q"
