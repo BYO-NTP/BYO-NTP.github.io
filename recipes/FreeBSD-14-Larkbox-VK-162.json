@@ -21,7 +21,7 @@
         {
             "name": "chrony",
             "version": "4.6.1",
-            "accuracy": 0.01
+            "accuracy": 0.00688
         },
         {
             "name": "NTPsec",

@@ -28,7 +28,7 @@
         {
             "name": "NTPsec",
             "version": "1.2.3",
-            "accuracy": 0.01
+            "accuracy": 0.0134
         },
         {
             "name": "ntp",
