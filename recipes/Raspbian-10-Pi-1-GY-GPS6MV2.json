@@ -1,28 +1,28 @@
 {
-    "author": {
-        "name": "Johannes Weber",
-        "email": "",
-        "url": "https://weberblog.net/"
-    },
-    "date": "2019-02-06",
-    "os": {
-        "name": "Raspbian",
-        "version": "10"
-    },
-    "server": {
-        "manufacturer": "Raspberry Pi",
-        "product": "1"
-    },
-    "gnss": {
-        "manufacturer": "GY",
-        "product": "GPS6MV2"
-    },
-    "daemon": [
-        {
-            "name": "ntp",
-            "version": "4.2.8p12",
-            "accuracy": 0.002
-        }
-    ],
-    "url": "https://weberblog.net/ntp-server-via-gps-on-a-raspberry-pi/"
+  "author": {
+    "name": "Johannes Weber",
+    "email": "",
+    "url": "https://weberblog.net/"
+  },
+  "date": "2019-02-06",
+  "os": {
+    "name": "Raspbian",
+    "version": "10"
+  },
+  "server": {
+    "manufacturer": "Raspberry Pi",
+    "product": "1"
+  },
+  "gnss": {
+    "manufacturer": "GY",
+    "product": "GPS6MV2"
+  },
+  "daemon": [
+    {
+      "name": "ntp",
+      "version": "4.2.8p12",
+      "accuracy": 0.002
+    }
+  ],
+  "url": "https://weberblog.net/ntp-server-via-gps-on-a-raspberry-pi/"
 }

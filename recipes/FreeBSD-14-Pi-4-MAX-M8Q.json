@@ -1,40 +1,40 @@
 {
-    "author": {
-        "name": "Matt Simerson",
-        "email": "",
-        "url": "https://matt.simerson.net/"
+  "author": {
+    "name": "Matt Simerson",
+    "email": "",
+    "url": "https://matt.simerson.net/"
+  },
+  "date": "2025-05-01",
+  "os": {
+    "name": "FreeBSD",
+    "version": "14"
+  },
+  "server": {
+    "manufacturer": "Raspberry Pi",
+    "product": "4",
+    "model": "B",
+    "revision": "1.4"
+  },
+  "gnss": {
+    "manufacturer": "Waveshare",
+    "product": "MAX-M8Q GNSS HAT"
+  },
+  "daemon": [
+    {
+      "name": "chrony",
+      "version": "4.6.1",
+      "accuracy": 0.000003
     },
-    "date": "2025-05-01",
-    "os": {
-        "name": "FreeBSD",
-        "version": "14"
+    {
+      "name": "NTPsec",
+      "version": "1.2.3",
+      "accuracy": 0.001
     },
-    "server": {
-        "manufacturer": "Raspberry Pi",
-        "product": "4",
-        "model": "B",
-        "revision": "1.4"
-    },
-    "gnss": {
-        "manufacturer": "Waveshare",
-        "product": "MAX-M8Q GNSS HAT"
-    },
-    "daemon": [
-        {
-            "name": "chrony",
-            "version": "4.6.1",
-            "accuracy": 0.000003
-        },
-        {
-            "name": "NTPsec",
-            "version": "1.2.3",
-            "accuracy": 0.001
-        },
-        {
-            "name": "ntp",
-            "version": "4.2.8",
-            "accuracy": 0.001
-        }
-    ],
-    "url": "https://github.com/BYO-NTP/recipes/wiki/FreeBSD-14-Pi-4-MAX%E2%80%90M8Q"
+    {
+      "name": "ntp",
+      "version": "4.2.8",
+      "accuracy": 0.001
+    }
+  ],
+  "url": "https://github.com/BYO-NTP/recipes/wiki/FreeBSD-14-Pi-4-MAX%E2%80%90M8Q"
 }

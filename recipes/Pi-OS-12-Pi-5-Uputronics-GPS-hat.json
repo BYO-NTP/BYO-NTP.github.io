@@ -1,28 +1,28 @@
 {
-    "author": {
-        "name": "Tiago Friere",
-        "email": "",
-        "url": "https://github.com/tiagofreire-pt/"
-    },
-    "date": "2025-01-17",
-    "os": {
-        "name": "Pi OS",
-        "version": "12"
-    },
-    "server": {
-        "manufacturer": "Raspberry Pi",
-        "product": "5"
-    },
-    "gnss": {
-        "manufacturer": "Uputronics",
-        "product": "GPS HAT"
-    },
-    "daemon": [
-        {
-            "name": "chrony",
-            "version": "4.6.1",
-            "accuracy": 0.00000001
-        }
-    ],
-    "url": "https://github.com/tiagofreire-pt/rpi_uputronics_stratum1_chrony"
+  "author": {
+    "name": "Tiago Friere",
+    "email": "",
+    "url": "https://github.com/tiagofreire-pt/"
+  },
+  "date": "2025-01-17",
+  "os": {
+    "name": "Pi OS",
+    "version": "12"
+  },
+  "server": {
+    "manufacturer": "Raspberry Pi",
+    "product": "5"
+  },
+  "gnss": {
+    "manufacturer": "Uputronics",
+    "product": "GPS HAT"
+  },
+  "daemon": [
+    {
+      "name": "chrony",
+      "version": "4.6.1",
+      "accuracy": 0.00000001
+    }
+  ],
+  "url": "https://github.com/tiagofreire-pt/rpi_uputronics_stratum1_chrony"
 }

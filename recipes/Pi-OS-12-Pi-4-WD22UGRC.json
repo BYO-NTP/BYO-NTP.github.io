@@ -1,41 +1,41 @@
 {
-    "author": {
-        "name": "Matt Simerson",
-        "email": "",
-        "url": "https://matt.simerson.net/"
+  "author": {
+    "name": "Matt Simerson",
+    "email": "",
+    "url": "https://matt.simerson.net/"
+  },
+  "date": "2025-05-16",
+  "os": {
+    "name": "Pi OS",
+    "version": "12"
+  },
+  "server": {
+    "manufacturer": "Raspberry Pi",
+    "product": "4",
+    "model": "B",
+    "revision": "1.4"
+  },
+  "gnss": {
+    "manufacturer": "Huawei",
+    "product": "WD22UGRC",
+    "revision": "CT"
+  },
+  "daemon": [
+    {
+      "name": "chrony",
+      "version": "4.6.1",
+      "accuracy": 0.000000453
     },
-    "date": "2025-05-16",
-    "os": {
-        "name": "Pi OS",
-        "version": "12"
+    {
+      "name": "NTPsec",
+      "version": "1.2.3",
+      "accuracy": 0.000004
     },
-    "server": {
-        "manufacturer": "Raspberry Pi",
-        "product": "4",
-        "model": "B",
-        "revision": "1.4"
-    },
-    "gnss": {
-        "manufacturer": "Huawei",
-        "product": "WD22UGRC",
-        "revision": "CT"
-    },
-    "daemon": [
-        {
-            "name": "chrony",
-            "version": "4.6.1" ,
-            "accuracy": 0.000000453
-        },
-        {
-            "name": "NTPsec",
-            "version": "1.2.3",
-            "accuracy": 0.000004
-        },
-        {
-            "name": "ntp",
-            "version": "4.2.8",
-            "accuracy": 0.000004
-        }
-    ],
-    "url": "https://github.com/BYO-NTP/recipes/wiki/Pi-OS-12-Pi-5-WD22UGRC"
+    {
+      "name": "ntp",
+      "version": "4.2.8",
+      "accuracy": 0.000004
+    }
+  ],
+  "url": "https://github.com/BYO-NTP/recipes/wiki/Pi-OS-12-Pi-5-M8T"
 }

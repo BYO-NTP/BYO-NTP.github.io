@@ -1,29 +1,29 @@
 {
-    "author": {
-        "name": "Eric S Raymond",
-        "email": "",
-        "url": ""
-    },
-    "date": "2018-06-27",
-    "os": {
-        "name": "Raspbian Lite",
-        "version": "9"
-    },
-    "server": {
-        "manufacturer": "Raspberry Pi",
-        "product": "3"
-    },
-    "gnss": {
-        "manufacturer": "Adafruit",
-        "product": "GPS Hat for Pi",
-        "revision": ""
-    },
-    "daemon": [
-        {
-            "name": "NTPsec",
-            "version": "",
-            "accuracy": 0.00001
-        }
-    ],
-    "url": "https://www.ntpsec.org/white-papers/stratum-1-microserver-howto/"
+  "author": {
+    "name": "Eric S Raymond",
+    "email": "",
+    "url": ""
+  },
+  "date": "2018-06-27",
+  "os": {
+    "name": "Raspbian Lite",
+    "version": "9"
+  },
+  "server": {
+    "manufacturer": "Raspberry Pi",
+    "product": "3"
+  },
+  "gnss": {
+    "manufacturer": "Adafruit",
+    "product": "GPS Hat for Pi",
+    "revision": ""
+  },
+  "daemon": [
+    {
+      "name": "NTPsec",
+      "version": "",
+      "accuracy": 0.00001
+    }
+  ],
+  "url": "https://www.ntpsec.org/white-papers/stratum-1-microserver-howto/"
 }
