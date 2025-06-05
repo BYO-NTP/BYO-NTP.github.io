@@ -95,19 +95,19 @@
         "revision": "1.4"
       },
       "gnss": {
-        "manufacturer": "Waveshare",
-        "product": "MAX-M8Q GNSS HAT"
+        "manufacturer": "Huawei",
+        "product": "LEA-M8T module"
       },
       "daemon": [
         {
           "name": "chrony",
           "version": "4.6.1",
-          "accuracy": 0.00000441
+          "accuracy": 0.00000141
         },
         {
           "name": "NTPsec",
           "version": "1.2.3",
-          "accuracy": 0.000018
+          "accuracy": 0.000007
         },
         {
           "name": "ntp",
@@ -227,7 +227,7 @@
         {
           "name": "NTPsec",
           "version": "1.2.3",
-          "accuracy": 0.0134
+          "accuracy": 0.00363
         },
         {
           "name": "ntp",
@@ -235,7 +235,7 @@
           "accuracy": 0.013
         }
       ],
-      "url": "https://github.com/BYO-NTP/recipes/wiki/FreeBSD-14-Pi-4-MAX%E2%80%90M8Q"
+      "url": "https://github.com/BYO-NTP/recipes/wiki/FreeBSD-14-Pi-5-MAX%E2%80%90M8Q"
     },
     {
       "author": {
@@ -327,6 +327,47 @@
         "email": "",
         "url": "https://matt.simerson.net/"
       },
+      "date": "2025-05-16",
+      "os": {
+        "name": "Pi OS",
+        "version": "12"
+      },
+      "server": {
+        "manufacturer": "Raspberry Pi",
+        "product": "4",
+        "model": "B",
+        "revision": "1.4"
+      },
+      "gnss": {
+        "manufacturer": "Huawei",
+        "product": "WD22UGRC",
+        "revision": "CT"
+      },
+      "daemon": [
+        {
+          "name": "chrony",
+          "version": "4.6.1",
+          "accuracy": 4.53e-7
+        },
+        {
+          "name": "NTPsec",
+          "version": "1.2.3",
+          "accuracy": 0.000004
+        },
+        {
+          "name": "ntp",
+          "version": "4.2.8",
+          "accuracy": 0.000004
+        }
+      ],
+      "url": "https://github.com/BYO-NTP/recipes/wiki/Pi-OS-12-Pi-5-M8T"
+    },
+    {
+      "author": {
+        "name": "Matt Simerson",
+        "email": "",
+        "url": "https://matt.simerson.net/"
+      },
       "date": "2025-05-01",
       "os": {
         "name": "Pi OS",
@@ -357,7 +398,7 @@
           "accuracy": 0.000003
         }
       ],
-      "url": "https://github.com/BYO-NTP/recipes/wiki/Pi-OS-12-Pi-4-Waveshare-MAX%E2%80%90M8Q"
+      "url": "https://github.com/BYO-NTP/recipes/wiki/Pi-OS-12-Pi-4-MAX%E2%80%90M8Q"
     },
     {
       "author": {
@@ -396,47 +437,6 @@
         }
       ],
       "url": "https://github.com/BYO-NTP/recipes/wiki/Pi-OS-12-Pi-4-VK%E2%80%90162"
-    },
-    {
-      "author": {
-        "name": "Matt Simerson",
-        "email": "",
-        "url": "https://matt.simerson.net/"
-      },
-      "date": "2025-05-16",
-      "os": {
-        "name": "Pi OS",
-        "version": "12"
-      },
-      "server": {
-        "manufacturer": "Raspberry Pi",
-        "product": "4",
-        "model": "B",
-        "revision": "1.4"
-      },
-      "gnss": {
-        "manufacturer": "Huawei",
-        "product": "WD22UGRC",
-        "revision": "CT"
-      },
-      "daemon": [
-        {
-          "name": "chrony",
-          "version": "4.6.1",
-          "accuracy": 4.53e-7
-        },
-        {
-          "name": "NTPsec",
-          "version": "1.2.3",
-          "accuracy": 0.000004
-        },
-        {
-          "name": "ntp",
-          "version": "4.2.8",
-          "accuracy": 0.000004
-        }
-      ],
-      "url": "https://github.com/BYO-NTP/recipes/wiki/Pi-OS-12-Pi-5-M8T"
     },
     {
       "author": {
@@ -515,7 +515,7 @@
           "accuracy": 0.000002
         }
       ],
-      "url": "https://github.com/BYO-NTP/recipes/wiki/Pi-OS-12-Pi-4-Waveshare-MAX%E2%80%90M8Q"
+      "url": "https://github.com/BYO-NTP/recipes/wiki/Pi-OS-12-Pi-4-MAX%E2%80%90M8Q"
     },
     {
       "author": {
@@ -855,6 +855,34 @@
         }
       ],
       "url": "https://www.ntpsec.org/white-papers/stratum-1-microserver-howto/"
+    },
+    {
+      "author": {
+        "name": "Matt Simerson",
+        "email": "matt@tnpi.net",
+        "url": "https://matt.simerson.net/"
+      },
+      "date": "2025-06-04",
+      "os": {
+        "name": "Windows",
+        "version": "11"
+      },
+      "server": {
+        "manufacturer": "Chuwi",
+        "product": "Larkbox X"
+      },
+      "gnss": {
+        "manufacturer": "Stratux",
+        "product": "VK-162"
+      },
+      "daemon": [
+        {
+          "name": "ntp",
+          "version": "4.2.8",
+          "accuracy": 0.0136
+        }
+      ],
+      "url": "https://github.com/BYO-NTP/recipes/wiki/Windows-11-Larkbox-VK162"
     }
   ],
   "server": [

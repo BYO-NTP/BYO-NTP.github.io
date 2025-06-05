@@ -28,7 +28,7 @@
     {
       "name": "NTPsec",
       "version": "1.2.3",
-      "accuracy": 0.0134
+      "accuracy": 0.00363
     },
     {
       "name": "ntp",
@@ -36,5 +36,5 @@
       "accuracy": 0.013
     }
   ],
-  "url": "https://github.com/BYO-NTP/recipes/wiki/FreeBSD-14-Pi-4-MAX%E2%80%90M8Q"
+  "url": "https://github.com/BYO-NTP/recipes/wiki/FreeBSD-14-Pi-5-MAX%E2%80%90M8Q"
 }
