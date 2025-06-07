@@ -23,17 +23,17 @@
     {
       "name": "chrony",
       "version": "4.6.1",
-      "accuracy": 0.01
+      "accuracy": 0.00171
     },
     {
       "name": "NTPsec",
       "version": "1.2.3",
-      "accuracy": 0.00363
+      "accuracy": 0.00288
     },
     {
       "name": "ntp",
       "version": "4.2.8",
-      "accuracy": 0.013
+      "accuracy": 0.014
     }
   ],
   "url": "https://github.com/BYO-NTP/recipes/wiki/FreeBSD-14-Pi-5-MAX%E2%80%90M8Q"

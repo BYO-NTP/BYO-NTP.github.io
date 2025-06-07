@@ -4,14 +4,16 @@
     "email": "",
     "url": "https://matt.simerson.net/"
   },
-  "date": "2025-05-18",
+  "date": "2025-06-06",
   "os": {
     "name": "FreeBSD",
     "version": "14"
   },
   "server": {
-    "manufacturer": "Chuwi",
-    "product": "Larkbox X"
+    "manufacturer": "Raspberry Pi",
+    "product": "5",
+    "model": "B",
+    "revision": ""
   },
   "gnss": {
     "manufacturer": "Stratux",
@@ -21,17 +23,17 @@
     {
       "name": "chrony",
       "version": "4.6.1",
-      "accuracy": 0.00688
+      "accuracy": 0.01
     },
     {
       "name": "NTPsec",
       "version": "1.2.3",
-      "accuracy": 0.0379
+      "accuracy": 0.01
     },
     {
       "name": "ntp",
       "version": "4.2.8",
-      "accuracy": 0.0104
+      "accuracy": 0.01
     }
   ],
   "url": "https://github.com/BYO-NTP/recipes/wiki/FreeBSD-14-VK%E2%80%90162"
