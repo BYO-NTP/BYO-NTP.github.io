@@ -6,6 +6,45 @@
         "email": "",
         "url": "https://matt.simerson.net/"
       },
+      "date": "2025-06-07",
+      "os": {
+        "name": "FreeBSD",
+        "version": "14"
+      },
+      "server": {
+        "manufacturer": "Chuwi",
+        "product": "Larkbox X"
+      },
+      "gnss": {
+        "manufacturer": "u-blox",
+        "product": "6M",
+        "revision": ""
+      },
+      "daemon": [
+        {
+          "name": "chrony",
+          "version": "4.6.1",
+          "accuracy": 0.0000045
+        },
+        {
+          "name": "NTPsec",
+          "version": "1.2.3",
+          "accuracy": 0.000025
+        },
+        {
+          "name": "ntp",
+          "version": "4.2.8",
+          "accuracy": 0.01
+        }
+      ],
+      "url": "https://github.com/BYO-NTP/recipes/wiki/FreeBSD-14-Larkbox-6M"
+    },
+    {
+      "author": {
+        "name": "Matt Simerson",
+        "email": "",
+        "url": "https://matt.simerson.net/"
+      },
       "date": "2025-05-12",
       "os": {
         "name": "FreeBSD",
@@ -75,7 +114,7 @@
           "accuracy": 0.0104
         }
       ],
-      "url": "https://github.com/BYO-NTP/recipes/wiki/FreeBSD-14-Larkbox-VK%E2%80%90162"
+      "url": "https://github.com/BYO-NTP/recipes/wiki/FreeBSD-14-VK%E2%80%90162"
     },
     {
       "author": {
@@ -152,7 +191,7 @@
         {
           "name": "ntp",
           "version": "4.2.8",
-          "accuracy": 0.001
+          "accuracy": 0.000011
         }
       ],
       "url": "https://github.com/BYO-NTP/recipes/wiki/FreeBSD-14-Pi-4-MAX%E2%80%90M8Q"
@@ -182,12 +221,12 @@
         {
           "name": "chrony",
           "version": "4.6.1",
-          "accuracy": 0.01
+          "accuracy": 0.00266
         },
         {
           "name": "NTPsec",
           "version": "1.2.3",
-          "accuracy": 0.01
+          "accuracy": 0.00577
         },
         {
           "name": "ntp",
@@ -195,7 +234,7 @@
           "accuracy": 0.01
         }
       ],
-      "url": "https://github.com/BYO-NTP/recipes/wiki/FreeBSD-14-Pi-4-VK%E2%80%90162"
+      "url": "https://github.com/BYO-NTP/recipes/wiki/FreeBSD-14-VK%E2%80%90162"
     },
     {
       "author": {
@@ -222,20 +261,60 @@
         {
           "name": "chrony",
           "version": "4.6.1",
-          "accuracy": 0.01
+          "accuracy": 0.00171
         },
         {
           "name": "NTPsec",
           "version": "1.2.3",
-          "accuracy": 0.00363
+          "accuracy": 0.00288
         },
         {
           "name": "ntp",
           "version": "4.2.8",
-          "accuracy": 0.013
+          "accuracy": 0.014
         }
       ],
       "url": "https://github.com/BYO-NTP/recipes/wiki/FreeBSD-14-Pi-5-MAX%E2%80%90M8Q"
+    },
+    {
+      "author": {
+        "name": "Matt Simerson",
+        "email": "",
+        "url": "https://matt.simerson.net/"
+      },
+      "date": "2025-06-06",
+      "os": {
+        "name": "FreeBSD",
+        "version": "14"
+      },
+      "server": {
+        "manufacturer": "Raspberry Pi",
+        "product": "5",
+        "model": "B",
+        "revision": ""
+      },
+      "gnss": {
+        "manufacturer": "Stratux",
+        "product": "VK-162"
+      },
+      "daemon": [
+        {
+          "name": "chrony",
+          "version": "4.6.1",
+          "accuracy": 0.00266
+        },
+        {
+          "name": "NTPsec",
+          "version": "1.2.3",
+          "accuracy": 0.00577
+        },
+        {
+          "name": "ntp",
+          "version": "4.2.8",
+          "accuracy": 0.01
+        }
+      ],
+      "url": "https://github.com/BYO-NTP/recipes/wiki/FreeBSD-14-VK%E2%80%90162"
     },
     {
       "author": {
