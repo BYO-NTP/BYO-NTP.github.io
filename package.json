@@ -3,9 +3,8 @@
     "nodemon": "^3.1.10"
   },
   "scripts": {
-    "all": "node tools/all-from-path.js && git add htdocs/all.json",
     "start": "npm run server",
-    "server": "npx nodemon --watch . --ignore htdocs/all.json --exec node tools/server.js"
+    "server": "npx nodemon --watch . --exec node server.js"
   },
   "type": "module",
   "devDependencies": {
