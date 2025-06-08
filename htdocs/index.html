@@ -27,7 +27,7 @@
       /*font-weight: bold;*/
       margin: 0;
       padding: 5px;
-      background-image: url('/recipes/img/byo-ntp-logo-bg.jpeg');
+      background-image: url('/img/byo-ntp-logo-bg.jpeg');
       background-size: 1200px;
       /* background-color: #7b6e6e; */
     }
@@ -115,7 +115,7 @@
   </ol>
 
   <footer>
-    <p>BYO-NTP is a community project. Please contribute on <a href="https://github.com/BYO-NTP/recipes">GitHub</a>.</p>
+    <p>BYO-NTP is a community project. Please contribute on <a href="https://github.com/BYO-NTP/BYO-NTP.github.io">GitHub</a>.</p>
   </footer>
 
   <script>
@@ -271,7 +271,7 @@ function populateServerFilterOptions(recipes) {
 function onLoad () {
   ajax({
     method: 'GET',
-    url: `/recipes/all.json`,
+    url: `/all.json`,
   }).then(response => {
     populateOSFilterOptions(response.recipes);
     populateServerFilterOptions(response.recipes);

@@ -33,7 +33,7 @@ const server = http.createServer(async (req, res) => {
 
   console.log(`Request URL: ${req.url}`);
 
-  let urlPath = req.url.startsWith('/recipes') ? req.url.replace(/^\/recipes/, '') || '/' : req.url;
+  let urlPath = req.url;
   let filePath = path.join(htdocs, urlPath === '/' ? '/index.html' : urlPath);
   const extname = path.extname(filePath).toLowerCase();
   const contentType = mimeTypes[extname] || 'application/octet-stream';
