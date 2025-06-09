@@ -14,10 +14,6 @@
   <meta property="og:image" content="">
   <meta property="og:image:alt" content="">
 
-  <!-- <link rel="icon" href="/favicon.ico" sizes="any"> -->
-  <!-- <link rel="icon" href="/icon.svg" type="image/svg+xml"> -->
-  <!-- <link rel="apple-touch-icon" href="icon.png"> -->
-
   <!-- <link rel="manifest" href="site.webmanifest"> -->
   <meta name="theme-color" content="#fafafa">
   <style>
@@ -42,7 +38,7 @@
     th, td {
       padding: 10px;
       text-align: left;
-      font-size: 0.9em;
+      font-size: 0.8em;
       border-bottom: 1px solid #ddd;
     }
     #recipes tbody tr:hover {
@@ -65,11 +61,11 @@
 </head>
 
 <body>
-  <h1>Build Your Own - NTP server</h1>
+  <h1>Build Your Own NTP server</h1>
 
   <p>Build a <a href="https://en.wikipedia.org/wiki/Satellite_navigation">GNSS</a> backed NTP Stratum 1 server, using proven components and processes.</p>
 
-  These build recipes match your criteria:
+  These <span id="match_count"></span> build recipes match your criteria:
 
   <table id="recipes" border="1">
     <thead>
@@ -111,7 +107,7 @@
 
   <h4>Footnotes</h4>
   <ol style="font-size: 0.8em;">
-    <li><a name="1">Accuracy values of 0.01 are placeholders</a></li>
+    <li><a name="1">Accuracy values of 0.01 and 0.0001 are usually placeholders.</a></li>
   </ol>
 
   <footer>
@@ -166,11 +162,18 @@ function populateRecipesTable(all) {
   const tbody = document.querySelector("table#recipes tbody");
   tbody.innerHTML = ""; // Clear existing rows
 
+  const counters = {
+    total: 0,
+    match: 0
+  }
+
   for (const recipe of all.recipes.sort((a, b) => new Date(b.date) - new Date(a.date))) {
     const osFilter = document.getElementById("osFilter").value;
     const serverFilter = document.getElementById("serverFilter").value;
     const accuracyFilter = document.getElementById("accuracyFilter").value;
     const ntpdFilter = document.getElementById("ntpdFilter").value;
+
+    counters.total++;
 
     if (osFilter !== "all" && recipe.os.name !== osFilter) continue;
     if (serverFilter !== "all" && recipe.server.manufacturer !== serverFilter) continue;
@@ -188,6 +191,8 @@ function populateRecipesTable(all) {
     }
 
     if (ntpdFilter !== "all" && !recipe.daemon.filter(d => d.name === ntpdFilter).length) continue;
+
+    counters.match++;
 
     const tr = document.createElement("tr");
 
@@ -236,6 +241,7 @@ function populateRecipesTable(all) {
 
     tbody.appendChild(tr);
   };
+  document.getElementById("match_count").textContent = `${counters.match} of ${counters.total}`;
 }
 
 function populateOSFilterOptions(recipes) {
