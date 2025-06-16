@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>SRV Lookup Tool for NTP</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      max-width: 600px;
+      margin: 2em auto;
+    }
+    input, button, textarea {
+      width: 100%;
+      font-size: 1em;
+      margin-top: 0.5em;
+    }
+    textarea {
+      height: 8em;
+    }
+    p, li {
+      font-size: 0.8em;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>NTP Server Lookup Tool</h1>
+
+  <label for="domainInput">Enter domain name:</label>
+  <input id="domainInput" type="text" placeholder="example.com" />
+  <button id="lookupBtn">Lookup SRV Records</button>
+
+  <h2>Results</h2>
+  <textarea id="results" readonly></textarea>
+  <button id="copyBtn">Copy Results</button>
+
+  <p>Discover local NTP servers via DNS SRV records and format them for inclusion in a NTP config file.</p>
+
+  <hr>
+
+  <h2>Creating DNS SRV Records</h2>
+  
+  <p>To create DNS SRV records for NTP, add entries in your domains DNS server. Here some example SRV records:</p>
+
+  <pre><code>_ntp._udp.example.com. 3600 IN SRV 1 10 123 ntp1.example.com.
+_ntp._udp.example.com. 3600 IN SRV 2 10 123 ntp2.example.com.
+_ntp._udp.example.com. 3600 IN SRV 3 10 123 ntp3.example.com.
+</code></pre>
+
+  <p>In this example, the weight of all three records is 10 and the port is 123.</p>
+  <p>Special Values</p>
+  <ul>
+    <li>If the priority equals 1, the NTP server entry will have `iburst` appended.</li>
+    <li>If the weight equals 0, the NTP server will have `prefer` appended.</li>
+    <li>If the weight equals 100, the NTP server will have `noselect` appended.</li>
+  </ul>
+
+<script type="module">
+    const domainInput = document.getElementById('domainInput');
+    const resultsArea = document.getElementById('results');
+    const lookupBtn = document.getElementById('lookupBtn');
+    const copyBtn = document.getElementById('copyBtn');
+
+    async function performLookup() {
+      const domain = domainInput.value.trim();
+      resultsArea.value = 'Looking up SRV records...';
+
+      if (!domain) {
+        resultsArea.value = 'Please enter a domain.';
+        return;
+      }
+
+      const srvName = `_ntp._udp.${domain}`;
+      const url = `https://cloudflare-dns.com/dns-query?name=${srvName}&type=SRV`;
+
+      try {
+        const response = await fetch(url, {
+          headers: {
+            'Accept': 'application/dns-json'
+          }
+        });
+
+        if (!response.ok) {
+          throw new Error(`DNS query failed with status ${response.status}`);
+        }
+
+        const data = await response.json();
+        if (!data.Answer) {
+          resultsArea.value = `No SRV records found for ${srvName}`;
+          return;
+        }
+
+        const output = data.Answer.map(record => {
+          const [priority, weight, port, target] = record.data.split(' ');
+          let result = `server ${target}`;
+          if (priority === "1") result += ' iburst';
+          if (weight === "0") result += ' prefer';
+          if (weight === "100") result += ' noselect';
+          return result;
+        }).join('\n');
+
+        resultsArea.value = output;
+      } catch (error) {
+        resultsArea.value = `Error: ${error.message}`;
+      }
+    }
+
+    function copyResults() {
+      resultsArea.select();
+      document.execCommand('copy');
+    }
+
+    // Hook up event listeners
+    lookupBtn.addEventListener('click', performLookup);
+    copyBtn.addEventListener('click', copyResults);
+  </script>
+</body>
+</html>
