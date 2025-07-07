@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>BYO-NTP Build Recipe Selector</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      max-width: 600px;
+      margin: 20px auto;
+    }
+
+    .center {
+      text-align: center;
+    }
+    .bold {
+      font-weight: bold;
+    }
+    .small {
+      font-size: 0.7em;
+    }
+    .container {
+      display: grid;
+      grid-template-columns: 2fr 3fr 3fr;
+      gap: 10px;
+      align-items: start;
+    }
+
+    .column-header {
+      font-weight: bold;
+      text-align: center;
+      margin-bottom: 10px;
+      border-bottom: 2px solid #ccc;
+      padding-bottom: 4px;
+    }
+
+    .os, .connection, .recipes {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .os div, .connection div {
+      padding: 5px;
+      margin: 10px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .os div.active, .connection div.active {
+      background-color: #eef;
+      border-color: #88f;
+    }
+
+    .os, .connection, .recipes {
+      text-align: center;
+    }
+
+    .recipes a {
+      display: block;
+      padding: 4px 6px;
+      text-decoration: none;
+      border-radius: 4px;
+      color: black;
+      transition: opacity 0.2s;
+    }
+
+    .recipes a.dim {
+      opacity: 0.3;
+    }
+
+    .recipes a:hover {
+      background-color: #eef;
+    }
+
+  </style>
+</head>
+<body>
+  <h2 class="center">BYO NTP Recipe Selector</h2>
+  <p class="small center" style="margin-top: -18px; margin-bottom: 20px; color: #555;">
+    by: <a href="https://byo-ntp.github.io">Build Your Own NTP server</a></p>
+
+    <p class="center">Select an OS and connection type to filter the BYO NTP build recipes.</p>
+
+    <div class="container">
+    <div class="column-header">OS</div>
+    <div class="column-header">Connection Type</div>
+    <div class="column-header">Build Recipe</div>
+
+    <div class="os">
+      <div data-os="FreeBSD"><img src="/img/os/freebsd.png" width="26px"><br>FreeBSD</div>
+      <div data-os="Linux"><img src="/img/os/linux.png" width="26px"><br>Linux</div>
+      <div data-os="macOS"><img src="/img/os/macos.jpg" width="26px"><br>macOS</div>
+      <div data-os="Windows"><img src="/img/os/windows.png" width="26px"><br>Windows</div>
+    </div>
+
+    <div class="connection">
+      <div data-conn="USB">
+        <div class="connection-title bold">USB</div>
+        modern PC<br>modern server<br>mini PC<br>etc.
+      </div>
+      <div data-conn="Both" class="active">
+        <div class="connection-title bold">Both</div>
+        Raspberry Pi 4<br>Raspberry Pi 5
+      </div>
+      <div data-conn="UART">
+        <div class="connection-title bold">UART<br><span class="small">(serial port)</span></div>
+        legacy PC<br>legacy server<br>etc.
+      </div>
+    </div>
+
+    <div class="recipes">
+      <div>
+        <a href="https://github.com/BYO-NTP/recipes/wiki/FreeBSD-14-USB" data-os-groups="FreeBSD">FreeBSD-USB</a>
+        <a href="#debian-usb" data-os-groups="Linux">Debian-USB</a>
+        <a href="https://github.com/BYO-NTP/recipes/wiki/macOS" data-os-groups="macOS">macOS-USB</a>
+        <a href="https://github.com/BYO-NTP/recipes/wiki/Windows-11-USB" data-os-groups="Windows">Windows-USB</a>
+      </div>
+      <div>
+        <a href="#pi-gpio" data-os-groups="Linux">Pi OS-GPIO</a>
+        <a href="https://github.com/BYO-NTP/recipes/wiki/FreeBSD-14-GPIO" data-os-groups="FreeBSD">FreeBSD-GPIO</a>
+      </div>
+      <div>
+        <a href="https://github.com/BYO-NTP/recipes/wiki/Debian-12-UART" data-os-groups="Linux">Debian-UART</a>
+        <a href="https://github.com/BYO-NTP/recipes/wiki/FreeBSD-14-UART" data-os-groups="FreeBSD">FreeBSD-UART</a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const osButtons = document.querySelectorAll('.os div');
+    const connButtons = document.querySelectorAll('.connection div');
+    const recipeLinks = document.querySelectorAll('.recipes a');
+
+    let selectedOS = null;
+    let selectedConn = "Both";
+
+    const setConn = (connType) => {
+      selectedConn = connType;
+      connButtons.forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.conn === connType);
+      });
+    };
+
+    const updateRecipeVisibility = () => {
+      recipeLinks.forEach(link => {
+        const osGroups = link.dataset.osGroups?.split(',') ?? [];
+        const text = link.textContent.trim();
+        const isOSMatch = selectedOS ? osGroups.includes(selectedOS) : true;
+
+        let isConnMatch = true;
+        if (selectedConn === 'USB') {
+          isConnMatch = text.endsWith('-USB');
+        } else if (selectedConn === 'UART') {
+          isConnMatch = text.endsWith('-UART') || text.endsWith('-GPIO');
+        } else if (selectedConn === 'Both') {
+          isConnMatch = text.endsWith('-USB') || text.endsWith('-UART') || text.endsWith('-GPIO');
+        }
+
+        link.classList.toggle('dim', !(isOSMatch && isConnMatch));
+      });
+    };
+
+    osButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        osButtons.forEach(b => b.classList.remove('active'));
+        button.classList.add('active');
+        selectedOS = button.dataset.os;
+
+        // Auto-switch connection type to USB for macOS
+        if (selectedOS === 'macOS') {
+          setConn('USB');
+        }
+
+        updateRecipeVisibility();
+      });
+    });
+
+    connButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        setConn(button.dataset.conn);
+        updateRecipeVisibility();
+      });
+    });
+
+    // Initial visibility update
+    updateRecipeVisibility();
+  </script>
+</body>
+</html>

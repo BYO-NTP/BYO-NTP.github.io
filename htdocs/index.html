@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>BYO-NTP</title>
+  <title>BYO NTP Recipe Index</title>
   <!-- <link rel="stylesheet" href="style.css"> -->
   <meta name="description" content="">
 
@@ -23,13 +23,21 @@
       /*font-weight: bold;*/
       margin: 0;
       padding: 5px;
-      background-image: url('/img/byo-ntp-logo-bg.jpeg');
-      background-size: 1200px;
-      /* background-color: #7b6e6e; */
+      /* background-image: url('/img/logo/byo-ntp-logo-bg.jpeg');
+      background-size: 1200px; */
+      background-color: #3f454b;
+    }
+    .center {
+      text-align: center;
+    }
+    .alignright {
+      text-align: right;
+    }
+    .small {
+      font-size: 0.7em;
     }
     h1 {
       color: white;
-      text-align: center;
     }
     table {
       width: 98%;
@@ -44,11 +52,8 @@
     #recipes tbody tr:hover {
       background-color: grey;
     }
-    .alignright {
-      text-align: right;
-    }
     a {
-      color: yellow;
+      color: lightgrey;
     }
     footer {
       margin-top: 20px;
@@ -61,7 +66,8 @@
 </head>
 
 <body>
-  <h1>Build Your Own NTP server</h1>
+  <h1 class="center">NTP Server Build Recipes</h1>
+  <p class="small center" style="margin-top: -18px;">by: <a href="https://byo-ntp.github.io">Build Your Own NTP server</a></p>
 
   <p>Build a <a href="https://en.wikipedia.org/wiki/Satellite_navigation">GNSS</a> backed NTP Stratum 1 server, using proven components and processes.</p>
 
