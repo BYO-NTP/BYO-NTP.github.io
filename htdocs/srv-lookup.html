@@ -2,10 +2,13 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="/style.css">
+  <meta name="description" content="A tool to look up DNS SRV records for NTP servers and format them for NTP configuration files.">
+
   <title>SRV Lookup Tool for NTP</title>
   <style>
     body {
-      font-family: sans-serif;
       max-width: 600px;
       margin: 2em auto;
     }
@@ -54,6 +57,10 @@ _ntp._udp.example.com. 3600 IN SRV 3 10 123 ntp3.example.com.
     <li>If the weight equals 0, the NTP server will have `prefer` appended.</li>
     <li>If the weight equals 100, the NTP server will have `noselect` appended.</li>
   </ul>
+
+  <footer>
+    <p>BYO-NTP is a community project. Please contribute at <a href="https://github.com/BYO-NTP/recipes/wiki">GitHub</a>.</p>
+  </footer>
 
 <script type="module">
     const domainInput = document.getElementById('domainInput');

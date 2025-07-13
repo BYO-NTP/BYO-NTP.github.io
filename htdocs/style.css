@@ -34,3 +34,9 @@ body {
     white-space: pre;
     margin: 0.3em;
 }
+footer {
+    margin-top: 20px;
+    padding: 5px;
+    text-align: center;
+    font-size: 0.8em;
+}
