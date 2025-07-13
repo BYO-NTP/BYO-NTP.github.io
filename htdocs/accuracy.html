@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BYO NTP GNSS Timing Performance</title>
+  <link rel="stylesheet" href="/style.css">
+  <meta name="description" content="A table showing the timing performance of various GNSS receivers and configurations on different hardware and operating systems.">
+
+  <meta property="og:title" content="GNSS Timing Performance">
+  <meta property="og:description" content="A table showing the timing performance of various GNSS receivers and configurations on different hardware and operating systems.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://byo-ntp.github.io/accuracy.html">
+  <meta property="og:image" content="https://byo-ntp.github.io/img/logo/BYO-NTP-logo.jpeg">
+  
+  <meta charset="UTF-8">
+  <title>GNSS Timing Performance</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      font-size: 0.8em;
+      padding: 1em;
+      background-color: #f9f9f9;
+    }
+    .center {
+      text-align: center;
+    }
+    h1 {
+      text-align: center;
+    }
+    .legend {
+      max-width: 400px;
+      margin: 1em auto;
+      padding: 0.5em;
+      background-color: #fff;
+      border: 1px solid #ccc;
+      box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    }
+    .legend p {
+      font-family: monospace, monospace;
+      white-space: pre;
+      margin: 0.3em;
+    }
+    .color-ms { color: #eab500; }
+    .color-us { color: #b3dc00; }
+    .color-ns { color: green; }
+    .color-ps { color: blue; }
+    .grey { color: #a1a1a1; }
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      max-width: 1200px;
+      margin: auto;
+      background-color: #fff;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    th, td {
+      border: 1px solid #ccc;
+      padding: 0.4em;
+      text-align: center;
+    }
+    th {
+      background-color: #eaeaea;
+    }
+    th.small {
+      font-size: 0.7em;
+      color: #a1a1a1;
+    }
+    td:empty {
+      background-color: #f5f5f5;
+    }
+    td[data-value='0'] {
+      color: white;
+    }
+    td[data-value].ms {
+      color: #eab500;
+    }
+    td[data-value].us {
+      color: #b3dc00;
+    }
+    td[data-value].ns {
+      color: green;
+    }
+    td[data-value].ps {
+      color: blue;
+    }
+    footer {
+      margin-top: 20px;
+      padding: 5px;
+      text-align: center;
+      font-size: 0.8em;
+    }
+  </style>
+</head>
+<body>
+  <h1>GNSS Timing Performance</h1>
+  <p class="small center" style="margin-top: -14px;">by: <a href="https://byo-ntp.github.io">Build Your Own NTP server</a></p>
+
+  <div class="legend">
+    <p class="color-ms">ms = millisecond = 1e-3  = 0.001</p>
+    <p class="color-us">µs = microsecond = 1e-6  = 0.000001</p>
+    <p class="color-ns">ns = nanosecond  = 1e-9  = 0.000000001</p>
+    <p class="color-ps">ps = picosecond  = 1e-12 = 0.000000000001</p>
+  </div>
+  <table id="timing-table">
+    <thead>
+      <tr>
+        <th>HW</th>
+        <th>OS</th>
+        <th>daemon</th>
+        <th>6M</th>
+        <th>Stratux<br>VK-162 / U7</th>
+        <th>NEO-7M</th>
+        <th>MAX-M8Q</th>
+        <th>LEA-M8T</th>
+        <th>M10</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><th>Pi 4</th><th>Pi OS</th><th>chrony</th><td>0.000000222</td><td>0.001010</td><td></td><td>0.000002850</td><td>0.000000206</td><td></td></tr>
+      <tr><th class="grey">Pi 4</th><th class="grey">Pi OS</th><th>sec</th><td>0.000006000</td><td>0.015400</td><td></td><td>0.000005900</td><td>0.000004000</td><td></td></tr>
+      <tr><th class="grey">Pi 4</th><th class="grey">Pi OS</th><th>sec + gpsd</th><td>0.000004100</td><td>0.006210</td><td></td><td>0.000005000</td><td>0.000004000</td><td></td></tr>
+      <tr><th class="grey">Pi 4</th><th class="grey">Pi OS</th><th>ntp</th><td>0.000031000</td><td>0.006020</td><td>0.0000000</td><td>0.000003000</td><td>0.000005000</td><td></td></tr>
+      <tr><th class="grey">Pi 4</th><th>BSD</th><th>chrony</th><td>0.000000522</td><td>0.001940</td><td></td><td>0.000001910</td><td>0.000000315</td><td></td></tr>
+      <tr><th class="grey">Pi 4</th><th class="grey">BSD</th><th>sec</th><td>0.000011000</td><td>0.002780</td><td></td><td>0.000011000</td><td>0.000007000</td><td></td></tr>
+      <tr><th class="grey">Pi 4</th><th class="grey">BSD</th><th>ntp</th><td>0.000012000</td><td>0.003740</td><td></td><td>0.000011000</td><td>0.000004000</td><td></td></tr>
+      <tr><th class="grey">Pi 4</th><th class="grey">BSD</th><th>ntp + gpsd</th><td>0.000024000</td><td>0.013000</td><td></td><td>0.000002320</td><td></td><td></td></tr>
+      <tr><th>&nbsp;</th><th></th><th></th><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+      <tr><th>Pi 5</th><th>Pi OS</th><th>chrony</th><td>0.000000313</td><td>0.001270</td><td></td><td>0.000000170</td><td>0.000000174</td><td></td></tr>
+      <tr><th class="grey">Pi 5</th><th class="grey">Pi OS</th><th>sec</th><td>0.000012000</td><td>0.010200</td><td></td><td>0.000002000</td><td>0.000003000</td><td></td></tr>
+      <tr><th class="grey">Pi 5</th><th class="grey">Pi OS</th><th>ntp</th><td>0.000005000</td><td>0.006760</td><td></td><td>0.000003000</td><td>0.000005000</td><td></td></tr>
+      <tr><th class="grey">Pi 5</th><th>BSD</th><th>chrony</th><td>0.000019500</td><td>0.002660</td><td></td><td></td><td>0.000003320</td><td></td></tr>
+      <tr><th class="grey">Pi 5</th><th class="grey">BSD</th><th>sec</th><td>0.000022000</td><td>0.007110</td><td></td><td></td><td>0.000088000</td><td></td></tr>
+      <tr><th class="grey">Pi 5</th><th class="grey">BSD</th><th>sec + gpsd</th><td>0.000015000</td><td>0.005770</td><td></td><td>0.000000000</td><td>0.000042000</td><td></td></tr>
+      <tr><th class="grey">Pi 5</th><th class="grey">BSD</th><th>ntp</th><td>0.000025000</td><td>0.005510</td><td>0.0000320</td><td>0.000032000</td><td>0.000070000</td><td></td></tr>
+      <tr><th>&nbsp;</th><th></th><th></th><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+      <tr><th>LarkBox</th><th>BSD</th><th>chrony</th><td>0.000004500</td><td>0.006880</td><td>0.0000049</td><td>0.000001910</td><td>0.000012600</td><td></td></tr>
+      <tr><th class="small">6W</th><th></th><th>sec</th><td>0.024900000</td><td>0.015000</td><td>0.0000880</td><td>0.000062000</td><td>0.000058000</td><td></td></tr>
+      <tr><th>    </th><th></th><th>sec + gpsd</th><td>0.000025000</td><td>0.013900</td><td>0.0000720</td><td>0.000064000</td><td>0.000045000</td><td></td></tr>
+      <tr><th>    </th><th></th><th>ntp</th><td>0.021700000</td><td>0.010400</td><td>0.0000510</td><td>0.000061000</td><td>0.000047000</td><td></td></tr>
+      <tr><th>    </th><th></th><th>ntp + gpsd</td><td></td><td></td><td>0.0001430</td><td>0.000057000</td><td>0.000025000</td><td></td></tr>
+      <tr><th>    </th><th>Win</th><th>ntp</th><td></td><td>0.013600</td><td></td><td></td><td></td><td></td></tr>
+      <tr><th>&nbsp;</th><th></th><th></th><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+      <tr><th>Xeon E5</th><th>BSD</th><th>chrony</th><td></td><td></td><td></td><td></td><td>0.000000426</td><td></td></tr>
+      <tr><th>    </th><th></th><th>sec</th><td></td><td></td><td></td><td></td><td>0.000002000</td><td></td></tr>
+      <tr><th>    </th><th></th><th>ntp</th><td></td><td></td><td></td><td></td><td>0.000004000</td><td></td></tr>
+      <tr><th>    </th><th>Linux</th><th>chrony</th><td></td><td></td><td></td><td></td><td>0.000008810</td><td></td></tr>
+      <tr><th>&nbsp;</th><th></th><th></th><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+      <tr><th>M3 MBA</th><th>Mac</th><th>chrony</th><td>0.00172</td><td></td><td>0.001580</td><td></td><td></td><td></td></tr>
+      <tr><th>    </th><th></th><th>mac-pps</th><td></td><td></td><td>0.000358</td><td></td><td>0.00000</td><td></td></tr>
+      <tr><th>    </th><th></th><th>sec</th><td></td><td></td><td>0.008000</td><td></td><td></td><td></td></tr>
+      <tr><th>    </th><th></th><th>sec + gpsd</th><td></td><td></td><td>0.007890</td><td></td><td></td><td></td></tr>
+    </tbody>
+  </table>
+
+  <div class="legend">
+    <p>BSD = FreeBSD 14</p>
+    <p>Linux = Debian 12</p>
+    <p>Mac = macOS 15</p>
+    <p>Win = Windows 11</p>
+  </div>
+
+  <footer>
+    <p>BYO-NTP is a community project. Please contribute on <a href="https://github.com/BYO-NTP/recipes/wiki">GitHub</a>.</p>
+  </footer>
+
+  <script>
+    const isNumeric = (val) => /^\d*\.?\d+$/.test(val);
+    const styleCell = (td) => {
+      const val = parseFloat(td.textContent);
+      if (td.textContent.trim() === "0" || val === 0) {
+        td.setAttribute("data-value", "0");
+      } else if (!isNaN(val)) {
+        td.setAttribute("data-value", val);
+        if (val >= 0.001 && val < 1) {
+          td.classList.add("ms");
+        } else if (val >= 0.000001 && val < 0.001) {
+          td.classList.add("us");
+        } else if (val >= 0.000000001 && val < 0.000001) {
+          td.classList.add("ns");
+        } else if (val >= 0.000000000001 && val < 0.000000001) {
+          td.classList.add("ps");
+        }
+      }
+    };
+
+    document.addEventListener("DOMContentLoaded", () => {
+      const table = document.getElementById("timing-table");
+      const rows = table.querySelectorAll("tbody tr");
+      rows.forEach(row => {
+        const cells = row.querySelectorAll("td");
+        cells.forEach((td, idx) => {
+          if (isNumeric(td.textContent.trim())) {
+            styleCell(td);
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>
