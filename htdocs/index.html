@@ -86,7 +86,6 @@
         <th>Accuracy<a href="#1"><sup>1</sup></a><br>
           <select id="accuracyFilter">
             <option value="all">All</option>
-            <option value="s">second</option>
             <option value="ms">millisecond</option>
             <option value="µs">microsecond</option>
             <option value="ns">nanosecond</option>
@@ -151,13 +150,16 @@ function ajax({ method = 'GET', url, data = null, headers = {} }) {
     });
 }
 
-const accuracyMap = {
-  's': 1,
-  'ms': 0.001,
-  'µs': 0.000001,
-  'ns': 0.000000001,
-  'ps': 0.000000000001
-};
+function accuracyMatch (filter, val) {
+  if (isNaN(val)) return false;
+
+  if (filter === 'ms' && val >= 0.001 && val < 1) return true;
+  if (filter === 'µs' && val >= 0.000001 && val < 0.001) return true;
+  if (filter === 'ns' && val >= 0.000000001 && val < 0.000001) return true;
+  if (filter === 'ps' && val >= 0.000000000001 && val < 0.000000001) return true;
+
+  return false;
+}
 
 function populateRecipesTable(all) {
   const tbody = document.querySelector("table#recipes tbody");
@@ -182,12 +184,12 @@ function populateRecipesTable(all) {
       if (recipe.daemon.filter(d => d.name === ntpdFilter).length) {
         // if ntpd is selected, use the accuracy of the ntpd
         const ntpd = recipe.daemon.filter(d => d.name === ntpdFilter)[0];
-        if (ntpd.accuracy > accuracyMap[accuracyFilter]) continue;
+        if (!accuracyMatch(accuracyFilter, ntpd.accuracy)) continue;
       } else {
         const mostAccurateDaemon = recipe.daemon.reduce((mostAccurate, current) => {
             return current.accuracy < mostAccurate.accuracy ? current : mostAccurate;
         });
-        if (mostAccurateDaemon.accuracy > accuracyMap[accuracyFilter]) continue;
+        if (!accuracyMatch(accuracyFilter, mostAccurateDaemon.accuracy)) continue;
       }
     }
 
