@@ -45,7 +45,7 @@
     .color-us { color: #b3dc00; }
     .color-ns { color: green; }
     .color-ps { color: blue; }
-    .grey { color: #a1a1a1; }
+    .grey { color: #bfbebe; }
     table {
       border-collapse: collapse;
       width: 100%;
@@ -102,6 +102,10 @@
     <p class="color-ns">ns = nanosecond  = 1e-9  = 0.000000001</p>
     <p class="color-ps">ps = picosecond  = 1e-12 = 0.000000000001</p>
   </div>
+  <p class="center">This table shows the timing performance of various GNSS receivers on varying hardware,
+     operating systems, and NTP daemons. Each numeric result is a clickable link to the build recipe with
+     instructions for replicating that build.
+  </p>
   <table id="timing-table">
     <thead>
       <tr>
@@ -135,21 +139,21 @@
       <tr><th class="grey">Pi 5</th><th class="grey">BSD</th><th>ntp</th><td>0.000025000</td><td>0.005510</td><td>0.0000320</td><td>0.000032000</td><td>0.000070000</td><td></td></tr>
       <tr><th>&nbsp;</th><th></th><th></th><td></td><td></td><td></td><td></td><td></td><td></td></tr>
       <tr><th>LarkBox</th><th>BSD</th><th>chrony</th><td>0.000004500</td><td>0.006880</td><td>0.0000049</td><td>0.000001910</td><td>0.000012600</td><td></td></tr>
-      <tr><th class="small">6W</th><th></th><th>sec</th><td>0.024900000</td><td>0.015000</td><td>0.0000880</td><td>0.000062000</td><td>0.000058000</td><td></td></tr>
-      <tr><th>    </th><th></th><th>sec + gpsd</th><td>0.000025000</td><td>0.013900</td><td>0.0000720</td><td>0.000064000</td><td>0.000045000</td><td></td></tr>
-      <tr><th>    </th><th></th><th>ntp</th><td>0.021700000</td><td>0.010400</td><td>0.0000510</td><td>0.000061000</td><td>0.000047000</td><td></td></tr>
-      <tr><th>    </th><th></th><th>ntp + gpsd</td><td></td><td></td><td>0.0001430</td><td>0.000057000</td><td>0.000025000</td><td></td></tr>
-      <tr><th>    </th><th>Win</th><th>ntp</th><td></td><td>0.013600</td><td></td><td></td><td></td><td></td></tr>
+      <tr><th class="grey">LarkBox</th><th class="grey">BSD</th><th>sec</th><td>0.024900000</td><td>0.015000</td><td>0.0000880</td><td>0.000062000</td><td>0.000058000</td><td></td></tr>
+      <tr><th class="grey">LarkBox</th><th class="grey">BSD</th><th>sec + gpsd</th><td>0.000025000</td><td>0.013900</td><td>0.0000720</td><td>0.000064000</td><td>0.000045000</td><td></td></tr>
+      <tr><th class="grey">LarkBox</th><th class="grey">BSD</th><th>ntp</th><td>0.021700000</td><td>0.010400</td><td>0.0000510</td><td>0.000061000</td><td>0.000047000</td><td></td></tr>
+      <tr><th class="grey">LarkBox</th><th class="grey">BSD</th><th>ntp + gpsd</td><td></td><td></td><td>0.0001430</td><td>0.000057000</td><td>0.000025000</td><td></td></tr>
+      <tr><th class="grey">LarkBox</th><th>Win</th><th>ntp</th><td></td><td>0.013600</td><td></td><td></td><td></td><td></td></tr>
       <tr><th>&nbsp;</th><th></th><th></th><td></td><td></td><td></td><td></td><td></td><td></td></tr>
       <tr><th>Xeon E5</th><th>BSD</th><th>chrony</th><td></td><td></td><td></td><td></td><td>0.000000426</td><td></td></tr>
-      <tr><th>    </th><th></th><th>sec</th><td></td><td></td><td></td><td></td><td>0.000002000</td><td></td></tr>
-      <tr><th>    </th><th></th><th>ntp</th><td></td><td></td><td></td><td></td><td>0.000004000</td><td></td></tr>
-      <tr><th>    </th><th>Linux</th><th>chrony</th><td></td><td></td><td></td><td></td><td>0.000008810</td><td></td></tr>
+      <tr><th class="grey">Xeon E5</th><th class="grey">BSD</th><th>sec</th><td></td><td></td><td></td><td></td><td>0.000002000</td><td></td></tr>
+      <tr><th class="grey">Xeon E5</th><th class="grey">BSD</th><th>ntp</th><td></td><td></td><td></td><td></td><td>0.000004000</td><td></td></tr>
+      <tr><th class="grey">Xeon E5</th><th>Linux</th><th>chrony</th><td></td><td></td><td></td><td></td><td>0.000008810</td><td></td></tr>
       <tr><th>&nbsp;</th><th></th><th></th><td></td><td></td><td></td><td></td><td></td><td></td></tr>
       <tr><th>M3 MBA</th><th>Mac</th><th>chrony</th><td>0.00172</td><td></td><td>0.001580</td><td></td><td></td><td></td></tr>
-      <tr><th>    </th><th></th><th>mac-pps</th><td></td><td></td><td>0.000358</td><td></td><td>0.00000</td><td></td></tr>
-      <tr><th>    </th><th></th><th>sec</th><td></td><td></td><td>0.008000</td><td></td><td></td><td></td></tr>
-      <tr><th>    </th><th></th><th>sec + gpsd</th><td></td><td></td><td>0.007890</td><td></td><td></td><td></td></tr>
+      <tr><th class="grey">M3 MBA</th><th class="grey">Mac</th><th>mac-pps</th><td></td><td></td><td>0.000358</td><td></td><td>0.00000</td><td></td></tr>
+      <tr><th class="grey">M3 MBA</th><th class="grey">Mac</th><th>sec</th><td></td><td></td><td>0.008000</td><td></td><td></td><td></td></tr>
+      <tr><th class="grey">M3 MBA</th><th class="grey">Mac</th><th>sec + gpsd</th><td></td><td></td><td>0.007890</td><td></td><td></td><td></td></tr>
     </tbody>
   </table>
 
@@ -166,7 +170,7 @@
 
   <script>
     const isNumeric = (val) => /^\d*\.?\d+$/.test(val);
-    const styleCell = (td) => {
+    function styleCell (td) {
       const val = parseFloat(td.textContent);
       if (td.textContent.trim() === "0" || val === 0) {
         td.setAttribute("data-value", "0");
@@ -182,20 +186,41 @@
           td.classList.add("ps");
         }
       }
-    };
+    }
+
+    function getRowRecipe (th) {
+      if (th.length < 1) return;
+
+      switch (th[1].textContent.trim()) {
+        case "Pi OS": return "Pi-OS-12-GPIO";
+        case "BSD":
+          switch (th[0].textContent.trim()) {
+            case "Pi 4": return "FreeBSD-14-GPIO";
+            case "Pi 5":
+            case "LarkBox": return "FreeBSD-14-USB";
+            case "Xeon E5": return "FreeBSD-14-UART";
+          }
+        case "Mac": return "macOS";
+        case "Win": return "Windows-11-USB";
+      }
+    }
 
     document.addEventListener("DOMContentLoaded", () => {
       const table = document.getElementById("timing-table");
       const rows = table.querySelectorAll("tbody tr");
-      rows.forEach(row => {
+      for (const row of rows) {
+        const th = row.querySelectorAll("th");
+        const recipe = getRowRecipe(th);
+
         const cells = row.querySelectorAll("td");
-        cells.forEach((td, idx) => {
-          if (isNumeric(td.textContent.trim())) {
+        for (const td of cells) {
+          if (td.textContent.trim() !== "") {
             styleCell(td);
+            if (recipe) td.onclick = () => window.open(`https://github.com/BYO-NTP/recipes/wiki/${recipe}`);
           }
-        });
-      });
-    });
+        }
+      }
+    })
   </script>
 </body>
 </html>
