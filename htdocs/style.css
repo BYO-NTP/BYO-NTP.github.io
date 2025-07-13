@@ -1,4 +1,6 @@
-
+body {
+    font-family: Arial, sans-serif;
+}
 .center {
     text-align: center;
 }
@@ -7,4 +9,28 @@
 }
 .small {
     font-size: 0.7em;
+}
+.bold {
+    font-weight: bold;
+}
+
+.grey { color: #bfbebe; }
+.color-white { color: white; }
+.color-ms { color: #eab500; }
+.color-us { color: #b3dc00; }
+.color-ns { color: green; }
+.color-ps { color: blue; }
+
+.legend {
+    max-width: 400px;
+    margin: 1em auto;
+    padding: 0.5em;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+}
+.legend p {
+    font-family: monospace, monospace;
+    white-space: pre;
+    margin: 0.3em;
 }

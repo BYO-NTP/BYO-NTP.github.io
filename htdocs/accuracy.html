@@ -17,35 +17,13 @@
   <title>GNSS Timing Performance</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
       font-size: 0.8em;
       padding: 1em;
       background-color: #f9f9f9;
     }
-    .center {
-      text-align: center;
-    }
     h1 {
       text-align: center;
     }
-    .legend {
-      max-width: 400px;
-      margin: 1em auto;
-      padding: 0.5em;
-      background-color: #fff;
-      border: 1px solid #ccc;
-      box-shadow: 0 0 5px rgba(0,0,0,0.1);
-    }
-    .legend p {
-      font-family: monospace, monospace;
-      white-space: pre;
-      margin: 0.3em;
-    }
-    .color-ms { color: #eab500; }
-    .color-us { color: #b3dc00; }
-    .color-ns { color: green; }
-    .color-ps { color: blue; }
-    .grey { color: #bfbebe; }
     table {
       border-collapse: collapse;
       width: 100%;
@@ -68,21 +46,6 @@
     }
     td:empty {
       background-color: #f5f5f5;
-    }
-    td[data-value='0'] {
-      color: white;
-    }
-    td[data-value].ms {
-      color: #eab500;
-    }
-    td[data-value].us {
-      color: #b3dc00;
-    }
-    td[data-value].ns {
-      color: green;
-    }
-    td[data-value].ps {
-      color: blue;
     }
     footer {
       margin-top: 20px;
@@ -173,17 +136,16 @@
     function styleCell (td) {
       const val = parseFloat(td.textContent);
       if (td.textContent.trim() === "0" || val === 0) {
-        td.setAttribute("data-value", "0");
+        td.classList.add("color-white");
       } else if (!isNaN(val)) {
-        td.setAttribute("data-value", val);
         if (val >= 0.001 && val < 1) {
-          td.classList.add("ms");
+          td.classList.add("color-ms");
         } else if (val >= 0.000001 && val < 0.001) {
-          td.classList.add("us");
+          td.classList.add("color-us");
         } else if (val >= 0.000000001 && val < 0.000001) {
-          td.classList.add("ns");
+          td.classList.add("color-ns");
         } else if (val >= 0.000000000001 && val < 0.000000001) {
-          td.classList.add("ps");
+          td.classList.add("color-ps");
         }
       }
     }

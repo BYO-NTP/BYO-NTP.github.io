@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>BYO NTP Recipe Index</title>
-  <link rel="stylesheet" href="//style.css">
+  <link rel="stylesheet" href="/style.css">
   <meta name="description" content="A filterable list of build recipes / guides / how-tos for building your own NTP server.">
 
   <meta property="og:title" content="Build Your Own NTP">
@@ -17,23 +17,10 @@
   <meta name="theme-color" content="#fafafa">
   <style>
     body {
-      font-family: Arial, sans-serif;
       color: lightgrey;
-      /*font-weight: bold;*/
       margin: 0;
       padding: 5px;
-      /* background-image: url('/img/logo/byo-ntp-logo-bg.jpeg');
-      background-size: 1200px; */
       background-color: #3f454b;
-    }
-    .center {
-      text-align: center;
-    }
-    .alignright {
-      text-align: right;
-    }
-    .small {
-      font-size: 0.7em;
     }
     h1 {
       color: white;
@@ -67,9 +54,12 @@
   <h1 class="center">NTP Server Build Recipes</h1>
   <p class="small center" style="margin-top: -18px;">by: <a href="https://byo-ntp.github.io">Build Your Own NTP server</a></p>
 
-  <p>Build a <a href="https://en.wikipedia.org/wiki/Satellite_navigation">GNSS</a> backed NTP Stratum 1 server, using proven components and processes.</p>
+  <p>Build a <a href="https://en.wikipedia.org/wiki/Satellite_navigation">GNSS</a> backed NTP Stratum 1 server, using proven
+     components and processes. Each row is a clickable link to the build recipe with instructions
+    for replicating that build.
+  </p>
 
-  These <span id="match_count"></span> build recipes match your criteria:
+  These <span id="match_count"></span> build recipes match your filters:
 
   <table id="recipes" border="1">
     <thead>
@@ -108,6 +98,13 @@
     <tbody>
     </tbody>
   </table>
+
+  <div class="legend">
+    <p class="color-ms">ms = millisecond = 1e-3  = 0.001</p>
+    <p class="color-us">µs = microsecond = 1e-6  = 0.000001</p>
+    <p class="color-ns">ns = nanosecond  = 1e-9  = 0.000000001</p>
+    <p class="color-ps">ps = picosecond  = 1e-12 = 0.000000000001</p>
+  </div>
 
   <h4>Footnotes</h4>
   <ol style="font-size: 0.8em;">
@@ -183,7 +180,7 @@ function populateRecipesTable(all) {
     if (serverFilter !== "all" && recipe.server.manufacturer !== serverFilter) continue;
     if (accuracyFilter !== "all") {
       if (recipe.daemon.filter(d => d.name === ntpdFilter).length) {
-        // if ntpd is used, use the accuracy of the ntpd
+        // if ntpd is selected, use the accuracy of the ntpd
         const ntpd = recipe.daemon.filter(d => d.name === ntpdFilter)[0];
         if (ntpd.accuracy > accuracyMap[accuracyFilter]) continue;
       } else {
@@ -237,9 +234,15 @@ function populateRecipesTable(all) {
     tr.appendChild(daemonTd);
 
     const accuracyTd = document.createElement("td");
-    accuracyTd.textContent = recipe.daemon.reduce((mostAccurate, current) => {
-        return current.accuracy < mostAccurate.accuracy ? current : mostAccurate;
-    }).accuracy;
+    if (ntpdFilter === "all") {
+      accuracyTd.textContent = recipe.daemon.reduce((mostAccurate, current) => {
+          return current.accuracy < mostAccurate.accuracy ? current : mostAccurate;
+      }).accuracy;
+    } else {
+      const ntpd = recipe.daemon.filter(d => d.name === ntpdFilter)[0];
+      accuracyTd.textContent = ntpd.accuracy;
+    }
+    styleCell(accuracyTd);
     accuracyTd.classList.add("alignright");
     tr.appendChild(accuracyTd);
 
@@ -276,6 +279,23 @@ function populateServerFilterOptions(recipes) {
     option.textContent = server;
     select.appendChild(option);
   });
+}
+
+function styleCell (td) {
+  const val = parseFloat(td.textContent);
+  if (td.textContent.trim() === "0" || val === 0) {
+    td.classList.add("color-white");
+  } else if (!isNaN(val)) {
+    if (val >= 0.001 && val < 1) {
+      td.classList.add("color-ms");
+    } else if (val >= 0.000001 && val < 0.001) {
+      td.classList.add("color-us");
+    } else if (val >= 0.000000001 && val < 0.000001) {
+      td.classList.add("color-ns");
+    } else if (val >= 0.000000000001 && val < 0.000000001) {
+      td.classList.add("color-ps");
+    }
+  }
 }
 
 function onLoad () {
