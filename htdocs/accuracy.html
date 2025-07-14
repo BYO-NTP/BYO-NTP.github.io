@@ -252,7 +252,7 @@
           if (td.textContent.trim() !== '') {
             styleCell(td)
             const imgURI = getCellImage(th, cellIndex)
-            if (graph * imgURI) {
+            if (graph && imgURI) {
               td.onclick = () => {
                 td.classList.add('lightbox-link')
                 overlay.style.display = 'flex'
