@@ -109,9 +109,9 @@
       <tr><th class="grey">Pi 5</th><th class="grey">Pi OS</th><th>ntp</th>
           <td>0.000005000</td><td>0.006760</td><td>         </td><td>0.000003000</td><td>0.000005000</td><td></td></tr>
       <tr><th class="grey">Pi 5</th><th>BSD</th><th>chrony</th>
-          <td>0.000019500</td><td>0.002660</td><td>         </td><td>           </td><td>0.000003320</td><td></td></tr>
+          <td>0.000019500</td><td>0.002660</td><td>         </td><td>0.000001730</td><td>0.000003320</td><td></td></tr>
       <tr><th class="grey">Pi 5</th><th class="grey">BSD</th><th>sec</th>
-          <td>0.000022000</td><td>0.007110</td><td>         </td><td>           </td><td>0.000088000</td><td></td></tr>
+          <td>0.000022000</td><td>0.007110</td><td>         </td><td>0.000039000</td><td>0.000088000</td><td></td></tr>
       <tr><th class="grey">Pi 5</th><th class="grey">BSD</th><th>sec + gpsd</th>
           <td>0.000015000</td><td>0.005770</td><td>         </td><td>0.000017000</td><td>0.000042000</td><td></td></tr>
       <tr><th class="grey">Pi 5</th><th class="grey">BSD</th><th>ntp</th>
@@ -221,7 +221,7 @@
 
       let imgDaemon = th[2].textContent.trim().toLowerCase().replace(/\s/g, '').replace(/\+/g, '-')
       switch (th[2].textContent.trim()) {
-        case 'mac-pps': imgDaemon = 'chrony'; break
+        case 'mac-pps': imgDaemon = 'pollpps'; break
       }
 
       let imgGNSS = gnss[tdIndex];
