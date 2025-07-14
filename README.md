@@ -8,10 +8,12 @@ The BYO-NTP project's main goal is to encourage new Stratum 1 NTP server builds.
 
 The main BYO NTP pages are:
 
-| All Recipes | BYO NTP Recipes | DNS SRV tool |
-| ----- | ------ | ------- |
-| <a href="https://byo-ntp.github.io"><img src="https://byo-ntp.github.io/img/wiki/all-recipes.png" width="250px"></a> | <a href="https://byo-ntp.github.io/byontp-recipes.html"><img src="https://byo-ntp.github.io/img/wiki/byo-ntp-recipes.png" width="250px"> | <a href="https://byo-ntp.github.io/srv-lookup.html"><img src="https://byo-ntp.github.io/img/wiki/dns-srv-lookup.png" width="250px"></a> |
-| A filterable list of every NTP build recipe on the internet | A filterable list of BYO NTP build recipes | DNS SRV lookup tool |
+| All Recipes | BYO NTP Recipes |
+| :---------: | :-------------: |
+| A filterable list of every NTP build recipe on the internet | A filterable list of BYO NTP build recipes |
+| <a href="https://byo-ntp.github.io"><img src="https://byo-ntp.github.io/img/wiki/all-recipes.png" width="350px"></a> | <a href="https://byo-ntp.github.io/byontp-recipes.html"><img src="https://byo-ntp.github.io/img/wiki/byo-ntp-recipes.png" width="350px"> |
+| GNSS Accuracy | DNS SRV lookup tool |
+| <a href="https://byo-ntp.github.io/accuracy.html"><img src="https://byo-ntp.github.io/img/wiki/accuracy.png" width="350px"></a> | <a href="https://byo-ntp.github.io/srv-lookup.html"><img src="https://byo-ntp.github.io/img/wiki/dns-srv-lookup.png" width="350px"></a> |
 
 ---
 
