@@ -10,8 +10,27 @@ body {
 .small {
     font-size: 0.7em;
 }
+.tiny {
+    font-size: 0.5em;
+}
 .bold {
     font-weight: bold;
+}
+
+.collapsed {
+  display: none;
+}
+/* Style for the toggle buttons */
+.toggle-col {
+  margin-left: 8px;
+  cursor: pointer;
+  background: #ddd;
+  border: none;
+  border-radius: 3px;
+  padding: 0 5px;
+}
+th[data-collapsible] {
+  background-color: #f5f5f5;
 }
 
 .grey { color: #bfbebe; }

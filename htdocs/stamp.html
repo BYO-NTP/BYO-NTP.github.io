@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <style>
+    .info-box {
+      width: 96px; /* 1 inch */
+      height: 144px; /* 1.5 inches */
+      border: 1px solid #000;
+      border-radius: 6px;
+      font-family: sans-serif;
+      font-size: 10px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      /* padding: 3px; */
+      box-sizing: border-box;
+    }
+    .row {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 0;
+    }
+    .row.three-cols {
+      justify-content: space-between;
+      padding: 0;
+    }
+    .cell {
+      width: 30%;
+      position: relative;
+      cursor: help;
+    }
+    .cell:hover::after {
+      content: attr(data-tooltip);
+      position: absolute;
+      bottom: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      background: black;
+      color: white;
+      padding: 2px 4px;
+      border-radius: 4px;
+      white-space: nowrap;
+      font-size: 9px;
+      pointer-events: none;
+      z-index: 1;
+    }
+    .row.gnss {
+        background-color: lightblue;
+    }
+    .row.electricity {
+      background-color: yellow;
+    }
+  </style>
+</head>
+<body>
+
+<div class="info-box">
+  <div class="row">Raspberry Pi 5</div>
+
+  <div class="row three-cols">
+    <div class="cell" data-tooltip="RAM size">4GB</div>
+    <div class="cell" data-tooltip="Storage">128GB</div>
+    <div class="cell" data-tooltip="Approximate price">$110</div>
+  </div>
+
+  <div class="row gnss">u-blox MAX-M8Q</div>
+
+  <div class="row three-cols gnss">
+    <div class="cell" data-tooltip="GNSS Constellations: GPS, GLONASS, Galileo, Beidou">🇺🇸🇷🇺🇪🇺🇨🇳</div>
+    <div class="cell" data-tooltip="Channels">32</div>
+    <div class="cell" data-tooltip="Time Precision">2 µs</div>
+  </div>
+
+  <div id="power-usage" class="row three-cols electricity">
+    <div class="cell" data-tooltip="Power usage in watts">3W</div>
+    <div class="cell" data-tooltip="Annual energy consumption">27 kWh</div>
+    <div class="cell" data-tooltip="Estimated annual cost @ $0.14/kWh">$3.68</div>
+  </div>
+</div>
+
+</body>
+</html>
